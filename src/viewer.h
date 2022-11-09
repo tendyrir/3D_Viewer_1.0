@@ -1,6 +1,7 @@
 #ifndef VIEWER_H
 #define VIEWER_H
 
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -54,9 +55,10 @@ typedef struct Matrix {  // структура данных для матриц�
 } matrix_t;
 
 typedef struct Polygon {  // структура данных для массива полигонов
-  int* vertexes;  // массив номеров вершин которые надо соединить [1, 7, 5]
-  int numbers_of_vertexes_in_facets;  // количество вершин которые надо
-                                      // соединить
+  int* vertexes_for_polygon;  // массив номеров вершин которые надо соединить
+                              // [1, 7, 5]
+  int numbers_of_vertexes_in_polygon;  // количество вершин которые надо
+                                       // соединить
 } polygon_t;
 
 typedef struct data {
@@ -69,6 +71,9 @@ typedef struct data {
 } data;
 
 int count_vertexes_and_polygons_number(FILE* file_pointer, data* obj);
+int parse_polygons(FILE* file_pointer, data* obj);
+// int get_f_line(FILE* file_pointer);
+
 int open_file_to_read(FILE* file_pointer);
 int parse_vertexes_from_file(FILE* file_pointer);
 int count_vertex_number(FILE* file_pointer);
