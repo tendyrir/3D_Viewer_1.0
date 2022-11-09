@@ -48,13 +48,13 @@ f  2//1  8//1  4//1
 // бесконечности
 
 typedef struct Matrix {  // структура данных для матрицы вершин
-  double **matrix;
+  double** matrix;
   int rows;
   int cols;
 } matrix_t;
 
-typedef struct facets {  // структура данных для массива полигонов
-  int *vertexes;  // массив номеров вершин которые надо соединить [1, 7, 5]
+typedef struct Polygon {  // структура данных для массива полигонов
+  int* vertexes;  // массив номеров вершин которые надо соединить [1, 7, 5]
   int numbers_of_vertexes_in_facets;  // количество вершин которые надо
                                       // соединить
 } polygon_t;
@@ -62,12 +62,15 @@ typedef struct facets {  // структура данных для массив�
 typedef struct data {
   unsigned int total_vertexes;  // количество вершин (точек) после первого
                                 // прочтения .obj файла
-  unsigned int total_facets;  // количество полигонов после первого прочтения
+  unsigned int total_polygons;  // количество полигонов после первого прочтения
   matrix_t matrix_3d;
-  polygon_t *polygons;  // добавлякс как массив структур потому что 1 структура
+  polygon_t* polygons;  // добавлякс как массив структур потому что 1 структура
                         // под одну строчку f
 } data;
 
-int parse_vertexes_from_file(FILE *fp);
+int count_vertexes_and_polygons_number(FILE* file_pointer, data* obj);
+int open_file_to_read(FILE* file_pointer);
+int parse_vertexes_from_file(FILE* file_pointer);
+int count_vertex_number(FILE* file_pointer);
 
 #endif  // VIEWER_H

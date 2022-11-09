@@ -1,49 +1,25 @@
 #include "viewer.h"
 
-int main(void) {
-  FILE* file_pointer = fopen("models/cube.obj", "r");
+/**
+ * @brief Подсчет количества вершин и полигонов и запись в значений в структуру
+ * data
+ *
+ * @param file_pointer - указатель на открытый файл
+ * @param obj - указатель на структуру со счетчиками
+ * @return int - код ошибки
+ */
+int count_vertexes_and_polygons_number(FILE* file_pointer, data* obj) {
+  char line[64];
+  int error = 0;
 
-  if (file_pointer == NULL) {
-    fprintf(stderr, "ERROR: file_pointer is NULL, smth is wrong.");
-    exit(EXIT_FAILURE);
-  }
-
-  // printf("Parsing %s\n",
-  //  parse_vertexes_from_file(file_pointer) ? "succeeded" : "failed");
-
-  char line[100];
   while (fgets(line, sizeof(line), file_pointer) != NULL) {
-    printf("%s\n", parse_vertexes_from_file(file_pointer));
-  }
-
-  fclose(file_pointer);
-
-  return 0;
-}
-
-int parse_vertexes_from_file(FILE* fp) {
-  char line[100];
-
-  double x = 0;
-  double y = 0;
-  double z = 0;
-
-  while (fgets(line, sizeof(line), fp) != NULL) {
-    char token[3] = "v ";
-
-    if (strstr(line, token) != NULL) {
-      const char delim[2] = " ";
-      char* part_of_line;
-
-      part_of_line = strtok(line, delim);
-
-      while (part_of_line != NULL) {
-        part_of_line = strtok(NULL, delim);
-        printf("%s", part_of_line);
-      }
-      printf("%s", line);
+    if (strstr(line, "v ") != NULL) {
+      obj->total_vertexes++;
+    } else if (strstr(line, "f ") != NULL) {
+      obj->total_polygons++;
+    } else {
+      error = 1;
     }
   }
-
-  return 0;
+  return error;
 }
