@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/project.dir/main.cpp.o.d"
   "CMakeFiles/project.dir/mainwindow.cpp.o"
   "CMakeFiles/project.dir/mainwindow.cpp.o.d"
+  "CMakeFiles/project.dir/opengl.cpp.o"
+  "CMakeFiles/project.dir/opengl.cpp.o.d"
   "CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o.d"
   "project.app/Contents/MacOS/project"

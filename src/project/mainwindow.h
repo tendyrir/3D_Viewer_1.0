@@ -5,6 +5,9 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QTextStream>
+#include <QWidget>
+#include <QMessageBox>
+#include <QToolBar>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

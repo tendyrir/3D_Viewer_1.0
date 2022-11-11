@@ -359,14 +359,20 @@ CMakeFiles/project.dir/mainwindow.cpp.o: \
   /usr/local/include/QtWidgets/qdialog.h \
   /usr/local/lib/QtCore.framework/Headers/QTextStream \
   /usr/local/lib/QtCore.framework/Headers/qtextstream.h \
+  /usr/local/lib/QtWidgets.framework/Headers/QWidget \
+  /usr/local/lib/QtWidgets.framework/Headers/qwidget.h \
+  /usr/local/lib/QtWidgets.framework/Headers/QMessageBox \
+  /usr/local/lib/QtWidgets.framework/Headers/qmessagebox.h \
+  /usr/local/lib/QtWidgets.framework/Headers/QToolBar \
+  /usr/local/lib/QtWidgets.framework/Headers/qtoolbar.h \
+  /usr/local/include/QtGui/qaction.h \
   /Users/sandslas/Documents/3D_Viewer_1.0/src/build-project-Desktop_x86_darwin_generic_mach_o_64bit-Debug/project_autogen/include/./ui_mainwindow.h \
   /usr/local/include/QtCore/QVariant \
   /usr/local/lib/QtCore.framework/Headers/qvariant.h \
   /usr/local/include/QtOpenGLWidgets/QOpenGLWidget \
-  /usr/local/include/QtOpenGLWidgets/qopenglwidget.h \
+  /usr/local/lib/QtOpenGLWidgets.framework/Headers/qopenglwidget.h \
   /usr/local/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
   /usr/local/include/QtWidgets/QWidget \
-  /usr/local/lib/QtWidgets.framework/Headers/qwidget.h \
   /usr/local/include/QtGui/QSurfaceFormat \
   /usr/local/lib/QtGui.framework/Headers/qsurfaceformat.h \
   /usr/local/include/QtGui/qopengl.h \
@@ -401,7 +407,6 @@ CMakeFiles/project.dir/mainwindow.cpp.o: \
   /usr/local/include/QtWidgets/QMenuBar \
   /usr/local/lib/QtWidgets.framework/Headers/qmenubar.h \
   /usr/local/include/QtWidgets/qmenu.h \
-  /usr/local/include/QtGui/qaction.h \
   /usr/local/include/QtWidgets/QPushButton \
   /usr/local/lib/QtWidgets.framework/Headers/qpushbutton.h \
   /usr/local/include/QtWidgets/qabstractbutton.h \

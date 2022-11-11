@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/sandslas/Documents/3D_Viewer_1.0/src/project/main.cpp" "CMakeFiles/project.dir/main.cpp.o" "gcc" "CMakeFiles/project.dir/main.cpp.o.d"
   "/Users/sandslas/Documents/3D_Viewer_1.0/src/project/mainwindow.cpp" "CMakeFiles/project.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/project.dir/mainwindow.cpp.o.d"
+  "/Users/sandslas/Documents/3D_Viewer_1.0/src/project/opengl.cpp" "CMakeFiles/project.dir/opengl.cpp.o" "gcc" "CMakeFiles/project.dir/opengl.cpp.o.d"
   "/Users/sandslas/Documents/3D_Viewer_1.0/src/build-project-Desktop_x86_darwin_generic_mach_o_64bit-Debug/project_autogen/mocs_compilation.cpp" "CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o.d"
   )
 

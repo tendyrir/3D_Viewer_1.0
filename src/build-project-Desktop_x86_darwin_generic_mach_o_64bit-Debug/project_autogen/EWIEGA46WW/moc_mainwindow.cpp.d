@@ -271,6 +271,7 @@
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qvariant.h \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qvarlengtharray.h \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h \
+  /usr/local/lib/QtGui.framework/Versions/A/Headers/qaction.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qbitmap.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qbrush.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qcolor.h \
@@ -295,11 +296,16 @@
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
   /usr/local/lib/QtWidgets.framework/Versions/A/Headers/QFileDialog \
   /usr/local/lib/QtWidgets.framework/Versions/A/Headers/QMainWindow \
+  /usr/local/lib/QtWidgets.framework/Versions/A/Headers/QMessageBox \
+  /usr/local/lib/QtWidgets.framework/Versions/A/Headers/QToolBar \
+  /usr/local/lib/QtWidgets.framework/Versions/A/Headers/QWidget \
   /usr/local/lib/QtWidgets.framework/Versions/A/Headers/qdialog.h \
   /usr/local/lib/QtWidgets.framework/Versions/A/Headers/qfiledialog.h \
   /usr/local/lib/QtWidgets.framework/Versions/A/Headers/qmainwindow.h \
+  /usr/local/lib/QtWidgets.framework/Versions/A/Headers/qmessagebox.h \
   /usr/local/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h \
   /usr/local/lib/QtWidgets.framework/Versions/A/Headers/qtabwidget.h \
+  /usr/local/lib/QtWidgets.framework/Versions/A/Headers/qtoolbar.h \
   /usr/local/lib/QtWidgets.framework/Versions/A/Headers/qtwidgets-config.h \
   /usr/local/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsglobal.h \
   /usr/local/lib/QtWidgets.framework/Versions/A/Headers/qwidget.h

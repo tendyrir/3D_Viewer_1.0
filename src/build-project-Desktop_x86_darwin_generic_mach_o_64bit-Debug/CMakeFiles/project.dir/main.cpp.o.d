@@ -359,6 +359,13 @@ CMakeFiles/project.dir/main.cpp.o: \
   /usr/local/include/QtWidgets/qdialog.h \
   /usr/local/lib/QtCore.framework/Headers/QTextStream \
   /usr/local/lib/QtCore.framework/Headers/qtextstream.h \
+  /usr/local/lib/QtWidgets.framework/Headers/QWidget \
+  /usr/local/lib/QtWidgets.framework/Headers/qwidget.h \
+  /usr/local/lib/QtWidgets.framework/Headers/QMessageBox \
+  /usr/local/lib/QtWidgets.framework/Headers/qmessagebox.h \
+  /usr/local/lib/QtWidgets.framework/Headers/QToolBar \
+  /usr/local/lib/QtWidgets.framework/Headers/qtoolbar.h \
+  /usr/local/include/QtGui/qaction.h \
   /usr/local/lib/QtWidgets.framework/Headers/QApplication \
   /usr/local/lib/QtWidgets.framework/Headers/qapplication.h \
   /usr/local/include/QtCore/qcoreapplication.h \

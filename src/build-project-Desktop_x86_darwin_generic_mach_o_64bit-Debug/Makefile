@@ -190,6 +190,30 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
+opengl.o: opengl.cpp.o
+.PHONY : opengl.o
+
+# target to build an object file
+opengl.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/opengl.cpp.o
+.PHONY : opengl.cpp.o
+
+opengl.i: opengl.cpp.i
+.PHONY : opengl.i
+
+# target to preprocess a source file
+opengl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/opengl.cpp.i
+.PHONY : opengl.cpp.i
+
+opengl.s: opengl.cpp.s
+.PHONY : opengl.s
+
+# target to generate assembly for a file
+opengl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/opengl.cpp.s
+.PHONY : opengl.cpp.s
+
 project_autogen/mocs_compilation.o: project_autogen/mocs_compilation.cpp.o
 .PHONY : project_autogen/mocs_compilation.o
 
@@ -230,6 +254,9 @@ help:
 	@echo "... mainwindow.o"
 	@echo "... mainwindow.i"
 	@echo "... mainwindow.s"
+	@echo "... opengl.o"
+	@echo "... opengl.i"
+	@echo "... opengl.s"
 	@echo "... project_autogen/mocs_compilation.o"
 	@echo "... project_autogen/mocs_compilation.i"
 	@echo "... project_autogen/mocs_compilation.s"
