@@ -4,18 +4,23 @@
 #include <QWidget>
 #include <QtOpenGL>
 #include <QOpenGLWidget>
+#include <QOpenGLFunctions>
+#include <QOpenGLShaderProgram>
+#include <QOpenGLTexture>
 
-class openGL : public QOpenGLWidget
-{
+class openGL : public QOpenGLWidget, protected QOpenGLFunctions {
     Q_OBJECT
 public:
     explicit openGL(QWidget *parent = nullptr);
-//    void initialiseGL();
-//    void realizeGL(int w, int h);
-//    void paintGL();
+protected:
+    void initializeGL();
+    void resizeGL(int w, int h);
+    void paintGL();
+    void initShaders();
 
-signals:
-
+private:
+    QOpenGLShaderProgram m_program;
+    QOpenGLTexture m_texture;
 };
 
 #endif // OPENGL_H

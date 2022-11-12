@@ -866,4 +866,5 @@ CMakeFiles/project.dir/opengl.cpp.o: \
   /usr/local/lib/QtOpenGLWidgets.framework/Headers/QOpenGLWidget \
   /usr/local/lib/QtOpenGLWidgets.framework/Headers/qopenglwidget.h \
   /usr/local/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
-  /usr/local/include/QtWidgets/QWidget
+  /usr/local/include/QtWidgets/QWidget \
+  /usr/local/lib/QtGui.framework/Headers/QOpenGLFunctions
