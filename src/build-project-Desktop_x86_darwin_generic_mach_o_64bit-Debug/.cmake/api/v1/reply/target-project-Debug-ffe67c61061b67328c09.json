@@ -44,7 +44,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 30,
+				"line" : 29,
 				"parent" : 0
 			},
 			{
@@ -68,19 +68,19 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 54,
+				"line" : 53,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 51,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 1,
 				"line" : 52,
-				"parent" : 0
-			},
-			{
-				"command" : 4,
-				"file" : 1,
-				"line" : 53,
 				"parent" : 0
 			},
 			{
@@ -456,15 +456,14 @@
 			[
 				4,
 				5,
-				8
+				7
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				6,
-				7
+				6
 			]
 		}
 	],
@@ -508,11 +507,6 @@
 		{
 			"backtrace" : 4,
 			"path" : "mainwindow.ui",
-			"sourceGroupIndex" : 2
-		},
-		{
-			"backtrace" : 4,
-			"path" : "vshader.vsh",
 			"sourceGroupIndex" : 2
 		},
 		{

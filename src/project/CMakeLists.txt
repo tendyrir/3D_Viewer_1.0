@@ -23,8 +23,6 @@ set(PROJECT_SOURCES
         mainwindow.h
         opengl.h
         mainwindow.ui
-        vshader.vsh
-        fshader.fsh
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
