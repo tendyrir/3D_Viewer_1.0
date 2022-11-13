@@ -6,17 +6,17 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct matrix {
-  double** matrix;
-  int rows;
-  int cols;
-} matrix_t;
+ typedef struct VertexArray_t {
+  double* coords_vertex;
+  int coords_number;
+  int scale;
+ } VertexArray_t;
 
-int create_matrix(int rows, int cols, matrix_t *result);
-char* create_lexem(char* infix_input_str);
+int v_lines_parser(FILE* fp, VertexArray_t* vertex_array, char* obj_file_name);
 
-int filling_tmp_double_array_for_current_line(char* current_line, 
-        char* axis_coord_char_array, double axis_coord_double, double* tmp_array_for_current_line);
+int get_number_of_vertexes(FILE* fp, VertexArray_t* vertex_array);
+int get_coords_of_vertexes(FILE* fp, VertexArray_t* vertex_array);
 
+void print_vertex_array(VertexArray_t* vertex_array);
 
 #endif  // VIEWER_H
