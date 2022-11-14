@@ -110,3 +110,23 @@ int lines_parser(FILE* fp, VertexArray_t* v_arr, IndexArray_t* i_arr, char* obj_
 }
 
 
+int parseFacesFromFile(FILE *fp)
+{
+    char line[100];
+    while (fgets(line, sizeof(line), fp) != NULL)
+    {
+        if (line[0] != 'f')
+            continue;
+
+        char *tokenPtr;
+        strtok(line, " "); // Read past the initial "f"
+        while ((tokenPtr = strtok(NULL, "/")) != NULL)
+        {
+            printf("%s ", tokenPtr);
+            strtok(NULL, " "); // Return value checking omitted, assume correct input
+        }
+        putchar('\n');
+    }
+
+    return 0;
+}

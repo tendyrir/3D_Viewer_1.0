@@ -22,6 +22,8 @@ int lines_parser(FILE* fp, VertexArray_t* v_arr, IndexArray_t* i_arr, char* obj_
 int get_number_of_vertexes_and_facets(FILE* fp, VertexArray_t* v_arr, IndexArray_t* i_arr);
 
 int get_coords_of_vertexes(FILE* fp, VertexArray_t* v_arr);
+int parseFacesFromFile(FILE *fp);
+
 
 void print_vertex_array(VertexArray_t* v_arr);
 

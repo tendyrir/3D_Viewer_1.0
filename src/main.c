@@ -9,9 +9,12 @@ int main (void) {
 
     char* obj_file_name = "models/cube.obj";
 
-    lines_parser(file_pointer, &vertex_array, &index_array, obj_file_name);
+    parseFacesFromFile(file_pointer);
+
+    // lines_parser(file_pointer, &vertex_array, &index_array, obj_file_name);
     
-    print_vertex_array(&vertex_array);
+    // print_vertex_array(&vertex_array);
+
 
     return 0;
 }
