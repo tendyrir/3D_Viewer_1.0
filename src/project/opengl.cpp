@@ -43,6 +43,16 @@ void openGL::drawCube(float a) {
          -a, -a, a,     a, -a, a,     a, -a, -a,     -a, -a, -a, // нижняя
          -a, a, a,     a, a, a,     a, a, -a,     -a, a, -a, // верхняя
     };
+    float indexes_array[] = {
+        -1,  1,  -1,
+        1,  1,  -1,
+        -1, -1,  -1,
+        1, -1,  -1,
+        -1,  1, -3,
+        1,  1, -3,
+        -1, -1, -3,
+        1, -1, -3
+    };
     float color[] = {
         1, 0, 0,     1, 0, 0,     1, 0, 0,     1, 0, 0,
         0, 0, 1,     0, 0, 1,     0, 0, 1,     0, 0, 1,
@@ -52,15 +62,15 @@ void openGL::drawCube(float a) {
         1, 0.5, 0.5,     1, 0.5, 0.5,     1, 0.5, 0.5,     1, 0.5, 0.5,
     };
     glVertexPointer(3, GL_FLOAT, 0, &ver_cub);
-    glEnableClientState(GL_VERTEX_ARRAY);
+    glEnableClientState(GL_VERTEX_ARRAY); // включить состояние OpenGL
 
     glColorPointer(3, GL_FLOAT, 0, &color);
     glEnableClientState(GL_COLOR_ARRAY);
 
-    glDrawArrays(GL_QUADS, 0, 24);
-
+//    glDrawArrays(GL_QUADS, 0, 24);
+    glDrawElements(GL_LINES, 24, GL_UNSIGNED_INT, &indexes_array);
     glDisableClientState(GL_COLOR_ARRAY);
-    glDisableClientState(GL_VERTEX_ARRAY);
+    glDisableClientState(GL_VERTEX_ARRAY); //выключить состояние OpenGL
 
 }
 
