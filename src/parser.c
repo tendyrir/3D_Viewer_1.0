@@ -1,46 +1,62 @@
 #include "viewer.h"
 
-void print_vertex_array(VertexArray_t* vertex_array) {
-    for (int j = 0; j < vertex_array->coords_number; j++) {
-            printf("%lf ", vertex_array->coords_vertex[j]);
+void print_vertex_array(ObjData_t data) {
+    for (int j = 0; j < data.vertex_array.coords_number; j++) {
+            printf("%lf ", data.vertex_array.coords_vertex[j]);
     }
 }
 
 
-int get_number_of_vertexes_and_facets(FILE         * fp, 
-                                      VertexArray_t* v_arr, 
-                                      IndexArray_t * i_arr) {
-    int     error              = 0;
-    int     number_of_vertexes = 0;
-    int     number_of_facets   = 0;
-    char*   line               = NULL;
-    size_t  len                = 0;
-    ssize_t read               = 0;
+int get_data_numbers(FILE* fp, ObjData_t* data) {
+    int     error                 = 0;
+    int     vertex_counter        = 0;
+    int     polygons_counter      = 0;
+    int     total_index_counter   = 0;
+    int     polygon_index_counter = 0;
+    char*   line                  = NULL;
+    size_t  len                   = 0;
+    ssize_t read                  = 0;
 
     /*     ssize_t getline(char **lineptr, size_t *n, FILE *stream); */
     while ((read = getline(&line, &len, fp)) != -1) {
         
         if (line[0] == 'v' && line[1] == ' ') {
-            number_of_vertexes++;
+            vertex_counter++;
         }
 
         if (line[0] == 'f' && line[1] == ' ') {
-            number_of_facets++;
+            polygons_counter++;
+
+            char *tokenPtr;
+            strtok(line, " "); // Read past the initial "f"
+            while ((tokenPtr = strtok(NULL, "/")) != NULL) {
+                // printf("%s ", tokenPtr);
+                strtok(NULL, " "); // Return value checking omitted, assume correct input
+                // i++;
+                total_index_counter++;
+                polygon_index_counter++;
+
+            }
+            // putchar('\n');
+            polygon_index_counter = 0;
+
         }
-
-
     }
 
     if (line != NULL) {
         free(line);
     }
 
-    v_arr -> coords_number  = number_of_vertexes * 3;
-    i_arr  -> indices_number = number_of_facets;
+    data->vertex_number = vertex_counter * 3;
+    data->polygons_number = polygons_counter;
+    data->index_arr_size = total_index_counter * 2;
 
     printf("In current .obj file:\n");
-    printf("vertexes: %d\n", number_of_vertexes);
-    printf("polygons: %d\n", number_of_facets);
+    printf("      vertex_counter  : %d\n", vertex_counter);
+    printf("data->vertex_number   : %d <- под массив координат\n", data->vertex_number);
+    printf("      polygons_counter: %d <- под массив структур\n", polygons_counter);
+    printf("total_index_counter   : %d\n", total_index_counter);
+    printf("data->index_arr_size  : %d <- под массив индексов\n", data->index_arr_size);
 
     // if (fp == NULL)
     //     exit(EXIT_FAILURE);
@@ -49,84 +65,58 @@ int get_number_of_vertexes_and_facets(FILE         * fp,
 }
 
 
-int get_coords_of_vertexes(FILE* fp, VertexArray_t* v_arr) {
+int get_data_arrays(FILE* fp, ObjData_t* data) {
     int error = 0;
-    int number_of_vertexes = 0;
 
-    char* line = NULL;
-    size_t len = 0;
+    char*   line = NULL;
+    size_t  len = 0;
     ssize_t read = 0;
 
     int i = 0;
     double x = 0, y = 0, z = 0;
 
-    /*     ssize_t getline(char **lineptr, size_t *n, FILE *stream); */
     while ((read = getline(&line, &len, fp)) != -1) {
-
         if (line[0] == 'v' && line[1] == ' ') {
             char*  current_line = line + 3;
             char*  coord_chars  = NULL;
             double coord_double = 0;
-            // printf("строка:%s", current_line);
             sscanf(current_line, "%lf%lf%lf", &x, &y, &z);
-            v_arr->coords_vertex[i + 0] = x; 
-            v_arr->coords_vertex[i + 1] = y;
-            v_arr->coords_vertex[i + 2] = z;
-            // vertex_array->coords_vertex[i + 3] = vertex_array->scale;
+            data->vertex_array.coords_vertex[i + 0] = x;
+            data->vertex_array.coords_vertex[i + 1] = y;
+            data->vertex_array.coords_vertex[i + 2] = z;
             i += 3;    
         }
 
         if (line[0] == 'f' && line[1] == ' ') {
             
         }
-
     }
+
     if (line != NULL) {
         free(line);
     }
+
     return error;
 }
 
-int lines_parser(FILE* fp, VertexArray_t* v_arr, IndexArray_t* i_arr, char* obj_file_name) {
+int parse_file(FILE* fp, ObjData_t* data, char* obj_file_name) {
 
-/*  1. Объявить структуру массива вершин, код ошибки, указатель на файл */
     int error = 0;
 
-/*  2. Открыть файл, узнать и сохранить количество координат */
+/*  . Открыть файл, узнать и сохранить количество координат */
     fp = fopen(obj_file_name, "r");
-    error = get_number_of_vertexes_and_facets(fp, v_arr, i_arr);
+    error = get_data_numbers(fp, data);
     fclose(fp);
 
-/*  3. Выделить память под координаты (и масштаб) */
-    v_arr->coords_vertex = malloc(v_arr->coords_number * sizeof(double));
-    // vertex_array->scale = 1;
+/*  . Выделить память под массивы */
+    data->vertex_array.coords_vertex = malloc(data->vertex_number * 3 * sizeof(double));
+    data->polygons_array             = malloc(data->polygons_number * sizeof(Polygon_t));
+
     
-/*  6. Открыть файл еще раз для и считать данные координат вершин из файла в массив */
+/*  . Открыть файл еще раз для и считать данные координат вершин из файла в массив */
     fp = fopen(obj_file_name, "r");
-    error = get_coords_of_vertexes(fp, v_arr);
+    error = get_data_arrays(fp, data);
     fclose(fp);
 
     return error;
-}
-
-
-int parseFacesFromFile(FILE *fp)
-{
-    char line[100];
-    while (fgets(line, sizeof(line), fp) != NULL)
-    {
-        if (line[0] != 'f')
-            continue;
-
-        char *tokenPtr;
-        strtok(line, " "); // Read past the initial "f"
-        while ((tokenPtr = strtok(NULL, "/")) != NULL)
-        {
-            printf("%s ", tokenPtr);
-            strtok(NULL, " "); // Return value checking omitted, assume correct input
-        }
-        putchar('\n');
-    }
-
-    return 0;
 }

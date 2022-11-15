@@ -2,20 +2,13 @@
 
 int main (void) {
 
-    FILE* file_pointer = NULL;
+    FILE*     file_pointer  = NULL;
+    ObjData_t data;
+    char*     obj_file_name = "models/cube.obj";
 
-    VertexArray_t vertex_array = {0};
-    IndexArray_t index_array   = {0};
-
-    char* obj_file_name = "models/cube.obj";
-
-    parseFacesFromFile(file_pointer);
-
-    // lines_parser(file_pointer, &vertex_array, &index_array, obj_file_name);
+    parse_file(file_pointer, &data, obj_file_name);
+    print_vertex_array(data);
     
-    // print_vertex_array(&vertex_array);
-
-
     return 0;
 }
 

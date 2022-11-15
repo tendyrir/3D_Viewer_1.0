@@ -6,25 +6,29 @@
 #include <stdlib.h>
 #include <string.h>
 
- typedef struct VertexArray_t {
+typedef struct VertexArray_t {
   double* coords_vertex;
   int coords_number;
- } VertexArray_t;
+} VertexArray_t;
 
- typedef struct IndexArray_t {
-    int* indices;
-    int indices_number;
- } IndexArray_t;
+typedef struct Polygon_t {
+   int* polygon_indices;
+   int indices_number;
+} Polygon_t;
 
+typedef struct ObjData_t { // для куба
+   int vertex_number;      // количество координат -> 24
+   int polygons_number;    // количество полигонов -> 12
+   int index_arr_size;     // массив индексов      -> 72
+   VertexArray_t vertex_array;
+   Polygon_t* polygons_array;
+} ObjData_t;
 
-int lines_parser(FILE* fp, VertexArray_t* v_arr, IndexArray_t* i_arr, char* obj_file_name);
+int parse_file(FILE* fp, ObjData_t* data, char* obj_file_name);
 
-int get_number_of_vertexes_and_facets(FILE* fp, VertexArray_t* v_arr, IndexArray_t* i_arr);
+int get_data_numbers(FILE* fp, ObjData_t* data);
+int get_data_arrays(FILE* fp, ObjData_t* data);
 
-int get_coords_of_vertexes(FILE* fp, VertexArray_t* v_arr);
-int parseFacesFromFile(FILE *fp);
-
-
-void print_vertex_array(VertexArray_t* v_arr);
+void print_vertex_array(ObjData_t data);
 
 #endif  // VIEWER_H
