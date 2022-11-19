@@ -29,6 +29,9 @@ int parse_file(FILE* fp, ObjData_t* data, char* obj_file_name);
 int get_data_numbers(FILE* fp, ObjData_t* data);
 int get_data_arrays(FILE* fp, ObjData_t* data);
 
+int get_number_of_polygon_indices(char* line);
+int get_array_of_polygon_indices(char* line, ObjData_t* data, int j);
+
 void print_vertex_array(ObjData_t data);
 
 #endif  // VIEWER_H
