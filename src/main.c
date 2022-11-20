@@ -7,7 +7,11 @@ int main (void) {
     char*     obj_file_name = "models/cube.obj";
 
     parse_file(file_pointer, &data, obj_file_name);
-    print_vertex_array(data);
+
+    print_vertex_array(&data);
+
+    // free(file_pointer);
+
     
     return 0;
 }
