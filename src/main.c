@@ -3,15 +3,14 @@
 int main (void) {
 
     FILE*     file_pointer  = NULL;
-    ObjData_t data;
+    ObjData_t data = {0};
     char*     obj_file_name = "models/cube.obj";
 
     parse_file(file_pointer, &data, obj_file_name);
 
+    printf("\n");
+
     print_vertex_array(&data);
-
-    // free(file_pointer);
-
     
     return 0;
 }
