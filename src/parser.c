@@ -167,3 +167,4 @@ void print_vertex_array(ObjData_t* data) {
     }
     printf("\n счетчик в конце равен: %d \n", data->index_array_counter);
 }
+

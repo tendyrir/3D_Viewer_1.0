@@ -1,4 +1,64 @@
-#include <src/s21_matrix.h>
+#include <viewer.h>
+
+int s21_create_matrix(int rows, int columns, matrix_t *result) {
+    int error = OK;
+
+    if (result == NULL || rows <= 0 || columns <= 0) {
+        error = ERR_1;
+
+    } else {
+        result->rows = rows;
+        result->columns = columns;
+        result->matrix = calloc(result->rows, sizeof(double*));
+        if (result->matrix == NULL) {
+            error = ERR_1;
+        } else  {
+            for (int i = 0; i < result->rows; i++) {
+                result->matrix[i] = calloc(result->columns, sizeof(double));
+                if (result->matrix[i] == NULL) {
+                    error = ERR_1;
+                }
+            }
+        }
+    }
+    return error;
+}
+
+int s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
+    int error = OK;
+    if ((A == NULL || A->matrix == NULL || A->columns <= 0 || A->rows <= 0) ||
+        (B == NULL || B->matrix == NULL || B->columns <= 0 || B->rows <= 0)) {
+        error = ERR_1;
+    } else if (!((A->columns == B->rows) || (B->columns == A->rows))) {
+        error = ERR_2;
+    } else {
+        s21_create_matrix(A->rows, B->columns, result);
+        for (int i = 0; i < result->rows; i++) {
+            for (int j = 0; j< result->columns; j++) {
+                for (int k = 0; k < B->rows; k++) {
+                    result->matrix[i][j] += A->matrix[i][k] * B->matrix[k][j];
+                }
+            }
+        }
+    }
+    return error;
+}
+
+
+void s21_remove_matrix(matrix_t *A) {
+    if (A != NULL && A->matrix != NULL && A->columns > 0 && A->rows > 0) {
+        for (int i = 0; i < A->rows; i++) {
+            free(A->matrix[i]);
+            A->matrix[i] = NULL;
+        }
+        free(A->matrix);
+        A->matrix = NULL;
+        A->columns = 0;
+        A->rows = 0;
+    }
+}
+
+
 
 /* Матрицы поворота относительно осей x, y и z соответственно */
 

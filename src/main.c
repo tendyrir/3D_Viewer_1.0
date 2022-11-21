@@ -9,7 +9,6 @@ int main (void) {
     parse_file(file_pointer, &data, obj_file_name);
 
     printf("\n");
-    
     print_vertex_array(&data);
     
     return 0;
