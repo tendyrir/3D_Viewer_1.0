@@ -1,0 +1,4 @@
+/Users/sandslas/Documents/3D_Viewer_1.0/src/build-project-Desktop_x86_darwin_generic_mach_o_64bit-Debug/CMakeFiles/project.dir
+/Users/sandslas/Documents/3D_Viewer_1.0/src/build-project-Desktop_x86_darwin_generic_mach_o_64bit-Debug/CMakeFiles/edit_cache.dir
+/Users/sandslas/Documents/3D_Viewer_1.0/src/build-project-Desktop_x86_darwin_generic_mach_o_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/Users/sandslas/Documents/3D_Viewer_1.0/src/build-project-Desktop_x86_darwin_generic_mach_o_64bit-Debug/CMakeFiles/project_autogen.dir
