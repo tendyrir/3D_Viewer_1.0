@@ -1,25 +1,23 @@
 #include "viewer.h"
 
 int parse_file(FILE* fp, ObjData_t* data, char* obj_file_name) {
-
     int error = 0;
-
 /*  . Первое открытие файла - узнаем количества координат всего, количество полигонов */
     fp    = fopen(obj_file_name, "r");
     error = get_data_numbers(fp, data);
     fclose(fp);
-
 /*  . Выделить память под массивы */
     data->vertex_array.coords_array = malloc(data->vertex_array.coords_number * sizeof(double));
     data->index_array               = malloc(data->index_array_size * sizeof(int));
-
 /*  . Второе открытие файла - заполнение массивов */
     fp    = fopen(obj_file_name, "r");
     error = get_data_arrays(fp, data);
     fclose(fp);
-
     return error;
 }
+
+
+
 
 
 int get_data_numbers(FILE* fp, ObjData_t* data) {
@@ -30,6 +28,7 @@ int get_data_numbers(FILE* fp, ObjData_t* data) {
     size_t  len              = 0;
     ssize_t read             = 0;
     char*   token_ptr        = NULL;
+    int i = 0;
 
     while ((read = getline(&line, &len, fp)) != -1) {
         
@@ -37,14 +36,39 @@ int get_data_numbers(FILE* fp, ObjData_t* data) {
             vertex_counter++;
         }
         if (line[0] == 'f' && line[1] == ' ') {
+
             strtok(line, " ");
-            while ((token_ptr = strtok(NULL, "/")) != NULL) {
-                total_indices++;
-                strtok(NULL, " ");
-            }
+
+
+            if (strchr(line, '/')) {
+
+                while ((token_ptr = strtok(NULL, "/")) != NULL) {
+                    total_indices++;
+                    i++;
+                    strtok(NULL, " ");
+                    printf("%d - %s ",  total_indices, token_ptr);
+                }
+
+            // } else {
+            //     // printf("nemae / scho delat? \n");
+
+            //     while ((token_ptr = strtok(NULL, " ")) != NULL) {
+            //         total_indices++;
+            //         i++;
+            //         strtok(token_ptr, " ");
+            //         printf("%d -%s",  total_indices, token_ptr);
+            //     }
+
+            // }
+
+
+
+
 
         }
     }
+    
+    printf("\n");
 
     if (line != NULL) {
         free(line);
@@ -59,6 +83,8 @@ int get_data_numbers(FILE* fp, ObjData_t* data) {
 
     return error;
 }
+
+
 
 
 int get_data_arrays(FILE* fp, ObjData_t* data) {
@@ -101,6 +127,9 @@ int get_data_arrays(FILE* fp, ObjData_t* data) {
 }
 
 
+
+
+
 int write_index_array_in_data(char* line, char* line_copy, ObjData_t* data) {
     // printf("%s", line);
 
@@ -113,6 +142,7 @@ int write_index_array_in_data(char* line, char* line_copy, ObjData_t* data) {
         while ((token_ptr = strtok(NULL, "/")) != NULL) {
             strtok(NULL, " ");
             // printf("|%s |", token_ptr);
+                    // printf("\n");
             current_line_index_counter_1++;  // - считаем количество индексов в текущей строчке
         }
         // printf("            индексов: %d\n", current_line_index_counter_1);
@@ -157,10 +187,21 @@ int write_index_array_in_data(char* line, char* line_copy, ObjData_t* data) {
 
 void print_vertex_array(ObjData_t* data) {
     
-    for (int j = 0; j < data->vertex_array.coords_number; j++) {
-            printf("%lf ", data->vertex_array.coords_array[j]);
-    }
+    // for (int j = 0; j < data->vertex_array.coords_number; j++) {
+    //         printf("%lf ", data->vertex_array.coords_array[j]);
+    // }
+
+    int j = 0;
+    while (j < data->vertex_array.coords_number) {
+        printf("%10lf ", data->vertex_array.coords_array[j]);
+        printf("%10lf ", data->vertex_array.coords_array[j + 1]);
+        printf("%10lf ", data->vertex_array.coords_array[j + 2]);
         printf("\n");
+        j += 3;
+    }
+
+    printf("\n");
+
     for (int j = 0; j < data->index_array_counter; j++) {
             printf("%d ", data->index_array[j]);
     }

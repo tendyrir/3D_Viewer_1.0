@@ -29,6 +29,7 @@ typedef struct ObjData_t {
    int  index_array_size;
    int  index_array_counter;
    int* index_array;
+   
 } ObjData_t;
 
 typedef struct matrix_t {
