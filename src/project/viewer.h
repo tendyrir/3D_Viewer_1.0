@@ -7,6 +7,7 @@
 #include <string.h>
 #include <math.h>
 
+
 #define OK 0
 #define ERR_1 1
 #define ERR_2 2
@@ -28,7 +29,7 @@ typedef struct ObjData_t {
 
    int  index_array_size;
    int  index_array_counter;
-   int* index_array;
+   int* index_array; // массив индексов
 } ObjData_t;
 
 typedef struct matrix_t {

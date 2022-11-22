@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QToolBar>
 #include "opengl.h"
+#include <cstdio>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,9 +22,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+     QString on_choose_OBJFile_clicked();
+     openGL *openGLWidget;
 
 private slots:
-    void on_choose_OBJFile_clicked();
+
 
 private:
     Ui::MainWindow *ui;
