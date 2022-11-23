@@ -71,7 +71,7 @@ border-radius: 5px;</string>
     <property name="title">
      <string>Move</string>
     </property>
-    <widget class="QSlider" name="horizontalSlider">
+    <widget class="QSlider" name="MoveX">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -80,11 +80,17 @@ border-radius: 5px;</string>
        <height>61</height>
       </rect>
      </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>50</number>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="QSlider" name="horizontalSlider_2">
+    <widget class="QSlider" name="MoveY">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -93,11 +99,17 @@ border-radius: 5px;</string>
        <height>61</height>
       </rect>
      </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>50</number>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="QSlider" name="horizontalSlider_3">
+    <widget class="QSlider" name="MoveZ">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -106,38 +118,14 @@ border-radius: 5px;</string>
        <height>61</height>
       </rect>
      </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>50</number>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>30</y>
-       <width>41</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_2">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>70</y>
-       <width>41</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_3">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>110</y>
-       <width>41</width>
-       <height>31</height>
-      </rect>
      </property>
     </widget>
     <widget class="QLabel" name="label_3">
@@ -163,7 +151,7 @@ border-radius: 5px;</string>
       </rect>
      </property>
      <property name="text">
-      <string>X</string>
+      <string>Y</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_2">
@@ -176,7 +164,46 @@ border-radius: 5px;</string>
       </rect>
      </property>
      <property name="text">
-      <string>Y</string>
+      <string>X</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lineMoveY">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>70</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>50</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lineMoveX">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>30</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>50</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lineMoveZ">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>110</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>50</string>
      </property>
     </widget>
    </widget>
@@ -195,27 +222,7 @@ border-radius: 5px;</string>
     <property name="title">
      <string>Rotate</string>
     </property>
-    <widget class="QTextEdit" name="textEdit_5">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>30</y>
-       <width>41</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_4">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>70</y>
-       <width>41</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QSlider" name="horizontalSlider_6">
+    <widget class="QSlider" name="RotateZ">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -224,21 +231,17 @@ border-radius: 5px;</string>
        <height>61</height>
       </rect>
      </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>50</number>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_6">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>110</y>
-       <width>41</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QSlider" name="horizontalSlider_5">
+    <widget class="QSlider" name="RotateY">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -246,6 +249,12 @@ border-radius: 5px;</string>
        <width>271</width>
        <height>61</height>
       </rect>
+     </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>50</number>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -267,7 +276,7 @@ border-radius: 5px;</string>
       <string>Z</string>
      </property>
     </widget>
-    <widget class="QSlider" name="horizontalSlider_4">
+    <widget class="QSlider" name="RotateX">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -275,6 +284,12 @@ border-radius: 5px;</string>
        <width>271</width>
        <height>61</height>
       </rect>
+     </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>50</number>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -306,6 +321,45 @@ border-radius: 5px;</string>
       <string>X</string>
      </property>
     </widget>
+    <widget class="QLabel" name="lineRotateZ">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>110</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>50</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lineRotateY">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>70</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>50</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lineRotateX">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>30</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>50</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QLabel" name="label_9">
     <property name="geometry">
@@ -335,7 +389,7 @@ border-radius: 5px;</string>
     <property name="title">
      <string>Scale</string>
     </property>
-    <widget class="QSlider" name="horizontalSlider_7">
+    <widget class="QSlider" name="Scale">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -344,11 +398,17 @@ border-radius: 5px;</string>
        <height>61</height>
       </rect>
      </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>50</number>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_7">
+    <widget class="QLabel" name="lineScale">
      <property name="geometry">
       <rect>
        <x>300</x>
@@ -356,6 +416,9 @@ border-radius: 5px;</string>
        <width>41</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="text">
+      <string>50</string>
      </property>
     </widget>
    </widget>

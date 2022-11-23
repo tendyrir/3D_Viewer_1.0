@@ -1,11 +1,11 @@
 #include "viewer.h"
 
-int parse_file(FILE* fp, ObjData_t* data, char* obj_file_name) {
+int parse_file(ObjData_t* data, char* obj_file_name) {
 
     int error = 0;
 
 /*  . Первое открытие файла - узнаем количества координат всего, количество полигонов */
-    fp    = fopen(obj_file_name, "r");
+    FILE* fp    = fopen(obj_file_name, "r");
     error = get_data_numbers(fp, data);
     fclose(fp);
 

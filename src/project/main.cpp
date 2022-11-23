@@ -1,5 +1,4 @@
 #include "mainwindow.h"
-//#include "opengl.h"
 
 #include <QApplication>
 

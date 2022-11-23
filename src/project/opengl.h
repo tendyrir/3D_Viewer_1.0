@@ -1,3 +1,4 @@
+#define GL_SILENCE_DEPRECATION
 #ifndef OPENGL_H
 #define OPENGL_H
 
@@ -6,6 +7,7 @@
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
 
+
 extern "C" {
 #include "viewer.h"
 }
@@ -13,16 +15,15 @@ extern "C" {
 class openGL : public QOpenGLWidget, protected QOpenGLFunctions {
     Q_OBJECT
 public:
-    explicit openGL(QWidget *parent = nullptr);
+    openGL(QWidget *parent = nullptr);
+    ObjData_t data_obj;
 
 protected:
     void initializeGL() override;
     void resizeGL(int w, int h) override;
     void paintGL() override;
 
-
 private:
-    ObjData_t data_obj;
     float xRot, zRot, yRot;
     QPoint mPos;
     QTimer tmr;

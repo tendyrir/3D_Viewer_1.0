@@ -39,7 +39,7 @@ typedef struct matrix_t {
 } matrix_t;
 
 
-int  parse_file(FILE* fp, ObjData_t* data, char* obj_file_name);
+int  parse_file(ObjData_t* data, char* obj_file_name);
 int  get_data_numbers(FILE* fp, ObjData_t* data);
 int  get_data_arrays(FILE* fp, ObjData_t* data);
 int  write_index_array_in_data(char* line, char* line_copy, ObjData_t* data);
