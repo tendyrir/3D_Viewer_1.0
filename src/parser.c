@@ -36,12 +36,9 @@ int get_data_numbers(FILE* fp, ObjData_t* data) {
             vertex_counter++;
         }
         if (line[0] == 'f' && line[1] == ' ') {
-
             strtok(line, " ");
 
-
             if (strchr(line, '/')) {
-
                 while ((token_ptr = strtok(NULL, "/")) != NULL) {
                     total_indices++;
                     i++;
@@ -49,17 +46,15 @@ int get_data_numbers(FILE* fp, ObjData_t* data) {
                     printf("%d - %s ",  total_indices, token_ptr);
                 }
 
-            // } else {
-            //     // printf("nemae / scho delat? \n");
+            } else {
+                while ((token_ptr = strtok(NULL, " ")) != NULL) {
+                    // strtok(NULL, "");
 
-            //     while ((token_ptr = strtok(NULL, " ")) != NULL) {
-            //         total_indices++;
-            //         i++;
-            //         strtok(token_ptr, " ");
-            //         printf("%d -%s",  total_indices, token_ptr);
-            //     }
-
-            // }
+                    total_indices++;
+                    i++;
+                    printf("%d -%s\n",  total_indices, token_ptr);
+                }
+            }
 
 
 
@@ -68,7 +63,7 @@ int get_data_numbers(FILE* fp, ObjData_t* data) {
         }
     }
     
-    printf("\n");
+    // printf("\n");
 
     if (line != NULL) {
         free(line);
@@ -138,47 +133,104 @@ int write_index_array_in_data(char* line, char* line_copy, ObjData_t* data) {
     int current_line_index_counter_1 = 0;
     int value = 0;
 
-        strtok(line_copy, " ");
-        while ((token_ptr = strtok(NULL, "/")) != NULL) {
-            strtok(NULL, " ");
+        // strtok(line_copy, " ");
+        // while ((token_ptr = strtok(NULL, "/")) != NULL) {
+            // strtok(NULL, " ");
             // printf("|%s |", token_ptr);
                     // printf("\n");
-            current_line_index_counter_1++;  // - считаем количество индексов в текущей строчке
-        }
+            // current_line_index_counter_1++;  // - считаем количество индексов в текущей строчке
+        // }
         // printf("            индексов: %d\n", current_line_index_counter_1);
+
+        strtok(line_copy, " ");
+
+            if (strchr(line_copy, '/')) {
+                while ((token_ptr = strtok(NULL, "/")) != NULL) {
+                    strtok(NULL, " ");
+                    current_line_index_counter_1++;
+                }
+
+            } else {
+                while ((token_ptr = strtok(NULL, " ")) != NULL) {
+                    // strtok(NULL, "");
+                    current_line_index_counter_1++;
+
+                }
+            }
+
+
+
+
 
         int i = 0;
         int spe_val = 0;
 
+
+
         strtok(line, " ");
-        while ((token_ptr = strtok(NULL, "/")) != NULL) {    // этот вайл крутится столько раз сколько индексов
-            
-            strtok(NULL, " ");
-            value = atoi(token_ptr) - 1; // - перевод из текущего токена в число
+            if (strchr(line_copy, '/')) {
+                while ((token_ptr = strtok(NULL, "/")) != NULL) {    // этот вайл крутится столько раз сколько индексов
 
-            if (i == 0) {
-                spe_val = value;     // - сохраняем первое значение в отдельную переменную
-                data->index_array[data->index_array_counter] = spe_val;
-                // printf("     первый индекс: %d\n", data->index_array[data->index_array_counter]);
-                data->index_array_counter++;
-            }
-            if (i > 0 && i < current_line_index_counter_1) {
-                data->index_array[data->index_array_counter] = value;
-                // printf("очередной_1 индекс: %d\n", data->index_array[data->index_array_counter]);
-                data->index_array_counter++;                    
-                data->index_array[data->index_array_counter] = value;
-                // printf("очередной_2 индекс: %d\n", data->index_array[data->index_array_counter]);
-                data->index_array_counter++;                    
+                    strtok(NULL, " ");
+                    value = atoi(token_ptr) - 1; // - перевод из текущего токена в число
+
+                    if (i == 0) {
+                        spe_val = value;     // - сохраняем первое значение в отдельную переменную
+                        data->index_array[data->index_array_counter] = spe_val;
+                        // printf("     первый индекс: %d\n", data->index_array[data->index_array_counter]);
+                        data->index_array_counter++;
+                    }
+                    if (i > 0 && i < current_line_index_counter_1) {
+                        data->index_array[data->index_array_counter] = value;
+                        // printf("очередной_1 индекс: %d\n", data->index_array[data->index_array_counter]);
+                        data->index_array_counter++;                    
+                        data->index_array[data->index_array_counter] = value;
+                        // printf("очередной_2 индекс: %d\n", data->index_array[data->index_array_counter]);
+                        data->index_array_counter++;                    
+                    }
+
+                    i++;
+
+                    if (i == current_line_index_counter_1) {
+                        data->index_array[data->index_array_counter] = spe_val;
+                        // printf("     первый индекс: %d\n", data->index_array[data->index_array_counter]);
+                        data->index_array_counter++;
+                    }
+                }  
+            } else {
+                while ((token_ptr = strtok(NULL, " ")) != NULL) {    // этот вайл крутится столько раз сколько индексов
+
+                    // strtok(NULL, " ");
+                    value = atoi(token_ptr) - 1; // - перевод из текущего токена в число
+
+                    if (i == 0) {
+                        spe_val = value;     // - сохраняем первое значение в отдельную переменную
+                        data->index_array[data->index_array_counter] = spe_val;
+                        // printf("     первый индекс: %d\n", data->index_array[data->index_array_counter]);
+                        data->index_array_counter++;
+                    }
+                    if (i > 0 && i < current_line_index_counter_1) {
+                        data->index_array[data->index_array_counter] = value;
+                        // printf("очередной_1 индекс: %d\n", data->index_array[data->index_array_counter]);
+                        data->index_array_counter++;                    
+                        data->index_array[data->index_array_counter] = value;
+                        // printf("очередной_2 индекс: %d\n", data->index_array[data->index_array_counter]);
+                        data->index_array_counter++;                    
+                    }
+
+                    i++;
+
+                    if (i == current_line_index_counter_1) {
+                        data->index_array[data->index_array_counter] = spe_val;
+                        // printf("     первый индекс: %d\n", data->index_array[data->index_array_counter]);
+                        data->index_array_counter++;
+                    }
+                }  
             }
 
-            i++;
 
-            if (i == current_line_index_counter_1) {
-                data->index_array[data->index_array_counter] = spe_val;
-                // printf("     первый индекс: %d\n", data->index_array[data->index_array_counter]);
-                data->index_array_counter++;
-            }
-        }   
+
+
         // printf("             счетчик: %d", data->index_array_counter);
         // printf("\n");
     return error;
