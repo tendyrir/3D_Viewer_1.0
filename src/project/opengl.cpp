@@ -23,8 +23,8 @@ void openGL::paintGL() {
     glLoadIdentity();
 
     glTranslatef(0, 0, -2);
-//    glRotatef(xRot, 1, 0, 0);
-//    glRotatef(yRot, 0, 1, 0);
+    glRotatef(xRot, 1, 0, 0);
+    glRotatef(yRot, 0, 1, 0);
     drawCube(&data_obj);
 }
 

@@ -23,14 +23,13 @@ int parse_file(ObjData_t* data, char* obj_file_name) {
 
 
 int get_data_numbers(FILE* fp, ObjData_t* data) {
-
     int     error            = 0;
     int     vertex_counter   = 0;
     int     total_indices    = 0;
     char*   line             = NULL;
     size_t  len              = 0;
     ssize_t read             = 0;
-    char *token_ptr = NULL;
+    char*   token_ptr        = NULL;
 
     while ((read = getline(&line, &len, fp)) != -1) {
         

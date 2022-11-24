@@ -58,18 +58,21 @@ void MainWindow::on_choose_OBJFile_clicked() {
     QByteArray file_bit = file.toLocal8Bit();
     char*     obj_file_name = file_bit.data();
     parse_file(&ui->openGLWidget->data_obj, obj_file_name);
+    ui->edges->setText(QString::number(ui->openGLWidget->data_obj.index_array_size / 2));
+    ui->verticies->setText(QString::number(ui->openGLWidget->data_obj.vertex_array.coords_number / 3));
     ui->openGLWidget->update();
 }
 
 void MainWindow::init () {
-//    ui->lineMoveX->setText( QString("I am %1 years old").arg(value));
-//    QString::number(ui->MoveX->value())
-    ui->MoveX->setRange(0, 100);
+    ui->MoveX->setRange(-50, 50);
     ui->MoveX->setSingleStep(1);
 
-    ui->MoveY->setRange(0, 100);
+    ui->MoveY->setRange(-50, 50);
     ui->MoveY->setSingleStep(1);
 
-    ui->MoveZ->setRange(0, 100);
+    ui->MoveZ->setRange(-50, 50);
     ui->MoveZ->setSingleStep(1);
 }
+
+
+
