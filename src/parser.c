@@ -199,22 +199,21 @@ int write_index_array_in_data(char* line, char* line_copy, ObjData_t* data) {
                 }  
             } else {
                 while ((token_ptr = strtok(NULL, " ")) != NULL) {    // этот вайл крутится столько раз сколько индексов
-
                     // strtok(NULL, " ");
                     value = atoi(token_ptr) - 1; // - перевод из текущего токена в число
 
                     if (i == 0) {
                         spe_val = value;     // - сохраняем первое значение в отдельную переменную
                         data->index_array[data->index_array_counter] = spe_val;
-                        // printf("     первый индекс: %d\n", data->index_array[data->index_array_counter]);
+                        printf("     первый индекс: %d\n", data->index_array[data->index_array_counter]);
                         data->index_array_counter++;
                     }
                     if (i > 0 && i < current_line_index_counter_1) {
                         data->index_array[data->index_array_counter] = value;
-                        // printf("очередной_1 индекс: %d\n", data->index_array[data->index_array_counter]);
+                        printf("очередной_1 индекс: %d\n", data->index_array[data->index_array_counter]);
                         data->index_array_counter++;                    
                         data->index_array[data->index_array_counter] = value;
-                        // printf("очередной_2 индекс: %d\n", data->index_array[data->index_array_counter]);
+                        printf("очередной_2 индекс: %d\n", data->index_array[data->index_array_counter]);
                         data->index_array_counter++;                    
                     }
 
@@ -222,7 +221,7 @@ int write_index_array_in_data(char* line, char* line_copy, ObjData_t* data) {
 
                     if (i == current_line_index_counter_1) {
                         data->index_array[data->index_array_counter] = spe_val;
-                        // printf("     первый индекс: %d\n", data->index_array[data->index_array_counter]);
+                        printf("     первый индекс: %d\n", data->index_array[data->index_array_counter]);
                         data->index_array_counter++;
                     }
                 }  
@@ -231,8 +230,8 @@ int write_index_array_in_data(char* line, char* line_copy, ObjData_t* data) {
 
 
 
-        // printf("             счетчик: %d", data->index_array_counter);
-        // printf("\n");
+        printf("             счетчик: %d", data->index_array_counter);
+        printf("\n");
     return error;
 }
 
