@@ -95,7 +95,8 @@ int get_data_arrays(FILE* fp, ObjData_t* data) {
 
     while ((read = getline(&line, &len, fp)) != -1) {
         if (line[0] == 'v' && line[1] == ' ') {
-            char*  current_line = line + 3;
+            char*  current_line = line + 2;
+            printf("%s", current_line);
             sscanf(current_line, "%lf%lf%lf", &x, &y, &z);
             data->vertex_array.coords_array[i] = x;
             data->vertex_array.coords_array[i + 1] = y;

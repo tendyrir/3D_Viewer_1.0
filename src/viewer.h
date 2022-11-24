@@ -39,6 +39,12 @@ typedef struct matrix_t {
 } matrix_t;
 
 
+// int parse_file(ObjData_t* data, char* file_full_path);
+// int count_indices_in_f_line(char* line, int* total_indices);
+
+// int count_indices_in_f_line_with_delimeter();
+// int count_indices_in_f_line_without_delimeter();
+
 int  parse_file(FILE* fp, ObjData_t* data, char* obj_file_name);
 int  get_data_numbers(FILE* fp, ObjData_t* data);
 int  get_data_arrays(FILE* fp, ObjData_t* data);
