@@ -5,3 +5,7 @@ all:
 
 clean:
 	rm -f a.out
+
+
+leaks:
+	CK_FORK=no leaks --atExit -- ./a.out

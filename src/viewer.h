@@ -39,17 +39,27 @@ typedef struct matrix_t {
 } matrix_t;
 
 
-// int parse_file(ObjData_t* data, char* file_full_path);
-// int count_indices_in_f_line(char* line, int* total_indices);
 
-// int count_indices_in_f_line_with_delimeter();
-// int count_indices_in_f_line_without_delimeter();
+int  parse_file(ObjData_t* data, char* obj_file_name);
 
-int  parse_file(FILE* fp, ObjData_t* data, char* obj_file_name);
 int  get_data_numbers(FILE* fp, ObjData_t* data);
+
+int allocate_memory(ObjData_t* data);
+int allocate_memory_for_vertex_array(ObjData_t* data);
+int allocate_memory_for_index_array(ObjData_t* data);
+
+
 int  get_data_arrays(FILE* fp, ObjData_t* data);
-int  write_index_array_in_data(char* line, char* line_copy, ObjData_t* data);
+
+int current_line_indices_counter(char* line);
+int write_index_array_in_data(char* line, char* line_copy, ObjData_t* data);
+int count_cur_line(char* line);
+int write_f_line(ObjData_t* data, char* token_ptr, int current_line_index_counter_1, int value);
+int write_value(ObjData_t* data, int value);
+
+
 void print_vertex_array(ObjData_t* data);
+
 
 int  rotate_x(double alpha, matrix_t *result);
 int  rotate_y(double alpha, matrix_t *result);

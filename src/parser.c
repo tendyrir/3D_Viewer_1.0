@@ -1,16 +1,15 @@
 #include "viewer.h"
 
-int parse_file(FILE* fp, ObjData_t* data, char* obj_file_name) {
+int parse_file(ObjData_t* data, char* obj_file_name) {
+    FILE* fp;
     int error = 0;
-/*  . Первое открытие файла - узнаем количества координат всего, количество полигонов */
+/*  Открытие фай0ла                                       */
     fp    = fopen(obj_file_name, "r");
+/*  Подсчет размеров массивов координат и индексов вершин */
     error = get_data_numbers(fp, data);
-    fclose(fp);
-/*  . Выделить память под массивы */
-    data->vertex_array.coords_array = malloc(data->vertex_array.coords_number * sizeof(double));
-    data->index_array               = malloc(data->index_array_size * sizeof(int));
-/*  . Второе открытие файла - заполнение массивов */
-    fp    = fopen(obj_file_name, "r");
+/*  Выделение память под массивы                          */
+    error = allocate_memory(data);
+/*  Заполнение массивов                                   */
     error = get_data_arrays(fp, data);
     fclose(fp);
     return error;
@@ -20,7 +19,32 @@ int parse_file(FILE* fp, ObjData_t* data, char* obj_file_name) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int get_data_numbers(FILE* fp, ObjData_t* data) {
+
     int     error            = 0;
     int     vertex_counter   = 0;
     int     total_indices    = 0;
@@ -35,34 +59,26 @@ int get_data_numbers(FILE* fp, ObjData_t* data) {
         if (line[0] == 'v' && line[1] == ' ') {
             vertex_counter++;
         }
+        
         if (line[0] == 'f' && line[1] == ' ') {
             strtok(line, " ");
-
             if (strchr(line, '/')) {
                 while ((token_ptr = strtok(NULL, "/")) != NULL) {
                     total_indices++;
                     i++;
                     strtok(NULL, " ");
-                    printf("%d - %s ",  total_indices, token_ptr);
+                    // printf("%d - %s ",  total_indices, token_ptr);
                 }
-
             } else {
                 while ((token_ptr = strtok(NULL, " ")) != NULL) {
-                    // strtok(NULL, "");
-
                     total_indices++;
                     i++;
-                    printf("%d -%s\n",  total_indices, token_ptr);
+                    // printf("%d -%s\n",  total_indices, token_ptr);
                 }
             }
-
-
-
-
-
         }
     }
-    
+
     // printf("\n");
 
     if (line != NULL) {
@@ -72,12 +88,53 @@ int get_data_numbers(FILE* fp, ObjData_t* data) {
     data->vertex_array.coords_number = vertex_counter * 3;
     data->index_array_size           = total_indices * 2;
 
-    printf("data->vertex_array.coords_number : %d <- под 1 массив Сержуне\n", data->vertex_array.coords_number);
-    printf("data->index_array_size           : %d <- под 2 массив Сержуне\n", data->index_array_size);
+    printf("data->vertex_array.coords_number : %d <- под координаты\n", data->vertex_array.coords_number);
+    printf("data->index_array_size           : %d <- под индексы\n", data->index_array_size);
     printf("\n");
 
+    rewind(fp);
+    
     return error;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -107,11 +164,18 @@ int get_data_arrays(FILE* fp, ObjData_t* data) {
         if (line[0] == 'f' && line[1] == ' ') {
             
             int   line_length = strlen(line);
-            char* line_copy   = malloc(line_length * sizeof(int));
+            char* line_copy   = calloc(line_length, sizeof(int));
 
-            memcpy(line_copy, line, line_length - 1);
 
-            error = write_index_array_in_data(line, line_copy, data);
+            if (strchr(line, '\n')) {
+                memcpy(line_copy, line, line_length - 1);
+            } else {
+                memcpy(line_copy, line, line_length);
+            }
+
+            write_index_array_in_data(line, line_copy, data);
+
+            free(line_copy);
         }
     }
 
@@ -126,115 +190,285 @@ int get_data_arrays(FILE* fp, ObjData_t* data) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int write_index_array_in_data(char* line, char* line_copy, ObjData_t* data) {
-    // printf("%s", line);
 
     char* token_ptr;
     int error = 0;
-    int current_line_index_counter_1 = 0;
+    int current_line_index_counter = 0;
+
+    int i = 0;
     int value = 0;
+    int first_value = 0;
 
-        // strtok(line_copy, " ");
-        // while ((token_ptr = strtok(NULL, "/")) != NULL) {
-            // strtok(NULL, " ");
-            // printf("|%s |", token_ptr);
-                    // printf("\n");
-            // current_line_index_counter_1++;  // - считаем количество индексов в текущей строчке
-        // }
-        // printf("            индексов: %d\n", current_line_index_counter_1);
+    current_line_index_counter = count_cur_line(line_copy);
 
-        strtok(line_copy, " ");
+    strtok(line, " ");
+    if (strchr(line, '/')) {
+        while ((token_ptr = strtok(NULL, "/")) != NULL) {    // этот вайл крутится столько раз сколько индексов
+            strtok(NULL, " ");
 
-            if (strchr(line_copy, '/')) {
-                while ((token_ptr = strtok(NULL, "/")) != NULL) {
-                    strtok(NULL, " ");
-                    current_line_index_counter_1++;
-                }
+            value = atoi(token_ptr) - 1; // - перевод из текущего токена в число
 
-            } else {
-                while ((token_ptr = strtok(NULL, " ")) != NULL) {
-                    // strtok(NULL, "");
-                    current_line_index_counter_1++;
-
-                }
+            if (i == 0) {
+                first_value = value;     // - сохраняем первое значение в отдельную переменную
+                write_value(data, first_value);
             }
-
-
-
-
-
-        int i = 0;
-        int spe_val = 0;
-
-
-
-        strtok(line, " ");
-            if (strchr(line_copy, '/')) {
-                while ((token_ptr = strtok(NULL, "/")) != NULL) {    // этот вайл крутится столько раз сколько индексов
-
-                    strtok(NULL, " ");
-                    value = atoi(token_ptr) - 1; // - перевод из текущего токена в число
-
-                    if (i == 0) {
-                        spe_val = value;     // - сохраняем первое значение в отдельную переменную
-                        data->index_array[data->index_array_counter] = spe_val;
-                        // printf("     первый индекс: %d\n", data->index_array[data->index_array_counter]);
-                        data->index_array_counter++;
-                    }
-                    if (i > 0 && i < current_line_index_counter_1) {
-                        data->index_array[data->index_array_counter] = value;
-                        // printf("очередной_1 индекс: %d\n", data->index_array[data->index_array_counter]);
-                        data->index_array_counter++;                    
-                        data->index_array[data->index_array_counter] = value;
-                        // printf("очередной_2 индекс: %d\n", data->index_array[data->index_array_counter]);
-                        data->index_array_counter++;                    
-                    }
-
-                    i++;
-
-                    if (i == current_line_index_counter_1) {
-                        data->index_array[data->index_array_counter] = spe_val;
-                        // printf("     первый индекс: %d\n", data->index_array[data->index_array_counter]);
-                        data->index_array_counter++;
-                    }
-                }  
-            } else {
-                while ((token_ptr = strtok(NULL, " ")) != NULL) {    // этот вайл крутится столько раз сколько индексов
-                    // strtok(NULL, " ");
-                    value = atoi(token_ptr) - 1; // - перевод из текущего токена в число
-
-                    if (i == 0) {
-                        spe_val = value;     // - сохраняем первое значение в отдельную переменную
-                        data->index_array[data->index_array_counter] = spe_val;
-                        printf("     первый индекс: %d\n", data->index_array[data->index_array_counter]);
-                        data->index_array_counter++;
-                    }
-                    if (i > 0 && i < current_line_index_counter_1) {
-                        data->index_array[data->index_array_counter] = value;
-                        printf("очередной_1 индекс: %d\n", data->index_array[data->index_array_counter]);
-                        data->index_array_counter++;                    
-                        data->index_array[data->index_array_counter] = value;
-                        printf("очередной_2 индекс: %d\n", data->index_array[data->index_array_counter]);
-                        data->index_array_counter++;                    
-                    }
-
-                    i++;
-
-                    if (i == current_line_index_counter_1) {
-                        data->index_array[data->index_array_counter] = spe_val;
-                        printf("     первый индекс: %d\n", data->index_array[data->index_array_counter]);
-                        data->index_array_counter++;
-                    }
-                }  
+            if (i > 0 && i < current_line_index_counter) {  
+                write_value(data, value);
+                write_value(data, value);
             }
+            i++;
+            if (i == current_line_index_counter) {
+                write_value(data, first_value);
+            }
+        }  
+        
+    } else {
+        while ((token_ptr = strtok(NULL, " ")) != NULL) {    // этот вайл крутится столько раз сколько индексов
 
+            value = atoi(token_ptr) - 1; // - перевод из текущего токена в число
 
+            if (i == 0) {
+                first_value = value;     // - сохраняем первое значение в отдельную переменную
+                write_value(data, first_value);
+            }
+            if (i > 0 && i < current_line_index_counter) {                 
+                write_value(data, value);
+                write_value(data, value);
+            }
+            i++;
+            if (i == current_line_index_counter) {
+                write_value(data, first_value);
+            }  
+        }  
+    }
 
+    printf("счетчик: %d", data->index_array_counter);
+    printf("\n");
 
-        printf("             счетчик: %d", data->index_array_counter);
-        printf("\n");
     return error;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int write_value(ObjData_t* data, int value) {
+    data->index_array[data->index_array_counter] = value;
+    // printf("очередной_1 индекс: %d\n", data->index_array[data->index_array_counter]);
+    data->index_array_counter++;                    
+    // data->index_array[data->index_array_counter] = value;
+    // // printf("очередной_2 индекс: %d\n", data->index_array[data->index_array_counter]);
+    // data->index_array_counter++;    
+    return 0;       
+}
+
+int count_cur_line(char* line_copy) {
+    char* token_ptr;
+    int current_line_index_counter_1 = 0;
+
+    strtok(line_copy, " ");
+    if (strchr(line_copy, '/')) {
+        while ((token_ptr = strtok(NULL, "/")) != NULL) {
+            current_line_index_counter_1++;
+            strtok(NULL, " ");
+        }
+    } else {
+        while ((token_ptr = strtok(NULL, " ")) != NULL) {
+            current_line_index_counter_1++;
+        }
+    }
+
+    return current_line_index_counter_1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int allocate_memory_for_vertex_array(ObjData_t* data) {
+
+    data->vertex_array.coords_array = calloc(data->vertex_array.coords_number, sizeof(double));
+
+    return 0;
+}
+
+int allocate_memory_for_index_array(ObjData_t* data) {
+
+    data->index_array = calloc(data->index_array_size, sizeof(int));
+
+    return 0;
+}
+
+int allocate_memory(ObjData_t* data) {
+
+    allocate_memory_for_vertex_array(data);
+
+    allocate_memory_for_index_array(data);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 void print_vertex_array(ObjData_t* data) {
@@ -259,4 +493,3 @@ void print_vertex_array(ObjData_t* data) {
     }
     printf("\n счетчик в конце равен: %d \n", data->index_array_counter);
 }
-
