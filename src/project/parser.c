@@ -44,7 +44,7 @@ int get_data_numbers(FILE* fp, ObjData_t* data) {
           total_indices++;
           i++;
           strtok(NULL, " ");
-          printf("%d - %s ", total_indices, token_ptr);
+          // printf("%d - %s ", total_indices, token_ptr);
         }
 
       } else {
@@ -53,7 +53,7 @@ int get_data_numbers(FILE* fp, ObjData_t* data) {
 
           total_indices++;
           i++;
-          printf("%d -%s\n", total_indices, token_ptr);
+          // printf("%d -%s\n", total_indices, token_ptr);
         }
       }
     }
@@ -68,11 +68,11 @@ int get_data_numbers(FILE* fp, ObjData_t* data) {
   data->vertex_array.coords_number = vertex_counter * 3;
   data->index_array_size = total_indices * 2;
 
-  printf("data->vertex_array.coords_number : %d <- под 1 массив Сержуне\n",
-         data->vertex_array.coords_number);
-  printf("data->index_array_size           : %d <- под 2 массив Сержуне\n",
-         data->index_array_size);
-  printf("\n");
+  // printf("data->vertex_array.coords_number : %d <- под 1 массив Сержуне\n",
+  //        data->vertex_array.coords_number);
+  // printf("data->index_array_size           : %d <- под 2 массив Сержуне\n",
+  //        data->index_array_size);
+  // printf("\n");
 
   return error;
 }
@@ -90,7 +90,7 @@ int get_data_arrays(FILE* fp, ObjData_t* data) {
 
   while ((read = getline(&line, &len, fp)) != -1) {
     if (line[0] == 'v' && line[1] == ' ') {
-      char* current_line = line + 3;
+      char* current_line = line + 2;
       sscanf(current_line, "%lf%lf%lf", &x, &y, &z);
       data->vertex_array.coords_array[i] = x;
       data->vertex_array.coords_array[i + 1] = y;
@@ -195,18 +195,18 @@ int write_index_array_in_data(char* line, char* line_copy, ObjData_t* data) {
       if (i == 0) {
         spe_val = value;  // - сохраняем первое значение в отдельную переменную
         data->index_array[data->index_array_counter] = spe_val;
-        printf("     первый индекс: %d\n",
-               data->index_array[data->index_array_counter]);
+        //        printf("     первый индекс: %d\n",
+        //               data->index_array[data->index_array_counter]);
         data->index_array_counter++;
       }
       if (i > 0 && i < current_line_index_counter_1) {
         data->index_array[data->index_array_counter] = value;
-        printf("очередной_1 индекс: %d\n",
-               data->index_array[data->index_array_counter]);
+        //        printf("очередной_1 индекс: %d\n",
+        //               data->index_array[data->index_array_counter]);
         data->index_array_counter++;
         data->index_array[data->index_array_counter] = value;
-        printf("очередной_2 индекс: %d\n",
-               data->index_array[data->index_array_counter]);
+        //        printf("очередной_2 индекс: %d\n",
+        //               data->index_array[data->index_array_counter]);
         data->index_array_counter++;
       }
 
@@ -214,36 +214,36 @@ int write_index_array_in_data(char* line, char* line_copy, ObjData_t* data) {
 
       if (i == current_line_index_counter_1) {
         data->index_array[data->index_array_counter] = spe_val;
-        printf("     первый индекс: %d\n",
-               data->index_array[data->index_array_counter]);
+        //        printf("     первый индекс: %d\n",
+        //               data->index_array[data->index_array_counter]);
         data->index_array_counter++;
       }
     }
   }
 
-  printf("             счетчик: %d", data->index_array_counter);
-  printf("\n");
+  //  printf("             счетчик: %d", data->index_array_counter);
+  //  printf("\n");
   return error;
 }
 
-void print_vertex_array(ObjData_t* data) {
-  // for (int j = 0; j < data->vertex_array.coords_number; j++) {
-  //         printf("%lf ", data->vertex_array.coords_array[j]);
-  // }
+// void print_vertex_array(ObjData_t* data) {
+// for (int j = 0; j < data->vertex_array.coords_number; j++) {
+//         printf("%lf ", data->vertex_array.coords_array[j]);
+// }
 
-  int j = 0;
-  while (j < data->vertex_array.coords_number) {
-    printf("%10lf ", data->vertex_array.coords_array[j]);
-    printf("%10lf ", data->vertex_array.coords_array[j + 1]);
-    printf("%10lf ", data->vertex_array.coords_array[j + 2]);
-    printf("\n");
-    j += 3;
-  }
+// int j = 0;
+// while (j < data->vertex_array.coords_number) {
+// printf("%10lf ", data->vertex_array.coords_array[j]);
+// printf("%10lf ", data->vertex_array.coords_array[j + 1]);
+// printf("%10lf ", data->vertex_array.coords_array[j + 2]);
+// printf("\n");
+//   j += 3;
+// }
 
-  printf("\n");
+// printf("\n");
 
-  for (int j = 0; j < data->index_array_counter; j++) {
-    printf("%d ", data->index_array[j]);
-  }
-  printf("\n счетчик в конце равен: %d \n", data->index_array_counter);
-}
+// for (int j = 0; j < data->index_array_counter; j++) {
+//   printf("%d ", data->index_array[j]);
+// }
+// printf("\n счетчик в конце равен: %d \n", data->index_array_counter);
+// }
