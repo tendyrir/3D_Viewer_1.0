@@ -35,9 +35,9 @@ int get_data_numbers(FILE* fp, ObjData_t* data) {
     }
     data->vertex_array.coords_number = vertex_counter * 3;
     data->index_array_size           = total_indices * 2;
-    printf("data->vertex_array.coords_number : %d <- под координаты\n", data->vertex_array.coords_number);
-    printf("data->index_array_size           : %d <- под индексы\n", data->index_array_size);
-    printf("\n");
+//    printf("data->vertex_array.coords_number : %d <- под координаты\n", data->vertex_array.coords_number);
+//    printf("data->index_array_size           : %d <- под индексы\n", data->index_array_size);
+//    printf("\n");
     rewind(fp);
     return error;
 }
@@ -68,7 +68,7 @@ int get_data_arrays(FILE* fp, ObjData_t* data) {
 int write_vertex_array_in_data(char* line, int i, ObjData_t* data) {
     double x = 0, y = 0, z = 0;
     char*  current_line = line + 2;
-    printf("%s", current_line);
+//    printf("%s", current_line);
     sscanf(current_line, "%lf%lf%lf", &x, &y, &z);
     data->vertex_array.coords_array[i] = x;
     data->vertex_array.coords_array[i + 1] = y;
@@ -119,8 +119,8 @@ int write_index_array_in_data(char* line, char* line_copy, ObjData_t* data) {
             write_value(data, first_value);
         }   
     }
-    printf("счетчик: %d", data->index_array_counter);
-    printf("\n");
+//    printf("счетчик: %d", data->index_array_counter);
+//    printf("\n");
     return error;
 }
 
@@ -179,15 +179,15 @@ int allocate_memory(ObjData_t* data) {
 void print_vertex_array(ObjData_t* data) {
     int j = 0;
     while (j < data->vertex_array.coords_number) {
-        printf("%10lf ", data->vertex_array.coords_array[j]);
-        printf("%10lf ", data->vertex_array.coords_array[j + 1]);
-        printf("%10lf ", data->vertex_array.coords_array[j + 2]);
-        printf("\n");
+//        printf("%10lf ", data->vertex_array.coords_array[j]);
+//        printf("%10lf ", data->vertex_array.coords_array[j + 1]);
+//        printf("%10lf ", data->vertex_array.coords_array[j + 2]);
+//        printf("\n");
         j += 3;
     }
-    printf("\n");
+//    printf("\n");
     for (int j = 0; j < data->index_array_counter; j++) {
-            printf("%d ", data->index_array[j]);
+//            printf("%d ", data->index_array[j]);
     }
-    printf("\n счетчик в конце равен: %d \n", data->index_array_counter);
+//    printf("\n счетчик в конце равен: %d \n", data->index_array_counter);
 }

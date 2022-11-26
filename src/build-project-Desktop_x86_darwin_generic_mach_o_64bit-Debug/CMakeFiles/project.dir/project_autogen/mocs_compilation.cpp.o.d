@@ -882,6 +882,7 @@ CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o: \
   /usr/local/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
   /usr/local/include/QtWidgets/QWidget \
   /usr/local/lib/QtGui.framework/Headers/QOpenGLFunctions \
+  /usr/local/lib/QtOpenGL.framework/Headers/QOpenGLBuffer \
   /Users/sandslas/Documents/3D_Viewer_1.0/src/project/viewer.h \
   /usr/local/lib/QtWidgets.framework/Headers/QtWidgets \
   /usr/local/include/QtWidgets/QtWidgetsDepends \

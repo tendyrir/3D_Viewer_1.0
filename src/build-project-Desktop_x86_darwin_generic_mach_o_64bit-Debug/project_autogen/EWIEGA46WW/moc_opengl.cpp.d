@@ -184,6 +184,9 @@
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qtransform.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
+  /usr/local/lib/QtOpenGL.framework/Versions/A/Headers/QOpenGLBuffer \
+  /usr/local/lib/QtOpenGL.framework/Versions/A/Headers/qopenglbuffer.h \
+  /usr/local/lib/QtOpenGL.framework/Versions/A/Headers/qtopenglglobal.h \
   /usr/local/lib/QtOpenGL.framework/Versions/A/QtOpenGL \
   /usr/local/lib/QtOpenGLWidgets.framework/Versions/A/Headers/QOpenGLWidget \
   /usr/local/lib/QtOpenGLWidgets.framework/Versions/A/Headers/qopenglwidget.h \

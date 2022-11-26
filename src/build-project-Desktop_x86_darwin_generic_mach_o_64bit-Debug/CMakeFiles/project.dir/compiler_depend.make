@@ -902,6 +902,7 @@ CMakeFiles/project.dir/main.cpp.o: /Users/sandslas/Documents/3D_Viewer_1.0/src/p
   /usr/local/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
   /usr/local/include/QtWidgets/QWidget \
   /usr/local/lib/QtGui.framework/Headers/QOpenGLFunctions \
+  /usr/local/lib/QtOpenGL.framework/Headers/QOpenGLBuffer \
   /Users/sandslas/Documents/3D_Viewer_1.0/src/project/viewer.h \
   /usr/local/lib/QtWidgets.framework/Headers/QtWidgets \
   /usr/local/include/QtWidgets/QtWidgetsDepends \
@@ -1979,6 +1980,7 @@ CMakeFiles/project.dir/mainwindow.cpp.o: /Users/sandslas/Documents/3D_Viewer_1.0
   /usr/local/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
   /usr/local/include/QtWidgets/QWidget \
   /usr/local/lib/QtGui.framework/Headers/QOpenGLFunctions \
+  /usr/local/lib/QtOpenGL.framework/Headers/QOpenGLBuffer \
   /Users/sandslas/Documents/3D_Viewer_1.0/src/project/viewer.h \
   /usr/local/lib/QtWidgets.framework/Headers/QtWidgets \
   /usr/local/include/QtWidgets/QtWidgetsDepends \
@@ -3053,6 +3055,7 @@ CMakeFiles/project.dir/opengl.cpp.o: /Users/sandslas/Documents/3D_Viewer_1.0/src
   /usr/local/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
   /usr/local/include/QtWidgets/QWidget \
   /usr/local/lib/QtGui.framework/Headers/QOpenGLFunctions \
+  /usr/local/lib/QtOpenGL.framework/Headers/QOpenGLBuffer \
   /Users/sandslas/Documents/3D_Viewer_1.0/src/project/viewer.h
 
 CMakeFiles/project.dir/parser.c.o: /Users/sandslas/Documents/3D_Viewer_1.0/src/project/parser.c \
@@ -3073,12 +3076,11 @@ CMakeFiles/project.dir/parser.c.o: /Users/sandslas/Documents/3D_Viewer_1.0/src/p
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_rune_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_wchar_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_wint_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/math.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/stdio.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/Availability.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/AvailabilityVersions.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/AvailabilityInternal.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/stdio.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_va_list.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/machine/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/i386/types.h \
@@ -3140,7 +3142,8 @@ CMakeFiles/project.dir/parser.c.o: /Users/sandslas/Documents/3D_Viewer_1.0/src/p
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_errno_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/strings.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/secure/_strings.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/secure/_string.h
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/secure/_string.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/math.h
 
 CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o: project_autogen/mocs_compilation.cpp \
   project_autogen/EWIEGA46WW/moc_mainwindow.cpp \
@@ -4044,6 +4047,7 @@ CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o: project_autogen/m
   /usr/local/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
   /usr/local/include/QtWidgets/QWidget \
   /usr/local/lib/QtGui.framework/Headers/QOpenGLFunctions \
+  /usr/local/lib/QtOpenGL.framework/Headers/QOpenGLBuffer \
   /Users/sandslas/Documents/3D_Viewer_1.0/src/project/viewer.h \
   /usr/local/lib/QtWidgets.framework/Headers/QtWidgets \
   /usr/local/include/QtWidgets/QtWidgetsDepends \
@@ -4495,6 +4499,8 @@ project_autogen/include/ui_mainwindow.h:
 /usr/local/lib/QtOpenGL.framework/Headers/qopengltextureblitter.h:
 
 /usr/local/lib/QtOpenGL.framework/Headers/qopengltexture.h:
+
+/usr/local/lib/QtOpenGL.framework/Headers/QOpenGLBuffer:
 
 /usr/local/lib/QtOpenGL.framework/Headers/qopenglshaderprogram.h:
 
