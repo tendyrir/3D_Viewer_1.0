@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(project VERSION 0.1 LANGUAGES CXX)
+project(project VERSION 0.1 LANGUAGES CXX C)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -20,9 +20,12 @@ set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
         opengl.cpp
+        parser.c
         mainwindow.h
         opengl.h
+        viewer.h
         mainwindow.ui
+        models/cube.obj
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
