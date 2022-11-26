@@ -85,12 +85,12 @@ int scale_matrix(matrix_t *move, matrix_t *result) {
 наоборот, вставки координаты */
 
 void crd_stlr(matrix_t *crd_main, matrix_t *crd, int row) {
-    for (int i; i = 0; i < 4)
+    for (int i = 0; i < 4; i++)
         crd->matrix[0][i] = crd_main->matrix[row][i];
 }
 
 void crd_ret(matrix_t *crd_main, matrix_t *crd, int row) {
-    for (int i; i = 0; i < 4)
+    for (int i = 0; i < 4; i++)
         crd_main->matrix[row][i] = crd->matrix[0][i];
 }
 
@@ -102,7 +102,7 @@ void crd_metamorph(matrix_t *crd_main, matrix_t *athena) {
 
     s21_create_matrix(1, 4, &crd);
 
-    for (int i; i = 0; i < crd_main->rows) {
+    for (int i = 0; i < crd_main->rows; i++) {
         crd_stlr(crd_main, &crd, i);
         s21_mult_matrix(&crd, athena, &crd);
         crd_ret(crd_main, &crd, i);
@@ -133,4 +133,20 @@ void core_algorithm(matrix_t *crd_main, matrix_t *move, int type) {
 
     crd_metamorph(crd_main, &athena);
     s21_remove_matrix(&athena);
+}
+
+void conv_to_matr(coor_type *coors, matrix_t *crd_main) {
+    s21_create_matrix(coors->elements / 3, 4, crd_main);
+
+    for (int i = 0; i < coor_type->elements; i++) {
+        crd_main->matrix[i / 3][i % 3] = coors->line[i];
+        if (i % 3 == 2)
+            crd_main->matrix[i / 3][3] = 0.0;
+    }
+}
+
+void conv_from_matr(coor_type *coors, matrix_t *crd_main) {
+    for (int i = 0; i < coor_type->elements; i++) {
+        coors->line[i] = crd_main->matrix[i / 3][i % 3];
+    }
 }
