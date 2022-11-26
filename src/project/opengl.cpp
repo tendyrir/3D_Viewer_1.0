@@ -6,21 +6,19 @@ openGL::openGL(QWidget *parent) : QOpenGLWidget(parent) {
 
 void openGL::initializeGL() {
     initializeOpenGLFunctions(); // for ubuntu
+//    glClearColor(0.2f, 0.2f, 0.2f, 1.0f); // черный цвет
     glEnable(GL_DEPTH_TEST);  // включение буффера глубины для Z
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glFrustum(-1, 1, -1, 1, 0.8, 3);
+//    glOrtho(minX, maxX, minY, maxY, -100000, 10000);
 
 }
 void openGL::resizeGL(int width, int height) {
     glViewport(0, 0, width, height);
-//    glMatrixMode(GL_PROJECTION);
-//    glLoadIdentity();
-////    glOrtho(-1,1,-1,1,1,2);
-//    glFrustum(-1, 1, -1, 1, 1, 3);
 }
 
 void openGL::paintGL() {
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glFrustum(-1,1,-1,1,1,3);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();

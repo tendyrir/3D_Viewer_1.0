@@ -10,6 +10,7 @@
 #include <QToolBar>
 #include "opengl.h"
 #include <QtWidgets>
+#include <QColorDialog>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
