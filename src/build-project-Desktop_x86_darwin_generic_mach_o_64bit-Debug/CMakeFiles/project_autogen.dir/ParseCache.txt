@@ -539,5 +539,6 @@
  mdp:/usr/local/lib/QtWidgets.framework/Versions/A/Headers/qwidget.h
  mdp:/usr/local/lib/QtWidgets.framework/Versions/A/QtWidgets
 /Users/sandslas/Documents/3D_Viewer_1.0/src/project/main.cpp
+/Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c
 /Users/sandslas/Documents/3D_Viewer_1.0/src/project/opengl.cpp
 /Users/sandslas/Documents/3D_Viewer_1.0/src/project/parser.c

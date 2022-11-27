@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c" "CMakeFiles/project.dir/Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.o" "gcc" "CMakeFiles/project.dir/Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.o.d"
   "/Users/sandslas/Documents/3D_Viewer_1.0/src/project/parser.c" "CMakeFiles/project.dir/parser.c.o" "gcc" "CMakeFiles/project.dir/parser.c.o.d"
   "/Users/sandslas/Documents/3D_Viewer_1.0/src/project/main.cpp" "CMakeFiles/project.dir/main.cpp.o" "gcc" "CMakeFiles/project.dir/main.cpp.o.d"
   "/Users/sandslas/Documents/3D_Viewer_1.0/src/project/mainwindow.cpp" "CMakeFiles/project.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/project.dir/mainwindow.cpp.o.d"

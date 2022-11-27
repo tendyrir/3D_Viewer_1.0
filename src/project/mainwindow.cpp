@@ -77,3 +77,9 @@ void MainWindow::init () {
 
 
 
+
+void MainWindow::on_Scale_actionTriggered(int action) {
+    conv_to_matr(ui->openGLWidget->data_obj, &data_matrix);
+//    core_algorithm(, , 2);
+}
+

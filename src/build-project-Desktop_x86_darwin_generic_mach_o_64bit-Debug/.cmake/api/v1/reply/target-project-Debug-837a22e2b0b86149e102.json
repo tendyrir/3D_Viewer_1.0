@@ -44,7 +44,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 32,
+				"line" : 34,
 				"parent" : 0
 			},
 			{
@@ -68,19 +68,19 @@
 			{
 				"command" : 4,
 				"file" : 1,
+				"line" : 58,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 1,
 				"line" : 56,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 54,
-				"parent" : 0
-			},
-			{
-				"command" : 4,
-				"file" : 1,
-				"line" : 55,
+				"line" : 57,
 				"parent" : 0
 			},
 			{
@@ -447,7 +447,8 @@
 			"language" : "C",
 			"sourceIndexes" : 
 			[
-				4
+				4,
+				10
 			]
 		}
 	],
@@ -561,7 +562,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				10
 			]
 		},
 		{
@@ -571,7 +573,7 @@
 				5,
 				6,
 				7,
-				10
+				11
 			]
 		},
 		{
@@ -646,6 +648,12 @@
 			"backtrace" : 4,
 			"path" : "models/cube.obj",
 			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 1,
+			"path" : "/Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c",
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,

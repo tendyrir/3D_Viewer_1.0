@@ -38,8 +38,6 @@ void openGL::resizeGL(int width, int height) {
 
 }
 
-
-
 void openGL::paintGL() {
 
 //    glMatrixMode(GL_PROJECTION);

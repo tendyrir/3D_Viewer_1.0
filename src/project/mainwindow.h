@@ -26,7 +26,10 @@ public:
     ~MainWindow();
 
 private slots:
+    matrix_t *data;
     void on_choose_OBJFile_clicked();
+
+    void on_Scale_actionTriggered(int action);
 
 private:
     void init ();

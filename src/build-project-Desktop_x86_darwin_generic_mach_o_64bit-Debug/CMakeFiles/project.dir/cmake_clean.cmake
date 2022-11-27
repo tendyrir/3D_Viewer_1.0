@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/project_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/project_autogen.dir/ParseCache.txt"
   "project_autogen"
+  "CMakeFiles/project.dir/Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.o"
+  "CMakeFiles/project.dir/Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.o.d"
   "CMakeFiles/project.dir/main.cpp.o"
   "CMakeFiles/project.dir/main.cpp.o.d"
   "CMakeFiles/project.dir/mainwindow.cpp.o"

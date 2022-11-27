@@ -58,6 +58,8 @@ void  crd_stlr(matrix_t *crd_main, matrix_t *crd, int row);
 void  crd_ret(matrix_t *crd_main, matrix_t *crd, int row);
 void  crd_metamorph(matrix_t *crd_main, matrix_t *athena);
 void  core_algorithm(matrix_t *crd_main, matrix_t *move, int type);
+void conv_to_matr(ObjData_t* data, matrix_t *crd_main);
+void conv_from_matr(ObjData_t* data, matrix_t *crd_main);
 
 int   s21_create_matrix(int rows, int columns, matrix_t *result);
 int   s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result);

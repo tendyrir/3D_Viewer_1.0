@@ -142,6 +142,30 @@ project_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project_autogen.dir/build.make CMakeFiles/project_autogen.dir/build
 .PHONY : project_autogen/fast
 
+Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.o: Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.o
+.PHONY : Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.o
+
+# target to build an object file
+Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.o
+.PHONY : Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.o
+
+Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.i: Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.i
+.PHONY : Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.i
+
+# target to preprocess a source file
+Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.i
+.PHONY : Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.i
+
+Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.s: Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.s
+.PHONY : Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.s
+
+# target to generate assembly for a file
+Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.s
+.PHONY : Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.c.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -272,6 +296,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... project_autogen"
 	@echo "... project"
+	@echo "... Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.o"
+	@echo "... Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.i"
+	@echo "... Users/sandslas/Documents/3D_Viewer_1.0/src/backend/athena.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

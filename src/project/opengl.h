@@ -19,14 +19,14 @@ public:
     openGL(QWidget *parent = nullptr);
     ObjData_t data_obj;
 
-    QColor backgroundColor;
-    QColor edgesColor;
-    QColor verticiesColor;
-    int projectionMode;
-    int verticiesMode;
-    int verticiesSize;
-    int edgesMode;
-    int edgesSize;
+//    QColor backgroundColor;
+//    QColor edgesColor;
+//    QColor verticiesColor;
+//    int projectionMode;
+//    int verticiesMode;
+//    int verticiesSize;
+//    int edgesMode;
+//    int edgesSize;
 
 protected:
     void initializeGL() override;
@@ -41,12 +41,12 @@ private:
     void draw(ObjData_t* data_obj);
 //    void setupProjection(int w = 0, int h = 0);
 //    void setDefault();
-    QOpenGLVertexArrayObject vertexArrays; // хранилище индексов VBO
-    QOpenGLBuffer vertexBuffer;
-    QOpenGLBuffer elementBuffer;
-    QMatrix4x4 rotateMatrix;
-    QMatrix4x4 moveMatrix;
-    QMatrix4x4 scaleMatrix;
+//    QOpenGLVertexArrayObject vertexArrays; // хранилище индексов VBO
+//    QOpenGLBuffer vertexBuffer;
+//    QOpenGLBuffer elementBuffer;
+//    QMatrix4x4 rotateMatrix;
+//    QMatrix4x4 moveMatrix;
+//    QMatrix4x4 scaleMatrix;
 };
 
 #endif // OPENGL_H
