@@ -58,7 +58,7 @@ void MainWindow::on_choose_OBJFile_clicked() {
     QByteArray file_bit = file.toLocal8Bit();
     char*     obj_file_name = file_bit.data();
     parse_file(&ui->openGLWidget->data_obj, obj_file_name);
-    print_vertex_array(&ui->openGLWidget->data_obj);
+//    print_vertex_array(&ui->openGLWidget->data_obj);
     ui->edges->setText(QString::number(ui->openGLWidget->data_obj.index_array_size / 2));
     ui->verticies->setText(QString::number(ui->openGLWidget->data_obj.vertex_array.coords_number / 3));
     ui->openGLWidget->update();

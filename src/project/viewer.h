@@ -20,7 +20,7 @@ typedef struct ObjData_t {
    Vertex_t vertex_array;
    int  index_array_size;
    int  index_array_counter;
-   int* index_array;
+   unsigned int* index_array;
 } ObjData_t;
 
 typedef struct matrix_t {

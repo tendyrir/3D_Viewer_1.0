@@ -35,9 +35,9 @@ int get_data_numbers(FILE* fp, ObjData_t* data) {
     }
     data->vertex_array.coords_number = vertex_counter * 3;
     data->index_array_size           = total_indices * 2;
-//    printf("data->vertex_array.coords_number : %d <- под координаты\n", data->vertex_array.coords_number);
-//    printf("data->index_array_size           : %d <- под индексы\n", data->index_array_size);
-//    printf("\n");
+    printf("data->vertex_array.coords_number : %d <- под координаты\n", data->vertex_array.coords_number);
+    printf("data->index_array_size           : %d <- под индексы\n", data->index_array_size);
+    printf("\n");
     rewind(fp);
     return error;
 }
