@@ -58,11 +58,8 @@ void openGL::draw(ObjData_t* data_obj) {
 
     /*the vertex; array is enabled for writing and used during rendering when glDrawArrays, or glDrawElements is called*/
     glEnableClientState(GL_VERTEX_ARRAY);
-
     glVertexPointer(3, GL_DOUBLE, 0, data_obj->vertex_array.coords_array);
-
     glDrawElements(GL_LINES, data_obj->index_array_size, GL_UNSIGNED_INT, data_obj->index_array);
-
     glDisableClientState(GL_VERTEX_ARRAY);
 
 }
@@ -83,3 +80,10 @@ void openGL::mouseMoveEvent(QMouseEvent *mo) {
 //    h = height();
 //  }
 //}
+
+void openGL::setScale(int value) {
+  if (value != scaleVal) {
+    scaleVal = value;
+    update();
+  }
+}

@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QLabel *labelRotateY = ui->lineRotateY;
     QLabel *labelRotateZ = ui->lineRotateZ;
 
-    QLabel *labelScale = ui->lineScale;
+    QLabel *labelScale = ui->lineScale; //  значение
 
 
     connect(ui->MoveX, &QSlider::valueChanged, [labelMoveX](int value) {
@@ -43,6 +43,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->Scale, &QSlider::valueChanged, [labelScale](int value) {
       labelScale->setText( QString("%0").arg(value));
     });
+
+//    connect(ui->Scale, &QSlider::valueChanged, ui->openGLWidget,
+//            &openGL::setScale);
+
+    connect(ui->Scale, SIGNAL(valueChanged(int)), this, SLOT(changeScale()));
 }
 
 MainWindow::~MainWindow() {
@@ -65,8 +70,10 @@ void MainWindow::on_choose_OBJFile_clicked() {
 }
 
 void MainWindow::init () {
-    ui->MoveX->setRange(-50, 50);
+    ui->MoveX->setRange(-50, 50); // устнавливаем диапазон значений
     ui->MoveX->setSingleStep(1);
+    ui->MoveX->setValue(0); // задаем стартовое значение
+   ui->MoveX->setTickInterval(2); // задаем шаг для рисования рисок
 
     ui->MoveY->setRange(-50, 50);
     ui->MoveY->setSingleStep(1);
@@ -75,11 +82,17 @@ void MainWindow::init () {
     ui->MoveZ->setSingleStep(1);
 }
 
-
-
-
-void MainWindow::on_Scale_actionTriggered(int action) {
-    conv_to_matr(ui->openGLWidget->data_obj, &data_matrix);
-//    core_algorithm(, , 2);
+void MainWindow::changeScale() {
+    float sliderValue = ui->Scale->value()/100.0;
+    printf("%f\n", sliderValue);
+    s21_create_matrix(1, 3, &ui->openGLWidget->move_matrix);
+    s21_create_matrix(ui->openGLWidget->data_obj.vertex_array.coords_number / 3, 4, &ui->openGLWidget->data_matrix);
+    ui->openGLWidget->move_matrix.matrix[0][0] = sliderValue;
+    ui->openGLWidget->move_matrix.matrix[0][1] = sliderValue;
+    ui->openGLWidget->move_matrix.matrix[0][2] = sliderValue;
+    conv_to_matr(&ui->openGLWidget->data_obj, &ui->openGLWidget->data_matrix);
+    core_algorithm(&ui->openGLWidget->data_matrix, &ui->openGLWidget->move_matrix, 2);
+    conv_from_matr(&ui->openGLWidget->data_obj, &ui->openGLWidget->data_matrix);
+    ui->openGLWidget->update();
 }
 

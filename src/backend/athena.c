@@ -115,6 +115,7 @@ int rotation(matrix_t *move, matrix_t *result) {
     s21_remove_matrix(&y_rot);
     s21_remove_matrix(&z_rot);
     s21_remove_matrix(&buffer);
+    return 0;
 }
 
 /* Матрица смещения точки по 3-м координатам */
@@ -189,14 +190,13 @@ void core_algorithm(matrix_t *crd_main, matrix_t *move, int type) {
     } else if (type == 2) {
         scale_matrix(move, &athena);
     }
-
     crd_metamorph(crd_main, &athena);
     s21_remove_matrix(&athena);
 }
 
-void conv_to_matr(ObjData_t* data, matrix_t *crd_main) { // перевод их массива в матрицу
+void conv_to_matr(ObjData_t* data, matrix_t *crd_main) { // перевод из массива в матрицу
 
-    s21_create_matrix(data->vertex_array.coords_number / 3, 4, crd_main);
+//    s21_create_matrix(data->vertex_array.coords_number / 3, 4, crd_main);
 
     for (int i = 0; i < data->vertex_array.coords_number; i++) {
         crd_main->matrix[i / 3][i % 3] = data->vertex_array.coords_array[i];
@@ -205,7 +205,7 @@ void conv_to_matr(ObjData_t* data, matrix_t *crd_main) { // перевод их 
     }
 }
 
-void conv_from_matr(ObjData_t* data, matrix_t *crd_main) { // перевод их матрицы в массив
+void conv_from_matr(ObjData_t* data, matrix_t *crd_main) { // перевод из матрицы в массив
     for (int i = 0; i < data->vertex_array.coords_number; i++) {
         data->vertex_array.coords_array[i] = crd_main->matrix[i / 3][i % 3];
     }
