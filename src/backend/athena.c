@@ -5,18 +5,23 @@ int s21_create_matrix(int rows, int columns, matrix_t *result) {
 
     if (result == NULL || rows <= 0 || columns <= 0) {
         error = ERR_1;
+        exit(EXIT_FAILURE);
 
     } else {
+        
         result->rows = rows;
         result->columns = columns;
-        result->matrix = calloc(result->rows, sizeof(double*));
+
+        result->matrix = calloc((size_t) result->rows, sizeof(double*));
         if (result->matrix == NULL) {
             error = ERR_1;
+            exit(EXIT_FAILURE);
         } else  {
             for (int i = 0; i < result->rows; i++) {
-                result->matrix[i] = calloc(result->columns, sizeof(double));
+                result->matrix[i] = calloc((size_t) result->columns, sizeof(double));
                 if (result->matrix[i] == NULL) {
                     error = ERR_1;
+                    exit(EXIT_FAILURE);
                 }
             }
         }
@@ -115,6 +120,8 @@ int rotation(matrix_t *move, matrix_t *result) {
     s21_remove_matrix(&y_rot);
     s21_remove_matrix(&z_rot);
     s21_remove_matrix(&buffer);
+
+    return 0;
 }
 
 /* Матрица смещения точки по 3-м координатам */

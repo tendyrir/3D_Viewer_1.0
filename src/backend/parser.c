@@ -35,9 +35,9 @@ int get_data_numbers(FILE* fp, ObjData_t* data) {
     }
     data->vertex_array.coords_number = vertex_counter * 3;
     data->index_array_size           = total_indices * 2;
-    printf("data->vertex_array.coords_number : %d <- под координаты\n", data->vertex_array.coords_number);
-    printf("data->index_array_size           : %d <- под индексы\n", data->index_array_size);
-    printf("\n");
+    // printf("data->vertex_array.coords_number : %d <- под координаты\n", data->vertex_array.coords_number);
+    // printf("data->index_array_size           : %d <- под индексы\n", data->index_array_size);
+    // printf("\n");
     rewind(fp);
     return error;
 }
@@ -68,7 +68,7 @@ int get_data_arrays(FILE* fp, ObjData_t* data) {
 int write_vertex_array_in_data(char* line, int i, ObjData_t* data) {
     double x = 0, y = 0, z = 0;
     char*  current_line = line + 2;
-    printf("%s", current_line);
+    // printf("%s", current_line);
     sscanf(current_line, "%lf%lf%lf", &x, &y, &z);
     data->vertex_array.coords_array[i] = x;
     data->vertex_array.coords_array[i + 1] = y;
@@ -77,7 +77,7 @@ int write_vertex_array_in_data(char* line, int i, ObjData_t* data) {
 }
 
 char* copy_current_line(char* line) {
-    int   line_length = strlen(line);
+    size_t line_length = strlen(line);
     char* line_copy   = calloc(line_length, sizeof(int)); // make check
     if (strchr(line, '\n')) {
         memcpy(line_copy, line, line_length - 1);
@@ -119,8 +119,8 @@ int write_index_array_in_data(char* line, char* line_copy, ObjData_t* data) {
             write_value(data, first_value);
         }   
     }
-    printf("счетчик: %d", data->index_array_counter);
-    printf("\n");
+    // printf("счетчик: %d", data->index_array_counter);
+    // printf("\n");
     return error;
 }
 
@@ -152,7 +152,7 @@ int count_cur_line(char* line_copy) {
 }
 
 int allocate_memory_for_vertex_array(ObjData_t* data) {
-    data->vertex_array.coords_array = calloc(data->vertex_array.coords_number, sizeof(double));
+    data->vertex_array.coords_array = calloc((size_t) data->vertex_array.coords_number, sizeof(double));
     if (!data->vertex_array.coords_array) {
         printf("mem failure, exiting \n");
         exit(EXIT_FAILURE);
@@ -161,7 +161,7 @@ int allocate_memory_for_vertex_array(ObjData_t* data) {
 }
 
 int allocate_memory_for_index_array(ObjData_t* data) {
-    data->index_array = calloc(data->index_array_size, sizeof(int));
+    data->index_array = calloc((size_t) data->index_array_size, sizeof(int));
     if (!data->index_array) {
         printf("mem failure, exiting \n");
         exit(EXIT_FAILURE);
@@ -186,8 +186,8 @@ void print_vertex_array(ObjData_t* data) {
         j += 3;
     }
     printf("\n");
-    for (int j = 0; j < data->index_array_counter; j++) {
-            printf("%d ", data->index_array[j]);
+    for (int i = 0; i < data->index_array_counter; i++) {
+            printf("%d ", data->index_array[i]);
     }
     printf("\n счетчик в конце равен: %d \n", data->index_array_counter);
 }
