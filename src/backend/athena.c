@@ -5,23 +5,18 @@ int s21_create_matrix(int rows, int columns, matrix_t *result) {
 
     if (result == NULL || rows <= 0 || columns <= 0) {
         error = ERR_1;
-        exit(EXIT_FAILURE);
 
     } else {
-        
         result->rows = rows;
         result->columns = columns;
-
-        result->matrix = calloc((size_t) result->rows, sizeof(double*));
+        result->matrix = calloc(result->rows, sizeof(double*));
         if (result->matrix == NULL) {
             error = ERR_1;
-            exit(EXIT_FAILURE);
         } else  {
             for (int i = 0; i < result->rows; i++) {
-                result->matrix[i] = calloc((size_t) result->columns, sizeof(double));
+                result->matrix[i] = calloc(result->columns, sizeof(double));
                 if (result->matrix[i] == NULL) {
                     error = ERR_1;
-                    exit(EXIT_FAILURE);
                 }
             }
         }
@@ -120,7 +115,6 @@ int rotation(matrix_t *move, matrix_t *result) {
     s21_remove_matrix(&y_rot);
     s21_remove_matrix(&z_rot);
     s21_remove_matrix(&buffer);
-
     return 0;
 }
 
@@ -151,7 +145,7 @@ int scale_matrix(matrix_t *move, matrix_t *result) {
 наоборот, вставки координаты */
 
 void crd_stlr(matrix_t *crd_main, matrix_t *crd, int row) {
-    for (int i = 0; i <     4; i++)
+    for (int i = 0; i < 4; i++)
         crd->matrix[0][i] = crd_main->matrix[row][i];
 }
 
@@ -201,9 +195,9 @@ void core_algorithm(matrix_t *crd_main, matrix_t *move, int type) {
     s21_remove_matrix(&athena);
 }
 
-void conv_to_matr(ObjData_t* data, matrix_t *crd_main) {
+void conv_to_matr(ObjData_t* data, matrix_t *crd_main) { // перевод из массива в матрицу
 
-    s21_create_matrix(data->vertex_array.coords_number / 3, 4, crd_main);
+//    s21_create_matrix(data->vertex_array.coords_number / 3, 4, crd_main);
 
     for (int i = 0; i < data->vertex_array.coords_number; i++) {
         crd_main->matrix[i / 3][i % 3] = data->vertex_array.coords_array[i];
@@ -212,7 +206,7 @@ void conv_to_matr(ObjData_t* data, matrix_t *crd_main) {
     }
 }
 
-void conv_from_matr(ObjData_t* data, matrix_t *crd_main) {
+void conv_from_matr(ObjData_t* data, matrix_t *crd_main) { // перевод из матрицы в массив
     for (int i = 0; i < data->vertex_array.coords_number; i++) {
         data->vertex_array.coords_array[i] = crd_main->matrix[i / 3][i % 3];
     }

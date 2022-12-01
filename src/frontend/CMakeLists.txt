@@ -23,13 +23,12 @@ set(PROJECT_SOURCES
 
         mainwindow.h
         opengl.h
-
-        mainwindow.ui
-
+        
         ../backend/parser.c
-        ../backend/athena.c
         ../backend/viewer.h
-
+        ../backend/athena.c
+        
+        mainwindow.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
