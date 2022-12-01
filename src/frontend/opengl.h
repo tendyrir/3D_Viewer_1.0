@@ -17,7 +17,7 @@ class openGL : public QOpenGLWidget, protected QOpenGLFunctions {
     Q_OBJECT
 public:
     openGL(QWidget *parent = nullptr);
-    ObjData_t data_obj;
+    ObjData_t* data_obj = NULL;
     matrix_t data_matrix;
     matrix_t move_matrix;
 
@@ -40,7 +40,7 @@ protected:
 private:
     float xRot, zRot, yRot;
     QPoint mPos;
-    void draw(ObjData_t* data_obj);
+    void draw(double* vertices, int* indices);
 //    void setupProjection(int w = 0, int h = 0);
 //    void setDefault();
 //    QOpenGLVertexArrayObject vertexArrays; // хранилище индексов VBO
