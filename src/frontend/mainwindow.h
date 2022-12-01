@@ -21,12 +21,12 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
     void on_choose_OBJFile_clicked();
+    void changeScale();
 
 private:
     void init ();
