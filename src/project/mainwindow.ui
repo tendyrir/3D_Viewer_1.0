@@ -109,8 +109,6 @@ border-radius: 4px;
 }
 
 QSlider::sub-page:horizontal {
-background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,
-    stop: 0 #76q, stop: 1 #bbf);
 background: rgb(127, 187, 255);
 border: 1px solid #777;
 height: 20px;
@@ -164,7 +162,7 @@ border-radius: 4px;
         <number>300</number>
        </property>
        <property name="value">
-        <number>30</number>
+        <number>150</number>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -183,7 +181,7 @@ border-radius: 4px;
         <string notr="true">font: 14pt &quot;.AppleSystemUIFont&quot;;</string>
        </property>
        <property name="text">
-        <string>30</string>
+        <string>150</string>
        </property>
       </widget>
      </widget>
@@ -220,8 +218,6 @@ border-radius: 4px;
 }
 
 QSlider::sub-page:horizontal {
-background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,
-    stop: 0 #76q, stop: 1 #bbf);
 background: rgb(127, 187, 255);
 border: 1px solid #777;
 height: 20px;
@@ -299,8 +295,6 @@ border-radius: 4px;
 }
 
 QSlider::sub-page:horizontal {
-background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,
-    stop: 0 #76q, stop: 1 #bbf);
 background: rgb(127, 187, 255);
 border: 1px solid #777;
 height: 20px;
@@ -394,8 +388,6 @@ border-radius: 4px;
 }
 
 QSlider::sub-page:horizontal {
-background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,
-    stop: 0 #76q, stop: 1 #bbf);
 background: rgb(127, 187, 255);
 border: 1px solid #777;
 height: 20px;
@@ -569,8 +561,6 @@ border-radius: 4px;
 }
 
 QSlider::sub-page:horizontal {
-background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,
-    stop: 0 #76q, stop: 1 #bbf);
 background: rgb(127, 187, 255);
 border: 1px solid #777;
 height: 20px;
@@ -648,8 +638,6 @@ border-radius: 4px;
 }
 
 QSlider::sub-page:horizontal {
-background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,
-    stop: 0 #76q, stop: 1 #bbf);
 background: rgb(127, 187, 255);
 border: 1px solid #777;
 height: 20px;
@@ -727,8 +715,6 @@ border-radius: 4px;
 }
 
 QSlider::sub-page:horizontal {
-background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,
-    stop: 0 #76q, stop: 1 #bbf);
 background: rgb(127, 187, 255);
 border: 1px solid #777;
 height: 20px;
@@ -1030,8 +1016,6 @@ border-radius: 4px;
 }
 
 QSlider::sub-page:horizontal {
-background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,
-    stop: 0 #76q, stop: 1 #bbf);
 background: rgb(127, 187, 255);
 border: 1px solid #777;
 height: 20px;
@@ -1215,8 +1199,6 @@ border-radius: 4px;
 }
 
 QSlider::sub-page:horizontal {
-background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,
-    stop: 0 #76q, stop: 1 #bbf);
 background: rgb(127, 187, 255);
 border: 1px solid #777;
 height: 20px;

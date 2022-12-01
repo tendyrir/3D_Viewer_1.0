@@ -145,7 +145,7 @@ int scale_matrix(matrix_t *move, matrix_t *result) {
 наоборот, вставки координаты */
 
 void crd_stlr(matrix_t *crd_main, matrix_t *crd, int row) {
-    for (int i = 0; i <     4; i++)
+    for (int i = 0; i < 4; i++)
         crd->matrix[0][i] = crd_main->matrix[row][i];
 }
 
@@ -190,6 +190,7 @@ void core_algorithm(matrix_t *crd_main, matrix_t *move, int type) {
     } else if (type == 2) {
         scale_matrix(move, &athena);
     }
+
     crd_metamorph(crd_main, &athena);
     s21_remove_matrix(&athena);
 }

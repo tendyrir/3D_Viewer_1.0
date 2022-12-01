@@ -81,9 +81,3 @@ void openGL::mouseMoveEvent(QMouseEvent *mo) {
 //  }
 //}
 
-void openGL::setScale(int value) {
-  if (value != scaleVal) {
-    scaleVal = value;
-    update();
-  }
-}

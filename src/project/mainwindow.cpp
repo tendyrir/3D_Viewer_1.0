@@ -55,11 +55,15 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::on_choose_OBJFile_clicked() {
-    ui->openGLWidget->data_obj = {0};
-    QString file = QFileDialog::getOpenFileName(this, "Choose File");
+//    ui->openGLWidget->data_obj = {0};
+
+    QString file = QFileDialog::getOpenFileName(this, tr("Choose File"), "/home");
+
     if(file.isEmpty())
-        return ;
+        return;
+
     ui->label_9->setText(file);
+
     QByteArray file_bit = file.toLocal8Bit();
     char*     obj_file_name = file_bit.data();
     parse_file(&ui->openGLWidget->data_obj, obj_file_name);

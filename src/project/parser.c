@@ -89,7 +89,7 @@ char* copy_current_line(char* line) {
 
 int write_index_array_in_data(char* line, char* line_copy, ObjData_t* data) {
     int error = 0;
-    char* token_ptr;
+    char* token_ptr = NULL;
     int i = 0;
     int value = 0;
     int first_value = 0;
@@ -135,7 +135,7 @@ int write_value(ObjData_t* data, int value) {
 }
 
 int count_cur_line(char* line_copy) {
-    char* token_ptr;
+    char* token_ptr = NULL;
     int current_line_index_counter_1 = 0;
     strtok(line_copy, " ");
     if (strchr(line_copy, '/')) {

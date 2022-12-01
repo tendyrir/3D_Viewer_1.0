@@ -20,7 +20,6 @@ public:
     ObjData_t data_obj;
     matrix_t data_matrix;
     matrix_t move_matrix;
-    void setScale(int value);
 
 //    QColor backgroundColor;
 //    QColor edgesColor;
@@ -49,8 +48,6 @@ private:
 //    QOpenGLBuffer elementBuffer;
 //    QMatrix4x4 rotateMatrix;
 //    QMatrix4x4 moveMatrix;
-
-    int scaleVal = 30;
 };
 
 #endif // OPENGL_H
