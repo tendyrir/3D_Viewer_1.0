@@ -8,26 +8,27 @@
  * Тесты ошибки открытия файла
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  */
 
-START_TEST(test) {
+START_TEST(test_open_valid_cube) {
   char *obj_path = "models/icosahedron.obj";
   ObjData_t data = {0};
-  // s21_parser_result code_check = S21_PARSER_ERROR_FILE;
-  // test_parser_fail(obj_path, &data, code_check);
+
   parse_file(&data, obj_path);
-
-
 
   free(data.vertex_array.coords_array);
   free(data.index_array);
 
 }
 
-// START_TEST(test_parser_fail2) {
-//   char *obj_path = "_objfiles/lkjhygtfrds.obj";
-//   s21_obj_data data;
-//   s21_parser_result code_check = S21_PARSER_ERROR_FILE;
-//   test_parser_fail(obj_path, &data, code_check);
-// }
+START_TEST(test_2) {
+  char *obj_path = "models/icosahedron.obj";
+  ObjData_t data = {0};
+
+  parse_file(&data, obj_path);
+  
+  free(data.vertex_array.coords_array);
+  free(data.index_array);
+
+}
 
 
 
@@ -39,8 +40,9 @@ Suite *suite_open_file(void) {
   s = suite_create("parse_file");
   tc_core = tcase_create("Core");
 
-  tcase_add_test(tc_core, test);
-  // tcase_add_test(tc_core, test_parser_fail2);
+  tcase_add_test(tc_core, test_1);
+  tcase_add_test(tc_core, test_2);
+
 
   suite_add_tcase(s, tc_core);
 
