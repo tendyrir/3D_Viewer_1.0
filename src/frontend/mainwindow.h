@@ -27,6 +27,7 @@ public:
 private slots:
     void on_choose_OBJFile_clicked();
     void changeScale();
+    void changeRotateX();
 
 private:
     void init ();
