@@ -24,71 +24,75 @@ int s21_create_matrix(int rows, int columns, matrix_t *result) {
   return error;
 }
 
-// int s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
-//   int error = OK;
-//   if ((A == NULL || A->matrix == NULL || A->columns <= 0 || A->rows <= 0) ||
-//       (B == NULL || B->matrix == NULL || B->columns <= 0 || B->rows <= 0)) {
-//     error = ERR_1;
-//   } else if (!((A->columns == B->rows) || (B->columns == A->rows))) {
-//     error = ERR_2;
-//   } else {
+ int s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
+   int error = OK;
+   if ((A == NULL || A->matrix == NULL || A->columns <= 0 || A->rows <= 0) ||
+       (B == NULL || B->matrix == NULL || B->columns <= 0 || B->rows <= 0)) {
+     error = ERR_1;
+   } else if (!((A->columns == B->rows) || (B->columns == A->rows))) {
+     error = ERR_2;
+   } else {
+
 //     s21_create_matrix(A->rows, B->columns, result);
-//     for (int i = 0; i < result->rows; i++) {
-//       for (int j = 0; j < result->columns; j++) {
-//         for (int k = 0; k < B->rows; k++) {
-//           result->matrix[i][j] += A->matrix[i][k] * B->matrix[k][j];
-//         }
-//       }
-//     }
-//   }
-//   return error;
-// }
+     for (int i = 0; i < result->rows; i++) {
+       for (int j = 0; j < result->columns; j++) {
+         for (int k = 0; k < B->rows; k++) {
+           result->matrix[i][j] += A->matrix[i][k] * B->matrix[k][j];
 
-int s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
-  int errCode = matrix_checker(A) || matrix_checker(B);
 
-  if (!errCode) {
-    errCode = possibility_mult(A, B);
-    if (!errCode) mat_multiplicate(A, B, result);
-  }
-  return errCode;
-}
+         }
+       }
 
-int possibility_mult(matrix_t *A, matrix_t *B) {
-  // Проверка, возможно ли умножение между матрицами
-  int errCode = 0;
+     }
+   }
+   return error;
+ }
 
-  if (A->columns != B->rows) {
-    errCode = 2;
-  }
-  return errCode;
-}
+//int s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
+//  int errCode = matrix_checker(A) || matrix_checker(B);
 
-void mat_multiplicate(matrix_t *A, matrix_t *B, matrix_t *result) {
-  // Логика перемножения матриц
-  int flag = s21_create_matrix(A->rows, B->columns, result);
+//  if (!errCode) {
+//    errCode = possibility_mult(A, B);
+//    if (!errCode) mat_multiplicate(A, B, result);
+//  }
+//  return errCode;
+//}
 
-  if (flag == 0) {
-    for (int i = 0; i < A->rows; i++) {
-      for (int j = 0; j < B->columns; j++) {
-        for (int k = 0; k < B->rows; k++) {
-          result->matrix[i][j] += A->matrix[i][k] * B->matrix[k][j];
-        }
-      }
-    }
-  }
-}
+//int possibility_mult(matrix_t *A, matrix_t *B) {
+//  // Проверка, возможно ли умножение между матрицами
+//  int errCode = 0;
 
-int matrix_checker(matrix_t *A) {
-  // Проверка матрицы на корректность
-  int errCode = 0;
+//  if (A->columns != B->rows) {
+//    errCode = 2;
+//  }
+//  return errCode;
+//}
 
-  if ((A == NULL) || (A->columns <= 0) || (A->rows <= 0) ||
-      (A->matrix == NULL)) {
-    errCode = 1;
-  }
-  return errCode;
-}
+//void mat_multiplicate(matrix_t *A, matrix_t *B, matrix_t *result) {
+//  // Логика перемножения матриц
+//  int flag = s21_create_matrix(A->rows, B->columns, result);
+
+//  if (flag == 0) {
+//    for (int i = 0; i < A->rows; i++) {
+//      for (int j = 0; j < B->columns; j++) {
+//        for (int k = 0; k < B->rows; k++) {
+//          result->matrix[i][j] += A->matrix[i][k] * B->matrix[k][j];
+//        }
+//      }
+//    }
+//  }
+//}
+
+//int matrix_checker(matrix_t *A) {
+//  // Проверка матрицы на корректность
+//  int errCode = 0;
+
+//  if ((A == NULL) || (A->columns <= 0) || (A->rows <= 0) ||
+//      (A->matrix == NULL)) {
+//    errCode = 1;
+//  }
+//  return errCode;
+//}
 
 void s21_remove_matrix(matrix_t *A) {
   if (A != NULL && A->matrix != NULL && A->columns > 0 && A->rows > 0) {
@@ -206,8 +210,18 @@ void crd_metamorph(matrix_t *crd_main, matrix_t *athena) {
 
   for (int i = 0; i < crd_main->rows; i++) {
     crd_stlr(crd_main, &crd, i);
-    // s21_mult_matrix(&crd, athena, &crd);
-    // crd_ret(crd_main, &crd, i);
+
+    int aboba = s21_mult_matrix(&crd, athena, &crd);
+
+        for (int k = 0; k < crd.rows; k++){
+            for (int j = 0; j < crd.columns; j++){
+                printf("%lf\n", crd.matrix[k][j]);
+            }
+        }
+
+    printf("\nmult returns: %d\n", aboba);
+
+     crd_ret(crd_main, &crd, i);
   }
   //
   s21_remove_matrix(&crd);

@@ -66,8 +66,8 @@ int   s21_create_matrix(int rows, int columns, matrix_t *result);
 int   s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
 void  s21_remove_matrix(matrix_t *A);
 
-int possibility_mult(matrix_t *A, matrix_t *B);
-void mat_multiplicate(matrix_t *A, matrix_t *B, matrix_t *result);
-int matrix_checker(matrix_t *A);
+//int possibility_mult(matrix_t *A, matrix_t *B);
+//void mat_multiplicate(matrix_t *A, matrix_t *B, matrix_t *result);
+//int matrix_checker(matrix_t *A);
 
 #endif  // VIEWER_H
