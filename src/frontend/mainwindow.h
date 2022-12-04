@@ -23,14 +23,18 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    float sliderValue;
 
 private slots:
     void on_choose_OBJFile_clicked();
-    void changeScale();
     void changeRotateX();
+    double* changeScale();
 
 private:
     void init ();
     Ui::MainWindow *ui;
+//    float sliderValuePast;
+//    double* coords_array_copy;
+
 };
 #endif // MAINWINDOW_H

@@ -156,10 +156,10 @@ border-radius: 4px;
 }</string>
        </property>
        <property name="minimum">
-        <number>-150</number>
+        <number>0</number>
        </property>
        <property name="maximum">
-        <number>150</number>
+        <number>200</number>
        </property>
        <property name="value">
         <number>0</number>

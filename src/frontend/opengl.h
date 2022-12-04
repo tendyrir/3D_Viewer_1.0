@@ -20,6 +20,8 @@ public:
     ObjData_t* data_obj = NULL;
     matrix_t data_matrix;
     matrix_t move_matrix;
+    float sliderValueOpenGL;
+    double* changeScaleOpenGL();
 
 //    QColor backgroundColor;
 //    QColor edgesColor;

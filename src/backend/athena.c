@@ -211,15 +211,15 @@ void crd_metamorph(matrix_t *crd_main, matrix_t *athena) {
   for (int i = 0; i < crd_main->rows; i++) {
     crd_stlr(crd_main, &crd, i);
 
-    int aboba = s21_mult_matrix(&crd, athena, &crd);
+    s21_mult_matrix(&crd, athena, &crd);
 
-        for (int k = 0; k < crd.rows; k++){
-            for (int j = 0; j < crd.columns; j++){
-                printf("%lf\n", crd.matrix[k][j]);
-            }
-        }
+//        for (int k = 0; k < crd.rows; k++){
+//            for (int j = 0; j < crd.columns; j++){
+//                printf("%lf\n", crd.matrix[k][j]);
+//            }
+//        }
 
-    printf("\nmult returns: %d\n", aboba);
+//    printf("\nmult returns: %d\n", aboba);
 
      crd_ret(crd_main, &crd, i);
   }
@@ -262,9 +262,29 @@ void conv_to_matr(ObjData_t *data,
   }
 }
 
-void conv_from_matr(ObjData_t *data,
+void conv_from_matr_to_array_copy(ObjData_t* data, double *coords_array_copy,
                     matrix_t *crd_main) {  // перевод из матрицы в массив
   for (int i = 0; i < data->vertex_array.coords_number; i++) {
-    data->vertex_array.coords_array[i] = crd_main->matrix[i / 3][i % 3];
+    coords_array_copy[i] = crd_main->matrix[i / 3][i % 3];
   }
 }
+
+
+void copy_matrix(matrix_t* src, matrix_t* dest) {
+
+    // checking if rows = rows col = cols
+
+    for (int i = 0; i < src->rows; i++) {
+        for (int j = 0; j < src->columns; j++) {
+
+            dest->matrix[i][j] = src->matrix[i][j];
+
+//            printf("%lf ", dest->matrix[i][j]);
+        }
+//        printf("\n");
+    }
+
+}
+
+
+

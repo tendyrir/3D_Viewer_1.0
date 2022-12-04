@@ -45,9 +45,13 @@ MainWindow::MainWindow(QWidget *parent)
     labelScale->setText(QString("%0").arg(value));
   });
 
+//  sliderValuePast = ui->Scale->value() / 100.0;
+
   connect(ui->Scale, SIGNAL(valueChanged(int)), this, SLOT(changeScale()));
 
   connect(ui->RotateX, SIGNAL(valueChanged(int)), this, SLOT(changeRotateX()));
+
+//  ui->openGLWidget->changeScaleOpenGL() = changeScale();
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -66,49 +70,61 @@ void MainWindow::on_choose_OBJFile_clicked() {
         QString::number(ui->openGLWidget->data_obj->index_array_size / 2));
     ui->verticies->setText(QString::number(
         ui->openGLWidget->data_obj->vertex_array.coords_number / 3));
+    init();
     ui->openGLWidget->update();
   }
 }
 
 void MainWindow::init() {
-  ui->MoveX->setRange(-50, 50);  // устнавливаем диапазон значений
-  ui->MoveX->setSingleStep(1);
-  ui->MoveX->setValue(0);  // задаем стартовое значение
-  ui->MoveX->setTickInterval(2);  // задаем шаг для рисования рисок
+    ui->Scale->setValue(0);
+//  ui->MoveX->setRange(-50, 50);  // устнавливаем диапазон значений
+//  ui->MoveX->setSingleStep(1);
+//  ui->MoveX->setValue(0);  // задаем стартовое значение
+//  ui->MoveX->setTickInterval(2);  // задаем шаг для рисования рисок
 
-  ui->MoveY->setRange(-50, 50);
-  ui->MoveY->setSingleStep(1);
+//  ui->MoveY->setRange(-50, 50);
+//  ui->MoveY->setSingleStep(1);
 
-  ui->MoveZ->setRange(-50, 50);
-  ui->MoveZ->setSingleStep(1);
+//  ui->MoveZ->setRange(-50, 50);
+//  ui->MoveZ->setSingleStep(1);
 }
 
-void MainWindow::changeScale() {
-  float sliderValue = ui->Scale->value() / 100.0;
+double* MainWindow::changeScale() {
 
-  printf("%f\n", sliderValue);
+  sliderValue = ui->Scale->value() / 100.0;
+
+  ui->openGLWidget->sliderValueOpenGL = sliderValue;
+
+  double* coords_array_copy = ui->openGLWidget->data_obj->vertex_array.coords_array;
 
   s21_create_matrix(1, 3, &ui->openGLWidget->move_matrix);
+
   s21_create_matrix(ui->openGLWidget->data_obj->vertex_array.coords_number / 3,
                     4, &ui->openGLWidget->data_matrix);
 
   ui->openGLWidget->move_matrix.matrix[0][0] = sliderValue;
   ui->openGLWidget->move_matrix.matrix[0][1] = sliderValue;
   ui->openGLWidget->move_matrix.matrix[0][2] = sliderValue;
-
   conv_to_matr(ui->openGLWidget->data_obj, &ui->openGLWidget->data_matrix);
 
-  core_algorithm(&ui->openGLWidget->data_matrix, &ui->openGLWidget->move_matrix,
-                 2);
+  core_algorithm(&ui->openGLWidget->data_matrix, &ui->openGLWidget->move_matrix, 2);
 
-  conv_from_matr(ui->openGLWidget->data_obj, &ui->openGLWidget->data_matrix);
+  conv_from_matr_to_array_copy(ui->openGLWidget->data_obj, coords_array_copy, &ui->openGLWidget->data_matrix);
+
+
+
+//  ui->openGLWidget->changeScaleOpenGL() {
+//      return coords_array_copy;
+//  }
 
   ui->openGLWidget->update();
+
+  return coords_array_copy;
 }
+
 
 void MainWindow::changeRotateX() {
   //    s21_create_matrix(1, 3, &ui->openGLWidget->move_matrix);
-
   //    s21_create_matrix(ui->openGLWidget->data_obj->vertex_array.coords_number
   //    / 3, 4, &ui->openGLWidget->data_matrix);
 

@@ -50,11 +50,22 @@ void openGL::paintGL() {
   //    glRotatef(yRot, 0, 1, 0);
 
    if (data_obj) {
-        double*      vertices = this->data_obj->vertex_array.coords_array;
-        int*    indices  = this->data_obj->index_array;
+       double*      vertices;
+       if(sliderValueOpenGL == 0) {
+           vertices = this->data_obj->vertex_array.coords_array;
+       } else {
+//           vertices = changeScaleOpenGL();
+       }
+       int*         indices  = this->data_obj->index_array;
 
-  draw(vertices, indices);
+       draw(vertices, indices);
    }
+
+
+}
+
+double* changeScaleOpenGL() {
+    return
 }
 
 void openGL::draw(double* vertices, int* indices) {
