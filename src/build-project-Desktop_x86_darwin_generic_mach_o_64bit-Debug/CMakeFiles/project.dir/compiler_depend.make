@@ -554,9 +554,8 @@ CMakeFiles/project.dir/main.cpp.o: /Users/sandslas/Documents/3D_Viewer_1.0/src/f
   /usr/local/lib/QtWidgets.framework/Headers/QToolBar \
   /usr/local/lib/QtWidgets.framework/Headers/qtoolbar.h \
   /usr/local/include/QtGui/qaction.h \
-  /Users/sandslas/Documents/3D_Viewer_1.0/src/frontend/opengl.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/QtOpenGL \
-  /usr/local/include/QtOpenGL/QtOpenGLDepends \
+  /usr/local/lib/QtWidgets.framework/Headers/QtWidgets \
+  /usr/local/include/QtWidgets/QtWidgetsDepends \
   /usr/local/include/QtCore/QtCore \
   /usr/local/include/QtCore/QtCoreDepends \
   /usr/local/lib/QtCore.framework/Headers/qglobal.h \
@@ -1046,40 +1045,6 @@ CMakeFiles/project.dir/main.cpp.o: /Users/sandslas/Documents/3D_Viewer_1.0/src/f
   /usr/local/lib/QtGui.framework/Headers/qvectornd.h \
   /usr/local/lib/QtGui.framework/Headers/qwindowdefs.h \
   /usr/local/lib/QtGui.framework/Headers/qtguiversion.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qtopenglglobal.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglbuffer.h \
-  /usr/local/include/QtOpenGL/qtopenglglobal.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopengldebug.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglframebufferobject.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglpaintdevice.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglpixeltransferoptions.h \
-  /usr/local/include/QtCore/QSharedDataPointer \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglshaderprogram.h \
-  /usr/local/include/QtGui/qmatrix4x4.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopengltexture.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopengltextureblitter.h \
-  /usr/local/include/QtGui/QMatrix3x3 \
-  /usr/local/include/QtGui/QMatrix4x4 \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopengltimerquery.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglversionfunctions.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglversionfunctionsfactory.h \
-  /usr/local/include/QtOpenGL/qopenglversionprofile.h \
-  /usr/local/include/QtCore/QPair \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglversionprofile.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglvertexarrayobject.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglwindow.h \
-  /usr/local/include/QtGui/QOpenGLContext \
-  /usr/local/include/QtGui/QImage \
-  /usr/local/lib/QtOpenGL.framework/Headers/qtopenglversion.h \
-  /usr/local/lib/QtOpenGLWidgets.framework/Headers/QOpenGLWidget \
-  /usr/local/lib/QtOpenGLWidgets.framework/Headers/qopenglwidget.h \
-  /usr/local/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
-  /usr/local/include/QtWidgets/QWidget \
-  /usr/local/lib/QtGui.framework/Headers/QOpenGLFunctions \
-  /usr/local/lib/QtOpenGL.framework/Headers/QOpenGLBuffer \
-  /Users/sandslas/Documents/3D_Viewer_1.0/src/backend/viewer.h \
-  /usr/local/lib/QtWidgets.framework/Headers/QtWidgets \
-  /usr/local/include/QtWidgets/QtWidgetsDepends \
   /usr/local/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
   /usr/local/lib/QtWidgets.framework/Headers/qabstractbutton.h \
   /usr/local/lib/QtWidgets.framework/Headers/qabstractitemdelegate.h \
@@ -1164,6 +1129,7 @@ CMakeFiles/project.dir/main.cpp.o: /Users/sandslas/Documents/3D_Viewer_1.0/src/f
   /usr/local/lib/QtWidgets.framework/Headers/qgraphicssceneevent.h \
   /usr/local/lib/QtWidgets.framework/Headers/qgraphicstransform.h \
   /usr/local/include/QtGui/QVector3D \
+  /usr/local/include/QtGui/QMatrix4x4 \
   /usr/local/lib/QtWidgets.framework/Headers/qgraphicsview.h \
   /usr/local/include/QtWidgets/qscrollarea.h \
   /usr/local/include/QtWidgets/qgraphicsscene.h \
@@ -1251,6 +1217,7 @@ CMakeFiles/project.dir/main.cpp.o: /Users/sandslas/Documents/3D_Viewer_1.0/src/f
   /usr/local/lib/QtWidgets.framework/Headers/qwizard.h \
   /usr/local/lib/QtWidgets.framework/Headers/qtwidgetsversion.h \
   /usr/local/lib/QtWidgets.framework/Headers/QColorDialog \
+  /Users/sandslas/Documents/3D_Viewer_1.0/src/backend/viewer.h \
   /usr/local/lib/QtWidgets.framework/Headers/QApplication
 
 CMakeFiles/project.dir/mainwindow.cpp.o: /Users/sandslas/Documents/3D_Viewer_1.0/src/frontend/mainwindow.cpp \
@@ -1632,9 +1599,8 @@ CMakeFiles/project.dir/mainwindow.cpp.o: /Users/sandslas/Documents/3D_Viewer_1.0
   /usr/local/lib/QtWidgets.framework/Headers/QToolBar \
   /usr/local/lib/QtWidgets.framework/Headers/qtoolbar.h \
   /usr/local/include/QtGui/qaction.h \
-  /Users/sandslas/Documents/3D_Viewer_1.0/src/frontend/opengl.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/QtOpenGL \
-  /usr/local/include/QtOpenGL/QtOpenGLDepends \
+  /usr/local/lib/QtWidgets.framework/Headers/QtWidgets \
+  /usr/local/include/QtWidgets/QtWidgetsDepends \
   /usr/local/include/QtCore/QtCore \
   /usr/local/include/QtCore/QtCoreDepends \
   /usr/local/lib/QtCore.framework/Headers/qglobal.h \
@@ -2124,40 +2090,6 @@ CMakeFiles/project.dir/mainwindow.cpp.o: /Users/sandslas/Documents/3D_Viewer_1.0
   /usr/local/lib/QtGui.framework/Headers/qvectornd.h \
   /usr/local/lib/QtGui.framework/Headers/qwindowdefs.h \
   /usr/local/lib/QtGui.framework/Headers/qtguiversion.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qtopenglglobal.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglbuffer.h \
-  /usr/local/include/QtOpenGL/qtopenglglobal.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopengldebug.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglframebufferobject.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglpaintdevice.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglpixeltransferoptions.h \
-  /usr/local/include/QtCore/QSharedDataPointer \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglshaderprogram.h \
-  /usr/local/include/QtGui/qmatrix4x4.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopengltexture.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopengltextureblitter.h \
-  /usr/local/include/QtGui/QMatrix3x3 \
-  /usr/local/include/QtGui/QMatrix4x4 \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopengltimerquery.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglversionfunctions.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglversionfunctionsfactory.h \
-  /usr/local/include/QtOpenGL/qopenglversionprofile.h \
-  /usr/local/include/QtCore/QPair \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglversionprofile.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglvertexarrayobject.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglwindow.h \
-  /usr/local/include/QtGui/QOpenGLContext \
-  /usr/local/include/QtGui/QImage \
-  /usr/local/lib/QtOpenGL.framework/Headers/qtopenglversion.h \
-  /usr/local/lib/QtOpenGLWidgets.framework/Headers/QOpenGLWidget \
-  /usr/local/lib/QtOpenGLWidgets.framework/Headers/qopenglwidget.h \
-  /usr/local/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
-  /usr/local/include/QtWidgets/QWidget \
-  /usr/local/lib/QtGui.framework/Headers/QOpenGLFunctions \
-  /usr/local/lib/QtOpenGL.framework/Headers/QOpenGLBuffer \
-  /Users/sandslas/Documents/3D_Viewer_1.0/src/backend/viewer.h \
-  /usr/local/lib/QtWidgets.framework/Headers/QtWidgets \
-  /usr/local/include/QtWidgets/QtWidgetsDepends \
   /usr/local/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
   /usr/local/lib/QtWidgets.framework/Headers/qabstractbutton.h \
   /usr/local/lib/QtWidgets.framework/Headers/qabstractitemdelegate.h \
@@ -2242,6 +2174,7 @@ CMakeFiles/project.dir/mainwindow.cpp.o: /Users/sandslas/Documents/3D_Viewer_1.0
   /usr/local/lib/QtWidgets.framework/Headers/qgraphicssceneevent.h \
   /usr/local/lib/QtWidgets.framework/Headers/qgraphicstransform.h \
   /usr/local/include/QtGui/QVector3D \
+  /usr/local/include/QtGui/QMatrix4x4 \
   /usr/local/lib/QtWidgets.framework/Headers/qgraphicsview.h \
   /usr/local/include/QtWidgets/qscrollarea.h \
   /usr/local/include/QtWidgets/qgraphicsscene.h \
@@ -2329,6 +2262,7 @@ CMakeFiles/project.dir/mainwindow.cpp.o: /Users/sandslas/Documents/3D_Viewer_1.0
   /usr/local/lib/QtWidgets.framework/Headers/qwizard.h \
   /usr/local/lib/QtWidgets.framework/Headers/qtwidgetsversion.h \
   /usr/local/lib/QtWidgets.framework/Headers/QColorDialog \
+  /Users/sandslas/Documents/3D_Viewer_1.0/src/backend/viewer.h \
   project_autogen/include/ui_mainwindow.h \
   /usr/local/include/QtWidgets/QApplication \
   /usr/local/include/QtWidgets/QGroupBox \
@@ -2340,7 +2274,40 @@ CMakeFiles/project.dir/mainwindow.cpp.o: /Users/sandslas/Documents/3D_Viewer_1.0
   /usr/local/include/QtWidgets/QRadioButton \
   /usr/local/include/QtWidgets/QScrollArea \
   /usr/local/include/QtWidgets/QSlider \
-  /usr/local/include/QtWidgets/QStatusBar
+  /usr/local/include/QtWidgets/QStatusBar \
+  /usr/local/include/QtWidgets/QWidget \
+  /Users/sandslas/Documents/3D_Viewer_1.0/src/frontend/opengl.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/QtOpenGL \
+  /usr/local/include/QtOpenGL/QtOpenGLDepends \
+  /usr/local/lib/QtOpenGL.framework/Headers/qtopenglglobal.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglbuffer.h \
+  /usr/local/include/QtOpenGL/qtopenglglobal.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopengldebug.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglframebufferobject.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglpaintdevice.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglpixeltransferoptions.h \
+  /usr/local/include/QtCore/QSharedDataPointer \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglshaderprogram.h \
+  /usr/local/include/QtGui/qmatrix4x4.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopengltexture.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopengltextureblitter.h \
+  /usr/local/include/QtGui/QMatrix3x3 \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopengltimerquery.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglversionfunctions.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglversionfunctionsfactory.h \
+  /usr/local/include/QtOpenGL/qopenglversionprofile.h \
+  /usr/local/include/QtCore/QPair \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglversionprofile.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglvertexarrayobject.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglwindow.h \
+  /usr/local/include/QtGui/QOpenGLContext \
+  /usr/local/include/QtGui/QImage \
+  /usr/local/lib/QtOpenGL.framework/Headers/qtopenglversion.h \
+  /usr/local/lib/QtOpenGLWidgets.framework/Headers/QOpenGLWidget \
+  /usr/local/lib/QtOpenGLWidgets.framework/Headers/qopenglwidget.h \
+  /usr/local/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
+  /usr/local/lib/QtGui.framework/Headers/QOpenGLFunctions \
+  /usr/local/lib/QtOpenGL.framework/Headers/QOpenGLBuffer
 
 CMakeFiles/project.dir/opengl.cpp.o: /Users/sandslas/Documents/3D_Viewer_1.0/src/frontend/opengl.cpp \
   /Users/sandslas/Documents/3D_Viewer_1.0/src/frontend/opengl.h \
@@ -3230,6 +3197,193 @@ CMakeFiles/project.dir/opengl.cpp.o: /Users/sandslas/Documents/3D_Viewer_1.0/src
   /usr/local/include/QtWidgets/QWidget \
   /usr/local/lib/QtGui.framework/Headers/QOpenGLFunctions \
   /usr/local/lib/QtOpenGL.framework/Headers/QOpenGLBuffer \
+  /Users/sandslas/Documents/3D_Viewer_1.0/src/frontend/mainwindow.h \
+  /usr/local/lib/QtWidgets.framework/Headers/QMainWindow \
+  /usr/local/lib/QtWidgets.framework/Headers/qmainwindow.h \
+  /usr/local/include/QtWidgets/qwidget.h \
+  /usr/local/include/QtWidgets/qtabwidget.h \
+  /usr/local/lib/QtCore.framework/Headers/QFile \
+  /usr/local/lib/QtWidgets.framework/Headers/QFileDialog \
+  /usr/local/lib/QtWidgets.framework/Headers/qfiledialog.h \
+  /usr/local/include/QtWidgets/qdialog.h \
+  /usr/local/lib/QtCore.framework/Headers/QTextStream \
+  /usr/local/lib/QtWidgets.framework/Headers/QMessageBox \
+  /usr/local/lib/QtWidgets.framework/Headers/qmessagebox.h \
+  /usr/local/lib/QtWidgets.framework/Headers/QToolBar \
+  /usr/local/lib/QtWidgets.framework/Headers/qtoolbar.h \
+  /usr/local/lib/QtWidgets.framework/Headers/QtWidgets \
+  /usr/local/include/QtWidgets/QtWidgetsDepends \
+  /usr/local/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qabstractbutton.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qabstractitemdelegate.h \
+  /usr/local/include/QtWidgets/qstyleoption.h \
+  /usr/local/include/QtWidgets/qabstractspinbox.h \
+  /usr/local/include/QtGui/qvalidator.h \
+  /usr/local/include/QtWidgets/qslider.h \
+  /usr/local/include/QtWidgets/qabstractslider.h \
+  /usr/local/include/QtWidgets/qstyle.h \
+  /usr/local/include/QtWidgets/qtabbar.h \
+  /usr/local/include/QtWidgets/qrubberband.h \
+  /usr/local/include/QtWidgets/qframe.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qabstractitemview.h \
+  /usr/local/include/QtWidgets/qabstractscrollarea.h \
+  /usr/local/include/QtCore/qitemselectionmodel.h \
+  /usr/local/include/QtWidgets/qabstractitemdelegate.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qabstractscrollarea.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qabstractslider.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qabstractspinbox.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qaccessiblewidget.h \
+  /usr/local/include/QtGui/qaccessibleobject.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qaction.h \
+  /usr/local/include/QtGui/QAction \
+  /usr/local/lib/QtWidgets.framework/Headers/qactiongroup.h \
+  /usr/local/include/QtGui/QActionGroup \
+  /usr/local/lib/QtWidgets.framework/Headers/qapplication.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qboxlayout.h \
+  /usr/local/include/QtWidgets/qlayout.h \
+  /usr/local/include/QtWidgets/qlayoutitem.h \
+  /usr/local/include/QtWidgets/qboxlayout.h \
+  /usr/local/include/QtWidgets/qgridlayout.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qbuttongroup.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qcheckbox.h \
+  /usr/local/include/QtWidgets/qabstractbutton.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qcolordialog.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qcolormap.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qcolumnview.h \
+  /usr/local/include/QtWidgets/qabstractitemview.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qcombobox.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qcommandlinkbutton.h \
+  /usr/local/include/QtWidgets/qpushbutton.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qcommonstyle.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qcompleter.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qdatawidgetmapper.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qdatetimeedit.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qdial.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qdialog.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qdialogbuttonbox.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qdockwidget.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qdrawutil.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qerrormessage.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qfileiconprovider.h \
+  /usr/local/include/QtGui/qabstractfileiconprovider.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qfilesystemmodel.h \
+  /usr/local/include/QtGui/QFileSystemModel \
+  /usr/local/lib/QtWidgets.framework/Headers/qfocusframe.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qfontcombobox.h \
+  /usr/local/include/QtWidgets/qcombobox.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qfontdialog.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qformlayout.h \
+  /usr/local/include/QtWidgets/QLayout \
+  /usr/local/lib/QtWidgets.framework/Headers/qlayout.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qframe.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgesture.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgesturerecognizer.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgraphicsanchorlayout.h \
+  /usr/local/include/QtWidgets/qgraphicsitem.h \
+  /usr/local/include/QtGui/qpainterpath.h \
+  /usr/local/include/QtWidgets/qgraphicslayout.h \
+  /usr/local/include/QtWidgets/qgraphicslayoutitem.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgraphicseffect.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgraphicsgridlayout.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgraphicsitemanimation.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgraphicslayout.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgraphicslayoutitem.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgraphicslinearlayout.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgraphicsproxywidget.h \
+  /usr/local/include/QtWidgets/qgraphicswidget.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgraphicssceneevent.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgraphicstransform.h \
+  /usr/local/include/QtGui/QVector3D \
+  /usr/local/lib/QtWidgets.framework/Headers/qgraphicsview.h \
+  /usr/local/include/QtWidgets/qscrollarea.h \
+  /usr/local/include/QtWidgets/qgraphicsscene.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgraphicswidget.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgridlayout.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qgroupbox.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qheaderview.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qinputdialog.h \
+  /usr/local/include/QtWidgets/qlineedit.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qitemdelegate.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qitemeditorfactory.h \
+  /usr/local/include/QtCore/qmetaobject.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qkeysequenceedit.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qlabel.h \
+  /usr/local/include/QtGui/qpicture.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qlayoutitem.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qlcdnumber.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qlineedit.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qlistview.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qlistwidget.h \
+  /usr/local/include/QtWidgets/qlistview.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qmdiarea.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qmdisubwindow.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qmenu.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qmenubar.h \
+  /usr/local/include/QtWidgets/qmenu.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qplaintextedit.h \
+  /usr/local/include/QtWidgets/qtextedit.h \
+  /usr/local/include/QtGui/qabstracttextdocumentlayout.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qprogressbar.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qprogressdialog.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qproxystyle.h \
+  /usr/local/include/QtWidgets/QCommonStyle \
+  /usr/local/lib/QtWidgets.framework/Headers/qpushbutton.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qradiobutton.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qrubberband.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qscrollarea.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qscrollbar.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qscroller.h \
+  /usr/local/include/QtCore/QPointF \
+  /usr/local/include/QtWidgets/QScrollerProperties \
+  /usr/local/lib/QtWidgets.framework/Headers/qscrollerproperties.h \
+  /usr/local/include/QtCore/QMetaType \
+  /usr/local/include/QtCore/QVariant \
+  /usr/local/lib/QtWidgets.framework/Headers/qshortcut.h \
+  /usr/local/include/QtGui/QShortcut \
+  /usr/local/lib/QtWidgets.framework/Headers/qsizegrip.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qsizepolicy.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qslider.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qspinbox.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qsplashscreen.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qsplitter.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qstackedlayout.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qstatusbar.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qstyle.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qstyleditemdelegate.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qstylefactory.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qstyleoption.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qstylepainter.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qstyleplugin.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qsystemtrayicon.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qtabbar.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qtableview.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qtablewidget.h \
+  /usr/local/include/QtWidgets/qtableview.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qtabwidget.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qtextbrowser.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qtextedit.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qtoolbox.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qtoolbutton.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qtooltip.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qtreeview.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qtreewidget.h \
+  /usr/local/include/QtWidgets/qtreeview.h \
+  /usr/local/include/QtWidgets/qtreewidgetitemiterator.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qtreewidgetitemiterator.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qundogroup.h \
+  /usr/local/include/QtGui/QUndoGroup \
+  /usr/local/lib/QtWidgets.framework/Headers/qundostack.h \
+  /usr/local/include/QtGui/QUndoStack \
+  /usr/local/lib/QtWidgets.framework/Headers/qundoview.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qwhatsthis.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qwidgetaction.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qwizard.h \
+  /usr/local/lib/QtWidgets.framework/Headers/qtwidgetsversion.h \
+  /usr/local/lib/QtWidgets.framework/Headers/QColorDialog \
   /Users/sandslas/Documents/3D_Viewer_1.0/src/backend/viewer.h
 
 CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o: project_autogen/mocs_compilation.cpp \
@@ -3612,9 +3766,8 @@ CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o: project_autogen/m
   /usr/local/lib/QtWidgets.framework/Headers/QToolBar \
   /usr/local/lib/QtWidgets.framework/Headers/qtoolbar.h \
   /usr/local/include/QtGui/qaction.h \
-  /Users/sandslas/Documents/3D_Viewer_1.0/src/frontend/opengl.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/QtOpenGL \
-  /usr/local/include/QtOpenGL/QtOpenGLDepends \
+  /usr/local/lib/QtWidgets.framework/Headers/QtWidgets \
+  /usr/local/include/QtWidgets/QtWidgetsDepends \
   /usr/local/include/QtCore/QtCore \
   /usr/local/include/QtCore/QtCoreDepends \
   /usr/local/lib/QtCore.framework/Headers/qglobal.h \
@@ -4104,40 +4257,6 @@ CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o: project_autogen/m
   /usr/local/lib/QtGui.framework/Headers/qvectornd.h \
   /usr/local/lib/QtGui.framework/Headers/qwindowdefs.h \
   /usr/local/lib/QtGui.framework/Headers/qtguiversion.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qtopenglglobal.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglbuffer.h \
-  /usr/local/include/QtOpenGL/qtopenglglobal.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopengldebug.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglframebufferobject.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglpaintdevice.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglpixeltransferoptions.h \
-  /usr/local/include/QtCore/QSharedDataPointer \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglshaderprogram.h \
-  /usr/local/include/QtGui/qmatrix4x4.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopengltexture.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopengltextureblitter.h \
-  /usr/local/include/QtGui/QMatrix3x3 \
-  /usr/local/include/QtGui/QMatrix4x4 \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopengltimerquery.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglversionfunctions.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglversionfunctionsfactory.h \
-  /usr/local/include/QtOpenGL/qopenglversionprofile.h \
-  /usr/local/include/QtCore/QPair \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglversionprofile.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglvertexarrayobject.h \
-  /usr/local/lib/QtOpenGL.framework/Headers/qopenglwindow.h \
-  /usr/local/include/QtGui/QOpenGLContext \
-  /usr/local/include/QtGui/QImage \
-  /usr/local/lib/QtOpenGL.framework/Headers/qtopenglversion.h \
-  /usr/local/lib/QtOpenGLWidgets.framework/Headers/QOpenGLWidget \
-  /usr/local/lib/QtOpenGLWidgets.framework/Headers/qopenglwidget.h \
-  /usr/local/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
-  /usr/local/include/QtWidgets/QWidget \
-  /usr/local/lib/QtGui.framework/Headers/QOpenGLFunctions \
-  /usr/local/lib/QtOpenGL.framework/Headers/QOpenGLBuffer \
-  /Users/sandslas/Documents/3D_Viewer_1.0/src/backend/viewer.h \
-  /usr/local/lib/QtWidgets.framework/Headers/QtWidgets \
-  /usr/local/include/QtWidgets/QtWidgetsDepends \
   /usr/local/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
   /usr/local/lib/QtWidgets.framework/Headers/qabstractbutton.h \
   /usr/local/lib/QtWidgets.framework/Headers/qabstractitemdelegate.h \
@@ -4222,6 +4341,7 @@ CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o: project_autogen/m
   /usr/local/lib/QtWidgets.framework/Headers/qgraphicssceneevent.h \
   /usr/local/lib/QtWidgets.framework/Headers/qgraphicstransform.h \
   /usr/local/include/QtGui/QVector3D \
+  /usr/local/include/QtGui/QMatrix4x4 \
   /usr/local/lib/QtWidgets.framework/Headers/qgraphicsview.h \
   /usr/local/include/QtWidgets/qscrollarea.h \
   /usr/local/include/QtWidgets/qgraphicsscene.h \
@@ -4309,8 +4429,42 @@ CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o: project_autogen/m
   /usr/local/lib/QtWidgets.framework/Headers/qwizard.h \
   /usr/local/lib/QtWidgets.framework/Headers/qtwidgetsversion.h \
   /usr/local/lib/QtWidgets.framework/Headers/QColorDialog \
+  /Users/sandslas/Documents/3D_Viewer_1.0/src/backend/viewer.h \
   project_autogen/EWIEGA46WW/moc_opengl.cpp \
-  /Users/sandslas/Documents/3D_Viewer_1.0/src/frontend/opengl.h
+  /Users/sandslas/Documents/3D_Viewer_1.0/src/frontend/opengl.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/QtOpenGL \
+  /usr/local/include/QtOpenGL/QtOpenGLDepends \
+  /usr/local/lib/QtOpenGL.framework/Headers/qtopenglglobal.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglbuffer.h \
+  /usr/local/include/QtOpenGL/qtopenglglobal.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopengldebug.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglframebufferobject.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglpaintdevice.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglpixeltransferoptions.h \
+  /usr/local/include/QtCore/QSharedDataPointer \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglshaderprogram.h \
+  /usr/local/include/QtGui/qmatrix4x4.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopengltexture.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopengltextureblitter.h \
+  /usr/local/include/QtGui/QMatrix3x3 \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopengltimerquery.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglversionfunctions.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglversionfunctionsfactory.h \
+  /usr/local/include/QtOpenGL/qopenglversionprofile.h \
+  /usr/local/include/QtCore/QPair \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglversionprofile.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglvertexarrayobject.h \
+  /usr/local/lib/QtOpenGL.framework/Headers/qopenglwindow.h \
+  /usr/local/include/QtGui/QOpenGLContext \
+  /usr/local/include/QtGui/QImage \
+  /usr/local/lib/QtOpenGL.framework/Headers/qtopenglversion.h \
+  /usr/local/lib/QtOpenGLWidgets.framework/Headers/QOpenGLWidget \
+  /usr/local/lib/QtOpenGLWidgets.framework/Headers/qopenglwidget.h \
+  /usr/local/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
+  /usr/local/include/QtWidgets/QWidget \
+  /usr/local/lib/QtGui.framework/Headers/QOpenGLFunctions \
+  /usr/local/lib/QtOpenGL.framework/Headers/QOpenGLBuffer \
+  /Users/sandslas/Documents/3D_Viewer_1.0/src/frontend/mainwindow.h
 
 
 project_autogen/EWIEGA46WW/moc_mainwindow.cpp:
@@ -4318,6 +4472,54 @@ project_autogen/EWIEGA46WW/moc_mainwindow.cpp:
 project_autogen/mocs_compilation.cpp:
 
 /Users/sandslas/Documents/3D_Viewer_1.0/src/frontend/opengl.cpp:
+
+/usr/local/lib/QtGui.framework/Headers/QOpenGLFunctions:
+
+/usr/local/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h:
+
+/usr/local/lib/QtOpenGLWidgets.framework/Headers/QOpenGLWidget:
+
+/usr/local/include/QtGui/QImage:
+
+/usr/local/include/QtGui/QOpenGLContext:
+
+/usr/local/lib/QtOpenGL.framework/Headers/qopenglwindow.h:
+
+/usr/local/lib/QtOpenGL.framework/Headers/qopenglversionprofile.h:
+
+/usr/local/include/QtCore/QPair:
+
+/usr/local/include/QtOpenGL/qopenglversionprofile.h:
+
+/usr/local/lib/QtOpenGL.framework/Headers/qopenglversionfunctionsfactory.h:
+
+/usr/local/lib/QtOpenGL.framework/Headers/qopenglversionfunctions.h:
+
+/usr/local/lib/QtOpenGL.framework/Headers/qopengltimerquery.h:
+
+/usr/local/lib/QtOpenGL.framework/Headers/qopengltextureblitter.h:
+
+/usr/local/lib/QtOpenGL.framework/Headers/qopengltexture.h:
+
+/usr/local/lib/QtOpenGL.framework/Headers/QOpenGLBuffer:
+
+/usr/local/lib/QtOpenGL.framework/Headers/qopenglshaderprogram.h:
+
+/usr/local/include/QtCore/QSharedDataPointer:
+
+/usr/local/lib/QtOpenGL.framework/Headers/qopenglpixeltransferoptions.h:
+
+/usr/local/lib/QtOpenGL.framework/Headers/qopenglpaintdevice.h:
+
+/usr/local/lib/QtOpenGL.framework/Headers/qopenglframebufferobject.h:
+
+/usr/local/include/QtOpenGL/qtopenglglobal.h:
+
+/usr/local/lib/QtOpenGL.framework/Headers/qtopenglglobal.h:
+
+/usr/local/include/QtOpenGL/QtOpenGLDepends:
+
+/usr/local/include/QtWidgets/QWidget:
 
 /usr/local/include/QtWidgets/QStatusBar:
 
@@ -4373,6 +4575,10 @@ project_autogen/include/ui_mainwindow.h:
 
 /usr/local/lib/QtWidgets.framework/Headers/qspinbox.h:
 
+/usr/local/lib/QtOpenGL.framework/Headers/qtopenglversion.h:
+
+/usr/local/include/QtCore/QVariant:
+
 /usr/local/include/QtCore/QMetaType:
 
 /usr/local/lib/QtWidgets.framework/Headers/qscrollerproperties.h:
@@ -4415,6 +4621,10 @@ project_autogen/include/ui_mainwindow.h:
 
 /usr/local/lib/QtWidgets.framework/Headers/qlayoutitem.h:
 
+/usr/local/lib/QtOpenGL.framework/Headers/qopenglvertexarrayobject.h:
+
+/usr/local/lib/QtWidgets.framework/Headers/qlabel.h:
+
 /usr/local/lib/QtWidgets.framework/Headers/qitemeditorfactory.h:
 
 /usr/local/lib/QtWidgets.framework/Headers/qitemdelegate.h:
@@ -4430,6 +4640,8 @@ project_autogen/include/ui_mainwindow.h:
 /usr/local/include/QtWidgets/qscrollarea.h:
 
 /usr/local/lib/QtWidgets.framework/Headers/qgraphicsview.h:
+
+/usr/local/include/QtGui/QMatrix4x4:
 
 /usr/local/include/QtGui/QVector3D:
 
@@ -4535,64 +4747,6 @@ project_autogen/include/ui_mainwindow.h:
 
 /usr/local/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h:
 
-/usr/local/lib/QtWidgets.framework/Headers/QtWidgets:
-
-/usr/local/lib/QtGui.framework/Headers/QOpenGLFunctions:
-
-/usr/local/include/QtWidgets/QWidget:
-
-/usr/local/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h:
-
-/usr/local/lib/QtOpenGLWidgets.framework/Headers/QOpenGLWidget:
-
-/usr/local/include/QtCore/QVariant:
-
-/usr/local/lib/QtOpenGL.framework/Headers/qtopenglversion.h:
-
-/usr/local/include/QtGui/QImage:
-
-/usr/local/include/QtGui/QOpenGLContext:
-
-/usr/local/lib/QtOpenGL.framework/Headers/qopenglwindow.h:
-
-/usr/local/lib/QtWidgets.framework/Headers/qlabel.h:
-
-/usr/local/lib/QtOpenGL.framework/Headers/qopenglvertexarrayobject.h:
-
-/usr/local/lib/QtOpenGL.framework/Headers/qopenglversionprofile.h:
-
-/usr/local/include/QtCore/QPair:
-
-/usr/local/include/QtOpenGL/qopenglversionprofile.h:
-
-/usr/local/lib/QtOpenGL.framework/Headers/qopenglversionfunctionsfactory.h:
-
-/usr/local/lib/QtOpenGL.framework/Headers/qopenglversionfunctions.h:
-
-/usr/local/lib/QtOpenGL.framework/Headers/qopengltimerquery.h:
-
-/usr/local/include/QtGui/QMatrix4x4:
-
-/usr/local/lib/QtOpenGL.framework/Headers/qopengltextureblitter.h:
-
-/usr/local/lib/QtOpenGL.framework/Headers/qopengltexture.h:
-
-/usr/local/lib/QtOpenGL.framework/Headers/QOpenGLBuffer:
-
-/usr/local/lib/QtOpenGL.framework/Headers/qopenglshaderprogram.h:
-
-/usr/local/include/QtCore/QSharedDataPointer:
-
-/usr/local/lib/QtOpenGL.framework/Headers/qopenglpixeltransferoptions.h:
-
-/usr/local/lib/QtOpenGL.framework/Headers/qopenglpaintdevice.h:
-
-/usr/local/lib/QtOpenGL.framework/Headers/qopenglframebufferobject.h:
-
-/usr/local/include/QtOpenGL/qtopenglglobal.h:
-
-/usr/local/lib/QtOpenGL.framework/Headers/qtopenglglobal.h:
-
 /usr/local/lib/QtGui.framework/Headers/qtguiversion.h:
 
 /usr/local/lib/QtGui.framework/Headers/qvector3d.h:
@@ -4697,11 +4851,13 @@ project_autogen/include/ui_mainwindow.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/inttypes.h:
 
+/usr/local/lib/QtOpenGL.framework/Headers/QtOpenGL:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/os/availability.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/OpenGL.framework/Headers/glext.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gltypes.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h:
 
 /usr/local/include/QtGui/qoffscreensurface.h:
 
@@ -4718,6 +4874,10 @@ project_autogen/include/ui_mainwindow.h:
 /usr/local/lib/QtWidgets.framework/Headers/qslider.h:
 
 /usr/local/lib/QtGui.framework/Headers/qiconengine.h:
+
+/usr/local/lib/QtGui.framework/Headers/qoffscreensurface.h:
+
+/usr/local/lib/QtGui.framework/Headers/qicon.h:
 
 /usr/local/lib/QtCore.framework/Headers/qfileinfo.h:
 
@@ -4795,12 +4955,6 @@ project_autogen/include/ui_mainwindow.h:
 
 /usr/local/include/QtGui/qglyphrun.h:
 
-/usr/local/include/QtWidgets/QMenu:
-
-/usr/local/lib/QtGui.framework/Headers/qaccessible.h:
-
-/usr/local/include/QtGui/QTransform:
-
 /usr/local/include/QtCore/QList:
 
 /usr/local/include/QtGui/qinputdevice.h:
@@ -4823,9 +4977,9 @@ project_autogen/include/ui_mainwindow.h:
 
 /usr/local/lib/QtGui.framework/Headers/qabstractfileiconprovider.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/strings.h:
-
 /Users/sandslas/Documents/3D_Viewer_1.0/src/frontend/opengl.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/strings.h:
 
 /usr/local/lib/QtCore.framework/Headers/qparallelanimationgroup.h:
 
@@ -5103,9 +5257,9 @@ project_autogen/include/ui_mainwindow.h:
 
 /usr/local/include/QtCore/qeasingcurve.h:
 
-/usr/local/lib/QtWidgets.framework/Headers/qtabbar.h:
-
 /usr/local/lib/QtOpenGL.framework/Headers/qopengldebug.h:
+
+/usr/local/lib/QtWidgets.framework/Headers/qtabbar.h:
 
 /usr/local/include/QtCore/qvariantanimation.h:
 
@@ -5450,10 +5604,6 @@ project_autogen/include/ui_mainwindow.h:
 /usr/local/lib/QtCore.framework/Headers/qsemaphore.h:
 
 /usr/local/include/QtCore/qabstractitemmodel.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/OpenGL.framework/Headers/OpenGLAvailability.h:
-
-/usr/local/lib/QtCore.framework/Headers/qabstractproxymodel.h:
 
 /usr/local/lib/QtCore.framework/Headers/qabstractnativeeventfilter.h:
 
@@ -5909,6 +6059,10 @@ project_autogen/EWIEGA46WW/moc_opengl.cpp:
 
 /usr/local/include/QtCore/qobjectdefs_impl.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/OpenGL.framework/Headers/OpenGLAvailability.h:
+
+/usr/local/lib/QtCore.framework/Headers/qabstractproxymodel.h:
+
 /usr/local/lib/QtGui.framework/Headers/qmovie.h:
 
 /usr/local/lib/QtWidgets.framework/Headers/qgraphicstransform.h:
@@ -5970,6 +6124,8 @@ project_autogen/EWIEGA46WW/moc_opengl.cpp:
 /usr/local/lib/QtCore.framework/Headers/qbytearraylist.h:
 
 /usr/local/include/QtCore/qatomic.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/smmintrin.h:
 
@@ -6265,14 +6421,6 @@ project_autogen/EWIEGA46WW/moc_opengl.cpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/functional:
 
-/usr/local/lib/QtGui.framework/Headers/qoffscreensurface.h:
-
-/usr/local/lib/QtGui.framework/Headers/qicon.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/os/availability.h:
-
-/usr/local/lib/QtOpenGL.framework/Headers/QtOpenGL:
-
 /Users/sandslas/Documents/3D_Viewer_1.0/src/frontend/main.cpp:
 
 /usr/local/lib/QtCore.framework/Headers/qstringalgorithms.h:
@@ -6334,6 +6482,12 @@ project_autogen/EWIEGA46WW/moc_opengl.cpp:
 /usr/local/include/QtWidgets/qstyle.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/typeinfo:
+
+/usr/local/include/QtWidgets/QMenu:
+
+/usr/local/lib/QtGui.framework/Headers/qaccessible.h:
+
+/usr/local/include/QtGui/QTransform:
 
 /usr/local/include/QtCore/qbasictimer.h:
 
@@ -6499,7 +6653,7 @@ project_autogen/EWIEGA46WW/moc_opengl.cpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_time_t.h:
 
-/usr/local/include/QtOpenGL/QtOpenGLDepends:
+/usr/local/lib/QtWidgets.framework/Headers/QtWidgets:
 
 /usr/local/include/QtCore/qexception.h:
 

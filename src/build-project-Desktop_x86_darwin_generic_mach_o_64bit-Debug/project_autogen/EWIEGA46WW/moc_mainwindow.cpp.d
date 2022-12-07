@@ -59,7 +59,6 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/inttypes.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
@@ -186,10 +185,7 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xlocale/_time.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/stdarg.h \
   /Users/sandslas/Documents/3D_Viewer_1.0/src/backend/viewer.h \
-  /Users/sandslas/Documents/3D_Viewer_1.0/src/frontend/opengl.h \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/QFile \
-  /usr/local/lib/QtCore.framework/Versions/A/Headers/QObject \
-  /usr/local/lib/QtCore.framework/Versions/A/Headers/QScopedPointer \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/QTextStream \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qalgorithms.h \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qanystringview.h \
@@ -238,7 +234,6 @@
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qmetacontainer.h \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qmetatype.h \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qnamespace.h \
-  /usr/local/lib/QtCore.framework/Versions/A/Headers/qnativeinterface.h \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qnumeric.h \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qobject.h \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qobject_impl.h \
@@ -277,8 +272,6 @@
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qvariant.h \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qvarlengtharray.h \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h \
-  /usr/local/lib/QtGui.framework/Versions/A/Headers/QOpenGLFunctions \
-  /usr/local/lib/QtGui.framework/Versions/A/Headers/QSurfaceFormat \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qaction.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qbitmap.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qbrush.h \
@@ -290,10 +283,6 @@
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qicon.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qimage.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qkeysequence.h \
-  /usr/local/lib/QtGui.framework/Versions/A/Headers/qopengl.h \
-  /usr/local/lib/QtGui.framework/Versions/A/Headers/qopenglcontext.h \
-  /usr/local/lib/QtGui.framework/Versions/A/Headers/qopenglcontext_platform.h \
-  /usr/local/lib/QtGui.framework/Versions/A/Headers/qopenglfunctions.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qpaintdevice.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qpalette.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qpixelformat.h \
@@ -302,18 +291,10 @@
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qregion.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qrgb.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qrgba64.h \
-  /usr/local/lib/QtGui.framework/Versions/A/Headers/qsurfaceformat.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qtgui-config.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qtransform.h \
   /usr/local/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
-  /usr/local/lib/QtOpenGL.framework/Versions/A/Headers/QOpenGLBuffer \
-  /usr/local/lib/QtOpenGL.framework/Versions/A/Headers/qopenglbuffer.h \
-  /usr/local/lib/QtOpenGL.framework/Versions/A/Headers/qtopenglglobal.h \
-  /usr/local/lib/QtOpenGL.framework/Versions/A/QtOpenGL \
-  /usr/local/lib/QtOpenGLWidgets.framework/Versions/A/Headers/QOpenGLWidget \
-  /usr/local/lib/QtOpenGLWidgets.framework/Versions/A/Headers/qopenglwidget.h \
-  /usr/local/lib/QtOpenGLWidgets.framework/Versions/A/Headers/qtopenglwidgetsglobal.h \
   /usr/local/lib/QtWidgets.framework/Versions/A/Headers/QColorDialog \
   /usr/local/lib/QtWidgets.framework/Versions/A/Headers/QFileDialog \
   /usr/local/lib/QtWidgets.framework/Versions/A/Headers/QMainWindow \

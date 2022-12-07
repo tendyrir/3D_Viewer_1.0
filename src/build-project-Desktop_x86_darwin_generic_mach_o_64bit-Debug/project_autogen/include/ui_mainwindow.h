@@ -176,9 +176,10 @@ public:
 "border: 1px solid #aaa;\n"
 "border-radius: 4px;\n"
 "}"));
-        Scale->setMinimum(0);
+        Scale->setMinimum(1);
         Scale->setMaximum(200);
-        Scale->setValue(0);
+        Scale->setPageStep(1);
+        Scale->setValue(50);
         Scale->setOrientation(Qt::Horizontal);
         lineScale = new QLabel(groupBox_3);
         lineScale->setObjectName(QString::fromUtf8("lineScale"));
@@ -928,7 +929,7 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "Path file:", nullptr));
         groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "Scale", nullptr));
-        lineScale->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
+        lineScale->setText(QCoreApplication::translate("MainWindow", "50", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "Rotate", nullptr));
         label_8->setText(QCoreApplication::translate("MainWindow", "Z", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "Y", nullptr));

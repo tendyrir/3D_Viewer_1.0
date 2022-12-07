@@ -32,12 +32,12 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 QT_MOC_LITERAL(0, 10), // "MainWindow"
 QT_MOC_LITERAL(11, 25), // "on_choose_OBJFile_clicked"
 QT_MOC_LITERAL(37, 0), // ""
-QT_MOC_LITERAL(38, 13), // "changeRotateX"
-QT_MOC_LITERAL(52, 11) // "changeScale"
+QT_MOC_LITERAL(38, 11), // "changeScale"
+QT_MOC_LITERAL(50, 13) // "changeRotateX"
 
     },
     "MainWindow\0on_choose_OBJFile_clicked\0"
-    "\0changeRotateX\0changeScale"
+    "\0changeScale\0changeRotateX"
 };
 #undef QT_MOC_LITERAL
 
@@ -74,8 +74,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         (void)_t;
         switch (_id) {
         case 0: _t->on_choose_OBJFile_clicked(); break;
-        case 1: _t->changeRotateX(); break;
-        case 2: _t->changeScale(); break;
+        case 1: _t->changeScale(); break;
+        case 2: _t->changeRotateX(); break;
         default: ;
         }
     }

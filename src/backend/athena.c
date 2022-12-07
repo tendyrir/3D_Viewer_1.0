@@ -38,8 +38,6 @@ int s21_create_matrix(int rows, int columns, matrix_t *result) {
        for (int j = 0; j < result->columns; j++) {
          for (int k = 0; k < B->rows; k++) {
            result->matrix[i][j] += A->matrix[i][k] * B->matrix[k][j];
-
-
          }
        }
 
@@ -47,52 +45,6 @@ int s21_create_matrix(int rows, int columns, matrix_t *result) {
    }
    return error;
  }
-
-//int s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
-//  int errCode = matrix_checker(A) || matrix_checker(B);
-
-//  if (!errCode) {
-//    errCode = possibility_mult(A, B);
-//    if (!errCode) mat_multiplicate(A, B, result);
-//  }
-//  return errCode;
-//}
-
-//int possibility_mult(matrix_t *A, matrix_t *B) {
-//  // Проверка, возможно ли умножение между матрицами
-//  int errCode = 0;
-
-//  if (A->columns != B->rows) {
-//    errCode = 2;
-//  }
-//  return errCode;
-//}
-
-//void mat_multiplicate(matrix_t *A, matrix_t *B, matrix_t *result) {
-//  // Логика перемножения матриц
-//  int flag = s21_create_matrix(A->rows, B->columns, result);
-
-//  if (flag == 0) {
-//    for (int i = 0; i < A->rows; i++) {
-//      for (int j = 0; j < B->columns; j++) {
-//        for (int k = 0; k < B->rows; k++) {
-//          result->matrix[i][j] += A->matrix[i][k] * B->matrix[k][j];
-//        }
-//      }
-//    }
-//  }
-//}
-
-//int matrix_checker(matrix_t *A) {
-//  // Проверка матрицы на корректность
-//  int errCode = 0;
-
-//  if ((A == NULL) || (A->columns <= 0) || (A->rows <= 0) ||
-//      (A->matrix == NULL)) {
-//    errCode = 1;
-//  }
-//  return errCode;
-//}
 
 void s21_remove_matrix(matrix_t *A) {
   if (A != NULL && A->matrix != NULL && A->columns > 0 && A->rows > 0) {
@@ -254,36 +206,33 @@ void core_algorithm(matrix_t *crd_main, matrix_t *move, int type) {
 void conv_to_matr(ObjData_t *data,
                   matrix_t *crd_main) {  // перевод из массива в матрицу
 
-  //    s21_create_matrix(data->vertex_array.coords_number / 3, 4, crd_main);
-
   for (int i = 0; i < data->vertex_array.coords_number; i++) {
     crd_main->matrix[i / 3][i % 3] = data->vertex_array.coords_array[i];
     if (i % 3 == 2) crd_main->matrix[i / 3][3] = 0.0;
   }
 }
 
-void conv_from_matr_to_array_copy(ObjData_t* data, double *coords_array_copy,
-                    matrix_t *crd_main) {  // перевод из матрицы в массив
-  for (int i = 0; i < data->vertex_array.coords_number; i++) {
-    coords_array_copy[i] = crd_main->matrix[i / 3][i % 3];
-  }
+//void conv_from_matr_to_array_copy(ObjData_t* data, double *coords_array_copy, matrix_t *crd_main) {  // перевод из матрицы в массив
+//  for (int i = 0; i < data->vertex_array.coords_number; i++) {
+//    coords_array_copy[i] = crd_main->matrix[i / 3][i % 3];
+//  }
+//}
+
+
+void conv_from_matr(ObjData_t* data, matrix_t *crd_main) { // перевод из матрицы в массив
+    for (int i = 0; i < data->vertex_array.coords_number; i++) {
+        data->vertex_array.coords_array[i] = crd_main->matrix[i / 3][i % 3];
+    }
 }
 
-
-void copy_matrix(matrix_t* src, matrix_t* dest) {
-
-    // checking if rows = rows col = cols
-
-    for (int i = 0; i < src->rows; i++) {
-        for (int j = 0; j < src->columns; j++) {
-
-            dest->matrix[i][j] = src->matrix[i][j];
-
-//            printf("%lf ", dest->matrix[i][j]);
+void model_scale(matrix_t*  vertexes, double scale) {
+    if (scale != 0) {
+        for (int i = 1; i < vertexes->rows; i++) {
+            for (int j = 0; j < 3; j++) {
+                vertexes->matrix[i][j] *= scale;
+            }
         }
-//        printf("\n");
     }
-
 }
 
 

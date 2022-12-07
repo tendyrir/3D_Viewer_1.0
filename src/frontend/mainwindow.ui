@@ -156,13 +156,16 @@ border-radius: 4px;
 }</string>
        </property>
        <property name="minimum">
-        <number>0</number>
+        <number>1</number>
        </property>
        <property name="maximum">
         <number>200</number>
        </property>
+       <property name="pageStep">
+        <number>1</number>
+       </property>
        <property name="value">
-        <number>0</number>
+        <number>50</number>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -181,7 +184,7 @@ border-radius: 4px;
         <string notr="true">font: 14pt &quot;.AppleSystemUIFont&quot;;</string>
        </property>
        <property name="text">
-        <string>0</string>
+        <string>50</string>
        </property>
       </widget>
      </widget>
