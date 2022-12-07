@@ -40,6 +40,11 @@ private slots:
     void on_choose_OBJFile_clicked();
     void changeScale();
     void changeRotateX();
+    void changeRotateY();
+    void changeRotateZ();
+    void changeMoveX();
+    void changeMoveY();
+    void changeMoveZ();
 
 private:
     void init ();

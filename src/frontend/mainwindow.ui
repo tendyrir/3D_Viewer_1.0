@@ -159,7 +159,10 @@ border-radius: 4px;
         <number>1</number>
        </property>
        <property name="maximum">
-        <number>200</number>
+        <number>100</number>
+       </property>
+       <property name="singleStep">
+        <number>1</number>
        </property>
        <property name="pageStep">
         <number>1</number>
@@ -611,10 +614,10 @@ border-radius: 4px;
 }</string>
        </property>
        <property name="minimum">
-        <number>-50</number>
+        <number>-180</number>
        </property>
        <property name="maximum">
-        <number>50</number>
+        <number>180</number>
        </property>
        <property name="value">
         <number>0</number>
@@ -688,10 +691,10 @@ border-radius: 4px;
 }</string>
        </property>
        <property name="minimum">
-        <number>-50</number>
+        <number>-180</number>
        </property>
        <property name="maximum">
-        <number>50</number>
+        <number>180</number>
        </property>
        <property name="value">
         <number>0</number>
@@ -765,10 +768,10 @@ border-radius: 4px;
 }</string>
        </property>
        <property name="minimum">
-        <number>-50</number>
+        <number>-180</number>
        </property>
        <property name="maximum">
-        <number>50</number>
+        <number>180</number>
        </property>
        <property name="value">
         <number>0</number>

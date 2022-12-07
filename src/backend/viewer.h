@@ -69,7 +69,11 @@ int   s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
 void  s21_remove_matrix(matrix_t *A);
 
 void  copy_matrix(matrix_t* src, matrix_t* dest);
+
+// Additional
 void model_scale(matrix_t*  vertexes, double scale);
+void model_rotate(matrix_t *vertexes, char coord, double angle);
+void model_move(matrix_t *vertexes, char coord, double value);
 
 //int possibility_mult(matrix_t *A, matrix_t *B);
 //void mat_multiplicate(matrix_t *A, matrix_t *B, matrix_t *result);

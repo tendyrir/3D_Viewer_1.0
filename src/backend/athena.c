@@ -235,5 +235,43 @@ void model_scale(matrix_t*  vertexes, double scale) {
     }
 }
 
+void model_rotate(matrix_t *vertexes, char coord, double angle) {
+    if (coord == 'x') {
+        for (int i = 1; i < vertexes->rows; i++) {
+            double temp_y = vertexes->matrix[i][1];
+            double temp_z = vertexes->matrix[i][2];
+            vertexes->matrix[i][1] = cos(angle) * temp_y - sin(angle) * temp_z;
+            vertexes->matrix[i][2] = sin(angle) * temp_y + cos(angle) * temp_z;
+        }
+    } else if (coord == 'y') {
+        for (int i = 1; i < vertexes->rows; i++) {
+            double temp_x = vertexes->matrix[i][0];
+            double temp_z = vertexes->matrix[i][2];
+            vertexes->matrix[i][0] = cos(angle) * temp_x - sin(angle) * temp_z;
+            vertexes->matrix[i][2] = sin(angle) * temp_x + cos(angle) * temp_z;
+        }
+    } else if (coord == 'z') {
+        for (int i = 1; i < vertexes->rows; i++) {
+            double temp_x = vertexes->matrix[i][0];
+            double temp_y = vertexes->matrix[i][1];
+            vertexes->matrix[i][0] = cos(angle) * temp_x - sin(angle) * temp_y;
+            vertexes->matrix[i][1] = sin(angle) * temp_x + cos(angle) * temp_y;
+        }
+    }
+}
+
+void model_move(matrix_t *vertexes, char coord, double value) {
+    int index;
+    if (coord == 'x') {
+        index = 0;
+    } else if (coord == 'y') {
+        index = 1;
+    } else if (coord == 'z') {
+        index = 2;
+    }
+    for (int i = 1; i < vertexes->rows; i++) {
+        vertexes->matrix[i][index] += value;
+    }
+}
 
 
