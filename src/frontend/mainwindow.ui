@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>2120</width>
-    <height>1269</height>
+    <width>1600</width>
+    <height>1000</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -20,29 +20,13 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="openGL" name="openGLWidget">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>40</y>
-      <width>1791</width>
-      <height>1161</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>800</width>
-      <height>600</height>
-     </size>
-    </property>
-   </widget>
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>2101</width>
-      <height>1201</height>
+      <x>0</x>
+      <y>-10</y>
+      <width>1600</width>
+      <height>990</height>
      </rect>
     </property>
     <property name="widgetResizable">
@@ -53,8 +37,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>2099</width>
-       <height>1199</height>
+       <width>1598</width>
+       <height>988</height>
       </rect>
      </property>
      <widget class="QLabel" name="label_10">
@@ -1391,126 +1375,141 @@ border-radius: 4px;
        <string/>
       </property>
      </widget>
+     <widget class="openGL" name="openGLWidget">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>90</y>
+        <width>1271</width>
+        <height>891</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>800</width>
+        <height>600</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="screenshot_jpeg">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>40</y>
+        <width>81</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton {
+     font: 700 13pt &quot;Arial&quot;;
+	color: white;
+	background-color:rgb(127, 187, 255);
+	border: 1px solid rgb(191, 210, 255);
+	border-radius: 5px;
+ }
+
+ QPushButton:hover {
+     background-color: blue;
+ }</string>
+      </property>
+      <property name="text">
+       <string>jpeg</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="screenshot_bmp">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>40</y>
+        <width>81</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton {
+     font: 700 13pt &quot;Arial&quot;;
+	color: white;
+	background-color:rgb(127, 187, 255);
+	border: 1px solid rgb(191, 210, 255);
+	border-radius: 5px;
+ }
+
+ QPushButton:hover {
+     background-color: blue;
+ }</string>
+      </property>
+      <property name="text">
+       <string>bmp</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="gif_button">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>40</y>
+        <width>81</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton {
+     font: 700 13pt &quot;Arial&quot;;
+	color: white;
+	background-color:rgb(127, 187, 255);
+	border: 1px solid rgb(191, 210, 255);
+	border-radius: 5px;
+ }
+
+ QPushButton:hover {
+     background-color: blue;
+ }</string>
+      </property>
+      <property name="text">
+       <string>GIF</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="choose_OBJFile">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>40</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton {
+     font: 700 13pt &quot;Arial&quot;;
+	color: white;
+	background-color:rgb(127, 187, 255);
+	border: 1px solid rgb(191, 210, 255);
+	border-radius: 5px;
+ }
+
+ QPushButton:hover {
+     background-color: blue;
+ }</string>
+      </property>
+      <property name="text">
+       <string>OBJ File</string>
+      </property>
+     </widget>
     </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>1910</x>
-      <y>50</y>
-      <width>81</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"> QPushButton {
-     font: 700 13pt &quot;Arial&quot;;
-	color: white;
-	background-color:rgb(127, 187, 255);
-	border: 1px solid rgb(191, 210, 255);
-	border-radius: 5px;
- }
-
- QPushButton:hover {
-     background-color: blue;
- }</string>
-    </property>
-    <property name="text">
-     <string>BMP</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="choose_OBJFile">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>50</y>
-      <width>151</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"> QPushButton {
-     font: 700 13pt &quot;Arial&quot;;
-	color: white;
-	background-color:rgb(127, 187, 255);
-	border: 1px solid rgb(191, 210, 255);
-	border-radius: 5px;
- }
-
- QPushButton:hover {
-     background-color: blue;
- }</string>
-    </property>
-    <property name="text">
-     <string>OBJ File</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>1810</x>
-      <y>50</y>
-      <width>81</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"> QPushButton {
-     font: 700 13pt &quot;Arial&quot;;
-	color: white;
-	background-color:rgb(127, 187, 255);
-	border: 1px solid rgb(191, 210, 255);
-	border-radius: 5px;
- }
-
- QPushButton:hover {
-     background-color: blue;
- }</string>
-    </property>
-    <property name="text">
-     <string>JPG</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>2010</x>
-      <y>50</y>
-      <width>81</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"> QPushButton {
-     font: 700 13pt &quot;Arial&quot;;
-	color: white;
-	background-color:rgb(127, 187, 255);
-	border: 1px solid rgb(191, 210, 255);
-	border-radius: 5px;
- }
-
- QPushButton:hover {
-     background-color: blue;
- }</string>
-    </property>
-    <property name="text">
-     <string>GIF</string>
-    </property>
-   </widget>
-   <zorder>scrollArea</zorder>
-   <zorder>openGLWidget</zorder>
-   <zorder>pushButton_2</zorder>
-   <zorder>choose_OBJFile</zorder>
-   <zorder>pushButton</zorder>
-   <zorder>pushButton_3</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>2120</width>
-     <height>22</height>
+     <width>1600</width>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuSuchka">

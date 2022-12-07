@@ -8,6 +8,7 @@
 #include <QWidget>
 #include <QMessageBox>
 #include <QToolBar>
+#include <QImage>
 #include "opengl.h"
 #include <QtWidgets>
 #include <QColorDialog>
@@ -23,8 +24,10 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QString pathProject = QDir::homePath();
 
 private slots:
+    void on_screenshotButton_clicked();  //tendyrir
     void on_choose_OBJFile_clicked();
     void changeScale();
 

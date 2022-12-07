@@ -15,7 +15,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     QLabel *labelScale = ui->lineScale; //  значение
 
-
     connect(ui->MoveX, &QSlider::valueChanged, [labelMoveX](int value) {
       labelMoveX->setText( QString("%0").arg(value));
     });
@@ -47,7 +46,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 //    connect(ui->Scale, &QSlider::valueChanged, ui->openGLWidget,
 //            &openGL::setScale);
 
-    connect(ui->Scale, SIGNAL(valueChanged(int)), this, SLOT(changeScale()));
+    connect(ui->screenshot_bmp, SIGNAL(clicked()), (this), SLOT(on_screenshotButton_clicked()));
+    connect(ui->screenshot_jpeg, SIGNAL(clicked()), (this), SLOT(on_screenshotButton_clicked()));
+
+
 }
 
 MainWindow::~MainWindow() {
@@ -77,7 +79,7 @@ void MainWindow::init () {
     ui->MoveX->setRange(-50, 50); // устнавливаем диапазон значений
     ui->MoveX->setSingleStep(1);
     ui->MoveX->setValue(0); // задаем стартовое значение
-   ui->MoveX->setTickInterval(2); // задаем шаг для рисования рисок
+    ui->MoveX->setTickInterval(2); // задаем шаг для рисования рисок
 
     ui->MoveY->setRange(-50, 50);
     ui->MoveY->setSingleStep(1);
@@ -99,4 +101,52 @@ void MainWindow::changeScale() {
     conv_from_matr(&ui->openGLWidget->data_obj, &ui->openGLWidget->data_matrix);
     ui->openGLWidget->update();
 }
+
+/** tendyrir screenshot hard coding skills **/
+
+void MainWindow::on_screenshotButton_clicked()
+{
+    QPushButton *btn = (QPushButton *)sender();
+    QString butVal = btn->text();
+    QString filename;
+
+    if (QString::compare(butVal, "bmp", Qt::CaseInsensitive) == 0) {
+        filename = QFileDialog::getSaveFileName(this, tr("Save File"), pathProject, tr("BMP files (*.bmp)"));
+    } else if (QString::compare(butVal, "jpeg", Qt::CaseInsensitive) == 0) {
+        filename = QFileDialog::getSaveFileName(this, tr("Save File"), pathProject, tr("JPEG files (*.jpeg)"));
+    }
+
+    QImage screenshot = ui->openGLWidget->grabFramebuffer();
+    screenshot.save(filename, nullptr, 80);
+
+}
+
+//QPushButton *btn = (QPushButton *)sender();
+//QString butVal = btn->text();
+
+//QDir *pathDir = new QDir();
+//pathDir->mkdir(pathProject);
+//pathDir->mkdir(pathProject + "/screenshots");
+
+//QDateTime dateTime = dateTime.currentDateTime();
+//QString currentDateTime = dateTime.toString("yyyy_MM_dd_HHmmss_zzz");
+
+//if (QString::compare(butVal, "bmp", Qt::CaseInsensitive) == 0) {
+//  ui->btn_screen_bmp->setEnabled(false);
+//  ui->OGLwidget->grab().save(pathProject + "screenshots/" + currentDateTime +
+//                             ".bmp");
+//  ui->btn_screen_bmp->setEnabled(true);
+//} else if (QString::compare(butVal, "jpg", Qt::CaseInsensitive) == 0) {
+//  ui->btn_screen_jpg->setEnabled(false);
+//  ui->OGLwidget->grab().save(pathProject + "screenshots/" + currentDateTime +
+//                             ".jpg");
+//  ui->btn_screen_jpg->setEnabled(true);
+//} else if (QString::compare(butVal, "gif", Qt::CaseInsensitive) == 0) {
+//  ui->btn_screen_gif->setEnabled(false);
+//  pathDir->mkdir(pathProject + "/screenshots/gif_obj/");
+//  startTime = 0, tmpTime = 1000 / GifFps;
+//  timer = new QTimer(this);
+//  connect(timer, SIGNAL(timeout()), this, SLOT(oneGif()));
+//  timer->start(1000 / GifFps);
+//}
 
