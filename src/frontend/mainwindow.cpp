@@ -59,7 +59,7 @@ MainWindow::~MainWindow() {
 void MainWindow::on_choose_OBJFile_clicked() {
 //    ui->openGLWidget->data_obj = {0};
 
-    QString file = QFileDialog::getOpenFileName(this, tr("Choose File"), "/home");
+    QString file = QFileDialog::getOpenFileName(this, tr("Choose File"), "/Users/tendyrir/Desktop/3D_Viewer_1.0/src/models");
 
     if(file.isEmpty())
         return;

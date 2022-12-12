@@ -11,6 +11,30 @@ int parse_file(ObjData_t* data, char* obj_file_name) {
     error = allocate_memory(data);
 /*  Заполнение массивов                                   */
     error = get_data_arrays(fp, data);
+
+
+    /*  помещение модельки в экран
+
+    0. Проверить есть ли среди координат больше единицы
+    */
+    // for (int i = 0; i < data->vertex_array.coords_number; i++) {
+
+    //     if (data->vertex_array.coords_array[i] > 1) {            
+    //         int more_than_one = 1;
+    //         printf("найдена координата больше 1");
+    //     }
+    // }
+
+    // 1. поделить все координаты на максимальную
+    //     1. пройтись по массиву и найти максимальную
+    //     2. пройтись и поделить все значения на нее    
+    // */
+
+
+
+
+
+
     fclose(fp);
     return error;
 }
