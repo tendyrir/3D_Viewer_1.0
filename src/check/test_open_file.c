@@ -40,7 +40,7 @@ Suite *suite_open_file(void) {
   s = suite_create("parse_file");
   tc_core = tcase_create("Core");
 
-  tcase_add_test(tc_core, test_1);
+  tcase_add_test(tc_core, test_open_valid_cube);
   tcase_add_test(tc_core, test_2);
 
 

@@ -14,7 +14,6 @@
 //   // s21_parser_result code_check = S21_PARSER_ERROR_FILE;
 //   // test_parser_fail(obj_path, &data, code_check);
 //   parse_file(&data, obj_path);
-
 //   free(data.vertex_array.coords_array);
 //   free(data.index_array);
 

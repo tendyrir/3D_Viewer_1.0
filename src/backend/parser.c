@@ -12,28 +12,12 @@ int parse_file(ObjData_t* data, char* obj_file_name) {
 /*  Заполнение массивов                                   */
     error = get_data_arrays(fp, data);
 
+    center_model(data);
 
     /*  помещение модельки в экран
 
     0. Проверить есть ли среди координат больше единицы
     */
-    // for (int i = 0; i < data->vertex_array.coords_number; i++) {
-
-    //     if (data->vertex_array.coords_array[i] > 1) {            
-    //         int more_than_one = 1;
-    //         printf("найдена координата больше 1");
-    //     }
-    // }
-
-    // 1. поделить все координаты на максимальную
-    //     1. пройтись по массиву и найти максимальную
-    //     2. пройтись и поделить все значения на нее    
-    // */
-
-
-
-
-
 
     fclose(fp);
     return error;
@@ -215,3 +199,116 @@ void print_vertex_array(ObjData_t* data) {
     }
     printf("\n счетчик в конце равен: %d \n", data->index_array_counter);
 }
+
+
+
+void center_model(ObjData_t data) {
+
+
+    if (find_max_coord(data)) {
+        divide_all_coords(data, );
+    }
+
+
+    /*
+    1. поделить все координаты на максимальную
+        1. пройтись по массиву и найти максимальную
+        2. пройтись и поделить все значения на нее    
+    */
+
+    for (int i = 0; i < data->vertex_array.coords_number; i++) {
+        data->vertex_array.coords_array[i] = data->vertex_array.coords_array[i] / max_coord;
+    }
+
+
+    
+    /* 
+    2. Поставить модельку в центр
+    */
+
+    double max_x = data->vertex_array.coords_array[0];
+    double min_x = data->vertex_array.coords_array[0];
+
+    double max_y = data->vertex_array.coords_array[1];
+    double min_y = data->vertex_array.coords_array[1];
+
+    double max_z = data->vertex_array.coords_array[2];
+    double min_z = data->vertex_array.coords_array[2];
+
+    int i = 0;
+
+    while (i < data->vertex_array.coords_number) {
+
+        if (data->vertex_array.coords_array[i] > max_x) {
+            max_x = data->vertex_array.coords_array[i];
+        }
+
+        if (data->vertex_array.coords_array[i] < min_x) {
+            min_x = data->vertex_array.coords_array[i];
+        }
+        i++;
+
+        if (data->vertex_array.coords_array[i] > max_y) {
+            max_y = data->vertex_array.coords_array[i];
+        }
+        if (data->vertex_array.coords_array[i] < min_y) {
+            min_y = data->vertex_array.coords_array[i];
+        }
+        i++;
+
+
+        if (data->vertex_array.coords_array[i] > max_z) {
+            max_z = data->vertex_array.coords_array[i];
+        }
+        if (data->vertex_array.coords_array[i] < min_z) {
+            min_z = data->vertex_array.coords_array[i];
+        }
+        i++;
+        
+
+    }
+
+    printf("max x = %lf min x = %lf max y = %lf min y = %lf max z = %lf min z = %lf\n", max_x, min_x, max_y, min_y, max_z, min_z);
+
+    double diff_x = (min_x + (max_x - min_x) / 2);
+    double diff_y = (min_y + (max_y - min_y) / 2);
+    double diff_z = (min_z + (max_z - min_z) / 2);
+
+    
+    int j = 0;
+
+    while(j < data->vertex_array.coords_number) {
+
+        data->vertex_array.coords_array[j] -= diff_x;
+        j++;
+        data->vertex_array.coords_array[j] -= diff_y;
+        j++;
+        data->vertex_array.coords_array[j] -= diff_z;
+        j++;
+    }
+}
+
+int find_max_coord(ObjData_t data) {
+    int max_coord = data->vertex_array.coords_array[0];
+    for (int i = 0; i < data->vertex_array.coords_number; i++) {
+        // printf("найдена координата больше 1 %d\n", more_than_one);
+        // printf("максимальная координата: %d\n", max_coord);
+        if (data->vertex_array.coords_array[i] > max_coord) {
+            max_coord = data->vertex_array.coords_array[i];
+        }
+    }
+
+    // printf("max_coord: %d", max_coord);
+    return max_coord;
+}
+
+
+int check_coords_more_one(ObjData_t data) {
+    int check_if_coords_have_more_one = 0;
+    for (int i = 0; i < data->vertex_array.coords_number; i++) {
+        if (data->vertex_array.coords_array[i] > 1.0) {
+            check_if_coords_have_more_one = 1;
+        }
+    }
+    return check_if_coords_have_more_one;
+} 

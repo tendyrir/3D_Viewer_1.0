@@ -3,7 +3,7 @@
     "arguments": [
         "clang",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-BhYycj/clang-uiheader-wdaruI",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-eEhGhZ/clang-uiheader-MuZWSK",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -72,7 +72,7 @@
     "arguments": [
         "clang",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-BhYycj/clang-uiheader-wdaruI",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-eEhGhZ/clang-uiheader-MuZWSK",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -141,7 +141,7 @@
     "arguments": [
         "clang",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-BhYycj/clang-uiheader-wdaruI",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-eEhGhZ/clang-uiheader-MuZWSK",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -210,7 +210,7 @@
     "arguments": [
         "clang",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-BhYycj/clang-uiheader-wdaruI",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-eEhGhZ/clang-uiheader-MuZWSK",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -279,7 +279,7 @@
     "arguments": [
         "clang",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-BhYycj/clang-uiheader-wdaruI",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-eEhGhZ/clang-uiheader-MuZWSK",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -348,7 +348,7 @@
     "arguments": [
         "clang",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-BhYycj/clang-uiheader-wdaruI",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-eEhGhZ/clang-uiheader-MuZWSK",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -417,7 +417,7 @@
     "arguments": [
         "clang",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-BhYycj/clang-uiheader-wdaruI",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-eEhGhZ/clang-uiheader-MuZWSK",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -484,7 +484,7 @@
     "arguments": [
         "clang",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-BhYycj/clang-uiheader-wdaruI",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n00026rh000jp4/T/QtCreator-eEhGhZ/clang-uiheader-MuZWSK",
         "-nostdinc",
         "-nostdinc++",
         "-g",
