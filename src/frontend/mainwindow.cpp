@@ -85,16 +85,6 @@ void MainWindow::init() {
     ui->MoveX->setValue(0);
     ui->MoveY->setValue(0);
     ui->MoveZ->setValue(0);
-//  ui->MoveX->setRange(-50, 50);  // устнавливаем диапазон значений
-//  ui->MoveX->setSingleStep(1);
-//  ui->MoveX->setValue(0);  // задаем стартовое значение
-//  ui->MoveX->setTickInterval(2);  // задаем шаг для рисования рисок
-
-//  ui->MoveY->setRange(-50, 50);
-//  ui->MoveY->setSingleStep(1);
-
-//  ui->MoveZ->setRange(-50, 50);
-//  ui->MoveZ->setSingleStep(1);
 }
 
 void MainWindow::changeScale() {
