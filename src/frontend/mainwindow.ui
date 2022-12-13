@@ -1118,7 +1118,7 @@ border-radius: 4px;
         <string>Size:</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="color_verticies">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -1301,7 +1301,7 @@ border-radius: 4px;
         <string>Size:</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="color_edges">
        <property name="geometry">
         <rect>
          <x>10</x>

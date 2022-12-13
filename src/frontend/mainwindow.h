@@ -11,6 +11,7 @@
 #include <QtWidgets>
 #include <QColorDialog>
 #include <math.h>
+#include <QSettings>
 
 extern "C" {
 #include "../backend/viewer.h"
@@ -35,6 +36,9 @@ public:
     double currentSliderValueMoveX = 0;
     double currentSliderValueMoveY = 0;
     double currentSliderValueMoveZ = 0;
+    QColor *edges_color = new QColor(0, 0, 0, 255);
+    QColor *back_color = new QColor(214, 214, 214, 255);
+    QColor *vertex_color = new QColor(0, 0, 255, 255);
 
 private slots:
     void on_choose_OBJFile_clicked();
@@ -45,6 +49,11 @@ private slots:
     void changeMoveX();
     void changeMoveY();
     void changeMoveZ();
+//    void setColorVerticies();
+
+    void on_color_edges_clicked();
+
+    void on_color_verticies_clicked();
 
 private:
     void init ();

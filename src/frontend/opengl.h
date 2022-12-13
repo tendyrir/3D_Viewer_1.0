@@ -18,6 +18,9 @@ public:
     matrix_t data_matrix;
     matrix_t move_matrix;
     ObjData_t* data_obj_openGL = NULL;
+    QColor *color_edge = new QColor(214, 214, 214, 255);
+    QColor *color_back = new QColor(0, 0, 0, 255);
+    QColor *color_vertex = new QColor(0, 0, 255, 255);
 
 protected:
     void initializeGL() override;

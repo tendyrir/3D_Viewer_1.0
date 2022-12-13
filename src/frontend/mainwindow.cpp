@@ -53,6 +53,9 @@ MainWindow::MainWindow(QWidget *parent)
   connect(ui->MoveX, SIGNAL(valueChanged(int)), this, SLOT(changeMoveX()));
   connect(ui->MoveY, SIGNAL(valueChanged(int)), this, SLOT(changeMoveY()));
   connect(ui->MoveZ, SIGNAL(valueChanged(int)), this, SLOT(changeMoveZ()));
+
+//  connect(ui->color_edges,SIGNAL(clicked()),this,SLOT(setColorEdges()));
+//  connect(ui->color_verticies,SIGNAL(clicked()),this,SLOT(setColorVerticies()));
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -184,3 +187,37 @@ void MainWindow::changeMoveZ() {
         ui->openGLWidget->update();
     }
 }
+
+
+//void MainWindow::setColorVerticies() {
+//    QColor color = QColorDialog::getColor();
+//        if (color.isValid()) {
+//            *vertex_color = color;
+//            ui->openGLWidget->color_vertex = vertex_color;
+//            ui->openGLWidget->update();
+//        }
+//}
+
+
+
+void MainWindow::on_color_edges_clicked()
+{
+    QColor color = QColorDialog::getColor();
+        if (color.isValid()) {
+            *edges_color = color;
+            ui->openGLWidget->color_edge = edges_color;
+            ui->openGLWidget->update();
+        }
+}
+
+
+void MainWindow::on_color_verticies_clicked()
+{
+    QColor color = QColorDialog::getColor();
+        if (color.isValid()) {
+            *vertex_color = color;
+            ui->openGLWidget->color_vertex = vertex_color;
+            ui->openGLWidget->update();
+        }
+}
+
