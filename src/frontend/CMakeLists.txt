@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.5)
-
 project(project VERSION 0.1 LANGUAGES CXX C)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -17,18 +16,37 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS OpenGL)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS OpenGLWidgets)
 
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        opengl.cpp
+    main.cpp
+    mainwindow.cpp
+    opengl.cpp
 
-        mainwindow.h
-        opengl.h
-        
-        ../backend/parser.c
-        ../backend/viewer.h
-        ../backend/athena.c
-        
-        mainwindow.ui
+    mainwindow.h
+    opengl.h
+
+    ../backend/parser.c
+    ../backend/viewer.h
+    ../backend/athena.c
+
+    ../giflib/dgif_lib.c
+    ../giflib/egif_lib.c
+    ../giflib/gif_err.c
+    ../giflib/gif_font.c
+    ../giflib/gif_hash.c
+    ../giflib/gifalloc.c
+    ../giflib/quantize.c
+
+    ../giflib/gif_lib_private.h
+    ../giflib/gif_lib.h
+    ../giflib/gif_hash.h
+
+
+
+    ../gifimage/qgifglobal.h
+    ../gifimage/qgifimage_p.h
+    ../gifimage/qgifimage.cpp
+    ../gifimage/qgifimage.h
+
+    mainwindow.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -36,17 +54,19 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
     )
+
 # Define target properties for Android with Qt 6 as:
-#    set_property(TARGET project APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
+# set_property(TARGET project APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
+# ${CMAKE_CURRENT_SOURCE_DIR}/android)
 # For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
     if(ANDROID)
         add_library(project SHARED
             ${PROJECT_SOURCES}
         )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
+
+    # Define properties for Android with Qt 5 after find_package() calls as:
+    # set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         add_executable(project
             ${PROJECT_SOURCES}

@@ -24,6 +24,10 @@ int parse_file(ObjData_t* data, char* obj_file_name) {
 }
 
 int get_data_numbers(FILE* fp, ObjData_t* data) {
+
+    data->index_array_size =  0;
+    data->vertex_array.coords_number = 0;
+
     int     error            = 0;
     int     vertex_counter   = 0;
     int     total_indices    = 0;

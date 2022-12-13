@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1600</width>
-    <height>1000</height>
+    <width>2120</width>
+    <height>1269</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -20,13 +20,29 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <widget class="openGL" name="openGLWidget">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>100</y>
+      <width>1791</width>
+      <height>1101</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>800</width>
+      <height>600</height>
+     </size>
+    </property>
+   </widget>
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>-10</y>
-      <width>1600</width>
-      <height>990</height>
+      <x>10</x>
+      <y>10</y>
+      <width>2101</width>
+      <height>1201</height>
      </rect>
     </property>
     <property name="widgetResizable">
@@ -37,8 +53,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>1598</width>
-       <height>988</height>
+       <width>2099</width>
+       <height>1199</height>
       </rect>
      </property>
      <widget class="QLabel" name="label_10">
@@ -143,10 +159,16 @@ border-radius: 4px;
         <number>1</number>
        </property>
        <property name="maximum">
-        <number>300</number>
+        <number>100</number>
+       </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
+       <property name="pageStep">
+        <number>1</number>
        </property>
        <property name="value">
-        <number>150</number>
+        <number>50</number>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -165,7 +187,7 @@ border-radius: 4px;
         <string notr="true">font: 14pt &quot;.AppleSystemUIFont&quot;;</string>
        </property>
        <property name="text">
-        <string>150</string>
+        <string>50</string>
        </property>
       </widget>
      </widget>
@@ -249,10 +271,13 @@ border-radius: 4px;
 }</string>
        </property>
        <property name="minimum">
-        <number>-180</number>
+        <number>-360</number>
        </property>
        <property name="maximum">
-        <number>180</number>
+        <number>360</number>
+       </property>
+       <property name="pageStep">
+        <number>1</number>
        </property>
        <property name="value">
         <number>0</number>
@@ -326,10 +351,13 @@ border-radius: 4px;
 }</string>
        </property>
        <property name="minimum">
-        <number>-180</number>
+        <number>-360</number>
        </property>
        <property name="maximum">
-        <number>180</number>
+        <number>360</number>
+       </property>
+       <property name="pageStep">
+        <number>1</number>
        </property>
        <property name="value">
         <number>0</number>
@@ -419,12 +447,18 @@ border-radius: 4px;
 }</string>
        </property>
        <property name="minimum">
-        <number>-180</number>
+        <number>-360</number>
        </property>
        <property name="maximum">
-        <number>180</number>
+        <number>360</number>
+       </property>
+       <property name="pageStep">
+        <number>1</number>
        </property>
        <property name="value">
+        <number>0</number>
+       </property>
+       <property name="sliderPosition">
         <number>0</number>
        </property>
        <property name="orientation">
@@ -592,10 +626,13 @@ border-radius: 4px;
 }</string>
        </property>
        <property name="minimum">
-        <number>-50</number>
+        <number>-180</number>
        </property>
        <property name="maximum">
-        <number>50</number>
+        <number>180</number>
+       </property>
+       <property name="pageStep">
+        <number>1</number>
        </property>
        <property name="value">
         <number>0</number>
@@ -669,10 +706,13 @@ border-radius: 4px;
 }</string>
        </property>
        <property name="minimum">
-        <number>-50</number>
+        <number>-180</number>
        </property>
        <property name="maximum">
-        <number>50</number>
+        <number>180</number>
+       </property>
+       <property name="pageStep">
+        <number>1</number>
        </property>
        <property name="value">
         <number>0</number>
@@ -746,10 +786,13 @@ border-radius: 4px;
 }</string>
        </property>
        <property name="minimum">
-        <number>-50</number>
+        <number>-180</number>
        </property>
        <property name="maximum">
-        <number>50</number>
+        <number>180</number>
+       </property>
+       <property name="pageStep">
+        <number>1</number>
        </property>
        <property name="value">
         <number>0</number>
@@ -1075,7 +1118,7 @@ border-radius: 4px;
         <string>Size:</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="color_verticies">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -1258,7 +1301,7 @@ border-radius: 4px;
         <string>Size:</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="color_edges">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -1375,32 +1418,11 @@ border-radius: 4px;
        <string/>
       </property>
      </widget>
-     <widget class="openGL" name="openGLWidget">
+     <widget class="QPushButton" name="button_jpeg">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>90</y>
-        <width>1271</width>
-        <height>891</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>800</width>
-        <height>600</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>13</pointsize>
-       </font>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="screenshot_jpeg">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>40</y>
+        <x>470</x>
+        <y>30</y>
         <width>81</width>
         <height>41</height>
        </rect>
@@ -1422,11 +1444,11 @@ border-radius: 4px;
        <string>jpeg</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="screenshot_bmp">
+     <widget class="QPushButton" name="button_bmp">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>40</y>
+        <x>560</x>
+        <y>30</y>
         <width>81</width>
         <height>41</height>
        </rect>
@@ -1448,11 +1470,11 @@ border-radius: 4px;
        <string>bmp</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="gif_button">
+     <widget class="QPushButton" name="button_gif">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>40</y>
+        <x>650</x>
+        <y>30</y>
         <width>81</width>
         <height>41</height>
        </rect>
@@ -1471,14 +1493,14 @@ border-radius: 4px;
  }</string>
       </property>
       <property name="text">
-       <string>GIF</string>
+       <string>gif</string>
       </property>
      </widget>
      <widget class="QPushButton" name="choose_OBJFile">
       <property name="geometry">
        <rect>
-        <x>580</x>
-        <y>40</y>
+        <x>310</x>
+        <y>30</y>
         <width>151</width>
         <height>41</height>
        </rect>
@@ -1502,13 +1524,15 @@ border-radius: 4px;
      </widget>
     </widget>
    </widget>
+   <zorder>scrollArea</zorder>
+   <zorder>openGLWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1600</width>
+     <width>2120</width>
      <height>24</height>
     </rect>
    </property>

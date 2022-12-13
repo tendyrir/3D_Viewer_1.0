@@ -8,10 +8,14 @@
 #include <QWidget>
 #include <QMessageBox>
 #include <QToolBar>
-#include <QImage>
-#include "opengl.h"
 #include <QtWidgets>
 #include <QColorDialog>
+#include <math.h>
+#include <QSettings>
+
+extern "C" {
+#include "../backend/viewer.h"
+}
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,13 +27,36 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
     QString pathProject = QDir::homePath();
+    ~MainWindow();
+    ObjData_t* data_obj = NULL;
+    double currentSliderValueScale = 50;
+    double currentSliderValueRotateX = 0;
+    double currentSliderValueRotateY = 0;
+    double currentSliderValueRotateZ = 0;
+    double currentSliderValueMoveX = 0;
+    double currentSliderValueMoveY = 0;
+    double currentSliderValueMoveZ = 0;
+    QColor *edges_color = new QColor(0, 0, 0, 255);
+    QColor *back_color = new QColor(214, 214, 214, 255);
+    QColor *vertex_color = new QColor(0, 0, 255, 255);
 
 private slots:
-    void on_screenshotButton_clicked();  //tendyrir
+    void on_gifButton_clicked();
+    void on_screenshotButton_clicked();
     void on_choose_OBJFile_clicked();
     void changeScale();
+    void changeRotateX();
+    void changeRotateY();
+    void changeRotateZ();
+    void changeMoveX();
+    void changeMoveY();
+    void changeMoveZ();
+//    void setColorVerticies();
+
+    void on_color_edges_clicked();
+
+    void on_color_verticies_clicked();
 
 private:
     void init ();

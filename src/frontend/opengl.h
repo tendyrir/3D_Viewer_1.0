@@ -7,28 +7,20 @@
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
 #include <QOpenGLBuffer> // create obj buffers
+#include "mainwindow.h"
 
-
-extern "C" {
-#include "../backend/viewer.h"
-}
 
 class openGL : public QOpenGLWidget, protected QOpenGLFunctions {
     Q_OBJECT
 public:
     openGL(QWidget *parent = nullptr);
-    ObjData_t data_obj;
+    void getModelData(ObjData_t* model);
     matrix_t data_matrix;
     matrix_t move_matrix;
-
-//    QColor backgroundColor;
-//    QColor edgesColor;
-//    QColor verticiesColor;
-//    int projectionMode;
-//    int verticiesMode;
-//    int verticiesSize;
-//    int edgesMode;
-//    int edgesSize;
+    ObjData_t* data_obj_openGL = NULL;
+    QColor *color_edge = new QColor(214, 214, 214, 255);
+    QColor *color_back = new QColor(0, 0, 0, 255);
+    QColor *color_vertex = new QColor(0, 0, 255, 255);
 
 protected:
     void initializeGL() override;
@@ -40,14 +32,7 @@ protected:
 private:
     float xRot, zRot, yRot;
     QPoint mPos;
-    void draw(ObjData_t* data_obj);
-//    void setupProjection(int w = 0, int h = 0);
-//    void setDefault();
-//    QOpenGLVertexArrayObject vertexArrays; // хранилище индексов VBO
-//    QOpenGLBuffer vertexBuffer;
-//    QOpenGLBuffer elementBuffer;
-//    QMatrix4x4 rotateMatrix;
-//    QMatrix4x4 moveMatrix;
+    void draw(double* vertices, int* indices);
 };
 
 #endif // OPENGL_H
