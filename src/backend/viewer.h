@@ -66,4 +66,8 @@ int   s21_create_matrix(int rows, int columns, matrix_t *result);
 int   s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
 void  s21_remove_matrix(matrix_t *A);
 
+void center_model(ObjData_t *data);
+int check_coords_more_one(ObjData_t *data);
+int find_max_coord(ObjData_t *data);
+
 #endif  // VIEWER_H

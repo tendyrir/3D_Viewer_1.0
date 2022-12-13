@@ -201,24 +201,22 @@ void print_vertex_array(ObjData_t* data) {
 }
 
 
+void center_model(ObjData_t *data) {
 
-void center_model(ObjData_t data) {
-
-
-    if (find_max_coord(data)) {
-        divide_all_coords(data, );
-    }
+    // if (find_max_coord(data)) {
+    //     divide_all_coords(data, );
+    // }
 
 
-    /*
-    1. поделить все координаты на максимальную
-        1. пройтись по массиву и найти максимальную
-        2. пройтись и поделить все значения на нее    
-    */
+    // /*
+    // 1. поделить все координаты на максимальную
+    //     1. пройтись по массиву и найти максимальную
+    //     2. пройтись и поделить все значения на нее    
+    // */
 
-    for (int i = 0; i < data->vertex_array.coords_number; i++) {
-        data->vertex_array.coords_array[i] = data->vertex_array.coords_array[i] / max_coord;
-    }
+    // for (int i = 0; i < data->vertex_array.coords_number; i++) {
+    //     data->vertex_array.coords_array[i] = data->vertex_array.coords_array[i] / max_coord;
+    // }
 
 
     
@@ -274,7 +272,6 @@ void center_model(ObjData_t data) {
     double diff_y = (min_y + (max_y - min_y) / 2);
     double diff_z = (min_z + (max_z - min_z) / 2);
 
-    
     int j = 0;
 
     while(j < data->vertex_array.coords_number) {
@@ -288,7 +285,7 @@ void center_model(ObjData_t data) {
     }
 }
 
-int find_max_coord(ObjData_t data) {
+int find_max_coord(ObjData_t *data) {
     int max_coord = data->vertex_array.coords_array[0];
     for (int i = 0; i < data->vertex_array.coords_number; i++) {
         // printf("найдена координата больше 1 %d\n", more_than_one);
@@ -303,7 +300,7 @@ int find_max_coord(ObjData_t data) {
 }
 
 
-int check_coords_more_one(ObjData_t data) {
+int check_coords_more_one(ObjData_t *data) {
     int check_if_coords_have_more_one = 0;
     for (int i = 0; i < data->vertex_array.coords_number; i++) {
         if (data->vertex_array.coords_array[i] > 1.0) {
