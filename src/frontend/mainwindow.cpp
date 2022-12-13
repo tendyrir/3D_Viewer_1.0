@@ -79,6 +79,7 @@ void MainWindow::on_choose_OBJFile_clicked() {
 }
 
 void MainWindow::init() {
+<<<<<<< HEAD
   ui->Scale->setValue(50);
   ui->RotateX->setValue(0);
   ui->RotateY->setValue(0);
@@ -86,6 +87,15 @@ void MainWindow::init() {
   ui->MoveX->setValue(0);
   ui->MoveY->setValue(0);
   ui->MoveZ->setValue(0);
+=======
+    ui->Scale->setValue(50);
+    ui->RotateX->setValue(0);
+    ui->RotateY->setValue(0);
+    ui->RotateZ->setValue(0);
+    ui->MoveX->setValue(0);
+    ui->MoveY->setValue(0);
+    ui->MoveZ->setValue(0);
+>>>>>>> 4b4c6900cf8b05814ee5a53a884825cd6fa7624e
 }
 
 void MainWindow::changeScale() {
