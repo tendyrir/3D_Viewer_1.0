@@ -54,8 +54,8 @@ MainWindow::MainWindow(QWidget *parent)
   connect(ui->MoveY, SIGNAL(valueChanged(int)), this, SLOT(changeMoveY()));
   connect(ui->MoveZ, SIGNAL(valueChanged(int)), this, SLOT(changeMoveZ()));
 
-//  connect(ui->color_edges,SIGNAL(clicked()),this,SLOT(setColorEdges()));
-//  connect(ui->color_verticies,SIGNAL(clicked()),this,SLOT(setColorVerticies()));
+  //  connect(ui->color_edges,SIGNAL(clicked()),this,SLOT(setColorEdges()));
+  //  connect(ui->color_verticies,SIGNAL(clicked()),this,SLOT(setColorVerticies()));
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -67,13 +67,11 @@ void MainWindow::on_choose_OBJFile_clicked() {
     ui->label_9->setText(file);
     QByteArray file_bit = file.toLocal8Bit();
     char *fileName = file_bit.data();
-    data_obj =
-        (ObjData_t *)calloc(1, sizeof(ObjData_t));
+    data_obj = (ObjData_t *)calloc(1, sizeof(ObjData_t));
     parse_file(data_obj, fileName);
-    ui->edges->setText(
-        QString::number(data_obj->index_array_size / 2));
-    ui->verticies->setText(QString::number(
-        data_obj->vertex_array.coords_number / 3));
+    ui->edges->setText(QString::number(data_obj->index_array_size / 2));
+    ui->verticies->setText(
+        QString::number(data_obj->vertex_array.coords_number / 3));
     ui->openGLWidget->getModelData(data_obj);
     init();
     ui->openGLWidget->update();
@@ -81,143 +79,150 @@ void MainWindow::on_choose_OBJFile_clicked() {
 }
 
 void MainWindow::init() {
-    ui->Scale->setValue(50);
-    ui->RotateX->setValue(0);
-    ui->RotateY->setValue(0);
-    ui->RotateZ->setValue(0);
-    ui->MoveX->setValue(0);
-    ui->MoveY->setValue(0);
-    ui->MoveZ->setValue(0);
+  ui->Scale->setValue(50);
+  ui->RotateX->setValue(0);
+  ui->RotateY->setValue(0);
+  ui->RotateZ->setValue(0);
+  ui->MoveX->setValue(0);
+  ui->MoveY->setValue(0);
+  ui->MoveZ->setValue(0);
 }
 
 void MainWindow::changeScale() {
-    if (data_obj) {
-        double newSliderValue = (double)ui->Scale->value();
-        if (newSliderValue != 50) {
-            s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4, &ui->openGLWidget->data_matrix);
-            conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
-            model_scale(&ui->openGLWidget->data_matrix, newSliderValue / currentSliderValueScale);
-            conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
-            currentSliderValueScale =  newSliderValue;
-        }
-        ui->openGLWidget->update();
+  if (data_obj) {
+    double newSliderValue = (double)ui->Scale->value();
+    if (newSliderValue != 50) {
+      s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4,
+                        &ui->openGLWidget->data_matrix);
+      conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
+      model_scale(&ui->openGLWidget->data_matrix,
+                  newSliderValue / currentSliderValueScale);
+      conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
+      currentSliderValueScale = newSliderValue;
     }
+    ui->openGLWidget->update();
+  }
 }
 
 void MainWindow::changeRotateX() {
-    if (data_obj) {
-        double newSliderValue = (double)ui->RotateX->value()/100;
-        if (newSliderValue != 0) {
-            s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4, &ui->openGLWidget->data_matrix);
-            conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
-            model_rotate(&ui->openGLWidget->data_matrix, 'x', newSliderValue - currentSliderValueRotateX);
-            conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
-            currentSliderValueRotateX =  newSliderValue;
-        }
-        ui->openGLWidget->update();
+  if (data_obj) {
+    double newSliderValue = (double)ui->RotateX->value() / 100;
+    if (newSliderValue != 0) {
+      s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4,
+                        &ui->openGLWidget->data_matrix);
+      conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
+      model_rotate(&ui->openGLWidget->data_matrix, 'x',
+                   newSliderValue - currentSliderValueRotateX);
+      conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
+      currentSliderValueRotateX = newSliderValue;
     }
+    ui->openGLWidget->update();
+  }
 }
 
 void MainWindow::changeRotateY() {
-    if (data_obj) {
-        double newSliderValue = (double)ui->RotateY->value()/100;
-        if (newSliderValue != 0) {
-            s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4, &ui->openGLWidget->data_matrix);
-            conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
-            model_rotate(&ui->openGLWidget->data_matrix, 'y', newSliderValue - currentSliderValueRotateY);
-            conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
-            currentSliderValueRotateY =  newSliderValue;
-        }
-        ui->openGLWidget->update();
+  if (data_obj) {
+    double newSliderValue = (double)ui->RotateY->value() / 100;
+    if (newSliderValue != 0) {
+      s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4,
+                        &ui->openGLWidget->data_matrix);
+      conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
+      model_rotate(&ui->openGLWidget->data_matrix, 'y',
+                   newSliderValue - currentSliderValueRotateY);
+      conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
+      currentSliderValueRotateY = newSliderValue;
     }
+    ui->openGLWidget->update();
+  }
 }
 
 void MainWindow::changeRotateZ() {
-    if (data_obj) {
-        double newSliderValue = (double)ui->RotateZ->value()/100;
-        if (newSliderValue != 0) {
-            s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4, &ui->openGLWidget->data_matrix);
-            conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
-            model_rotate(&ui->openGLWidget->data_matrix, 'z', newSliderValue - currentSliderValueRotateZ);
-            conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
-            currentSliderValueRotateZ =  newSliderValue;
-        }
-        ui->openGLWidget->update();
+  if (data_obj) {
+    double newSliderValue = (double)ui->RotateZ->value() / 100;
+    if (newSliderValue != 0) {
+      s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4,
+                        &ui->openGLWidget->data_matrix);
+      conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
+      model_rotate(&ui->openGLWidget->data_matrix, 'z',
+                   newSliderValue - currentSliderValueRotateZ);
+      conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
+      currentSliderValueRotateZ = newSliderValue;
     }
+    ui->openGLWidget->update();
+  }
 }
 
 void MainWindow::changeMoveX() {
-    if (data_obj) {
-        double newSliderValue = (double)ui->MoveX->value()/100;
-        if (newSliderValue != 0) {
-            s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4, &ui->openGLWidget->data_matrix);
-            conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
-            model_move(&ui->openGLWidget->data_matrix, 'x', newSliderValue - currentSliderValueMoveX);
-            conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
-            currentSliderValueMoveX =  newSliderValue;
-        }
-        ui->openGLWidget->update();
+  if (data_obj) {
+    double newSliderValue = (double)ui->MoveX->value() / 100;
+    if (newSliderValue != 0) {
+      s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4,
+                        &ui->openGLWidget->data_matrix);
+      conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
+      model_move(&ui->openGLWidget->data_matrix, 'x',
+                 newSliderValue - currentSliderValueMoveX);
+      conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
+      currentSliderValueMoveX = newSliderValue;
     }
+    ui->openGLWidget->update();
+  }
 }
 
 void MainWindow::changeMoveY() {
-    if (data_obj) {
-        double newSliderValue = (double)ui->MoveY->value()/100;
-        if (newSliderValue != 0) {
-            s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4, &ui->openGLWidget->data_matrix);
-            conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
-            model_move(&ui->openGLWidget->data_matrix, 'y', newSliderValue - currentSliderValueMoveY);
-            conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
-            currentSliderValueMoveY =  newSliderValue;
-        }
-        ui->openGLWidget->update();
+  if (data_obj) {
+    double newSliderValue = (double)ui->MoveY->value() / 100;
+    if (newSliderValue != 0) {
+      s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4,
+                        &ui->openGLWidget->data_matrix);
+      conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
+      model_move(&ui->openGLWidget->data_matrix, 'y',
+                 newSliderValue - currentSliderValueMoveY);
+      conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
+      currentSliderValueMoveY = newSliderValue;
     }
+    ui->openGLWidget->update();
+  }
 }
 
 void MainWindow::changeMoveZ() {
-    if (data_obj) {
-        double newSliderValue = (double)ui->MoveZ->value()/100;
-        if (newSliderValue != 0) {
-            s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4, &ui->openGLWidget->data_matrix);
-            conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
-            model_move(&ui->openGLWidget->data_matrix, 'z', newSliderValue - currentSliderValueMoveZ);
-            conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
-            currentSliderValueMoveZ =  newSliderValue;
-        }
-        ui->openGLWidget->update();
+  if (data_obj) {
+    double newSliderValue = (double)ui->MoveZ->value() / 100;
+    if (newSliderValue != 0) {
+      s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4,
+                        &ui->openGLWidget->data_matrix);
+      conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
+      model_move(&ui->openGLWidget->data_matrix, 'z',
+                 newSliderValue - currentSliderValueMoveZ);
+      conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
+      currentSliderValueMoveZ = newSliderValue;
     }
+    ui->openGLWidget->update();
+  }
 }
 
+// void MainWindow::setColorVerticies() {
+//     QColor color = QColorDialog::getColor();
+//         if (color.isValid()) {
+//             *vertex_color = color;
+//             ui->openGLWidget->color_vertex = vertex_color;
+//             ui->openGLWidget->update();
+//         }
+// }
 
-//void MainWindow::setColorVerticies() {
-//    QColor color = QColorDialog::getColor();
-//        if (color.isValid()) {
-//            *vertex_color = color;
-//            ui->openGLWidget->color_vertex = vertex_color;
-//            ui->openGLWidget->update();
-//        }
-//}
-
-
-
-void MainWindow::on_color_edges_clicked()
-{
-    QColor color = QColorDialog::getColor();
-        if (color.isValid()) {
-            *edges_color = color;
-            ui->openGLWidget->color_edge = edges_color;
-            ui->openGLWidget->update();
-        }
+void MainWindow::on_color_edges_clicked() {
+  QColor color = QColorDialog::getColor();
+  if (color.isValid()) {
+    *edges_color = color;
+    ui->openGLWidget->color_edge = edges_color;
+    ui->openGLWidget->update();
+  }
 }
 
-
-void MainWindow::on_color_verticies_clicked()
-{
-    QColor color = QColorDialog::getColor();
-        if (color.isValid()) {
-            *vertex_color = color;
-            ui->openGLWidget->color_vertex = vertex_color;
-            ui->openGLWidget->update();
-        }
+void MainWindow::on_color_verticies_clicked() {
+  QColor color = QColorDialog::getColor();
+  if (color.isValid()) {
+    *vertex_color = color;
+    ui->openGLWidget->color_vertex = vertex_color;
+    ui->openGLWidget->update();
+  }
 }
-
