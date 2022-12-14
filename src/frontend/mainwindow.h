@@ -52,11 +52,11 @@ private slots:
     void changeMoveX();
     void changeMoveY();
     void changeMoveZ();
-//    void setColorVerticies();
 
     void on_color_edges_clicked();
-
     void on_color_verticies_clicked();
+    void edge_size_valueChanged();
+    void vertex_size_valueChanged();
 
 private:
     void init ();

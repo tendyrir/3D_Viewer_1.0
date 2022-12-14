@@ -5,6 +5,7 @@
 
 /** tendyrir screenshot hard coding skills **/
 
+
 void MainWindow::on_screenshotButton_clicked()
 {
     QPushButton *btn = (QPushButton *)sender();

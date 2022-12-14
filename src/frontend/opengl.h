@@ -21,6 +21,9 @@ public:
     QColor *color_edge = new QColor(214, 214, 214, 255);
     QColor *color_back = new QColor(0, 0, 0, 255);
     QColor *color_vertex = new QColor(0, 0, 255, 255);
+    int line_size;
+    int point_size;
+    GLenum mods_point[2] = {GL_POINTS, GL_POINT_SMOOTH};
 
 protected:
     void initializeGL() override;

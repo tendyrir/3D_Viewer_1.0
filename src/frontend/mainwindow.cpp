@@ -60,7 +60,7 @@ MainWindow::MainWindow(QWidget *parent)
   connect(ui->button_bmp, SIGNAL(clicked()), this, SLOT(on_screenshotButton_clicked()));
   connect(ui->button_gif, SIGNAL(clicked()), this, SLOT(on_gifButton_clicked()));
 
-
+  connect(ui->edge_size, SIGNAL(valueChanged(int)), this, SLOT(edge_size_valueChanged()));
 
   //  connect(ui->color_edges,SIGNAL(clicked()),this,SLOT(setColorEdges()));
   //  connect(ui->color_verticies,SIGNAL(clicked()),this,SLOT(setColorVerticies()));
@@ -71,6 +71,7 @@ MainWindow::~MainWindow() { delete ui; }
 void MainWindow::on_choose_OBJFile_clicked() {
   QString file = QFileDialog::getOpenFileName(this, "Choose File", "../../../../../src/models");
   if (!file.isEmpty()) {
+    init();
     ui->label_9->setText(file);
     QByteArray file_bit = file.toLocal8Bit();
     char *fileName = file_bit.data();
@@ -80,7 +81,6 @@ void MainWindow::on_choose_OBJFile_clicked() {
     ui->verticies->setText(
         QString::number(data_obj->vertex_array.coords_number / 3));
     ui->openGLWidget->getModelData(data_obj);
-    init();
     ui->openGLWidget->update();
   }
 }
@@ -93,6 +93,7 @@ void MainWindow::init() {
   ui->MoveX->setValue(0);
   ui->MoveY->setValue(0);
   ui->MoveZ->setValue(0);
+  ui->openGLWidget->line_size = 1;
 }
 
 void MainWindow::changeScale() {
@@ -207,15 +208,6 @@ void MainWindow::changeMoveZ() {
   }
 }
 
-// void MainWindow::setColorVerticies() {
-//     QColor color = QColorDialog::getColor();
-//         if (color.isValid()) {
-//             *vertex_color = color;
-//             ui->openGLWidget->color_vertex = vertex_color;
-//             ui->openGLWidget->update();
-//         }
-// }
-
 void MainWindow::on_color_edges_clicked() {
   QColor color = QColorDialog::getColor();
   if (color.isValid()) {
@@ -234,48 +226,15 @@ void MainWindow::on_color_verticies_clicked() {
   }
 }
 
+void MainWindow::edge_size_valueChanged()
+{
+    ui->openGLWidget->line_size = ui->edge_size->value();
+    ui->openGLWidget->update();
+}
 
-// /** tendyrir screenshot hard coding skills **/
+void MainWindow::vertex_size_valueChanged()
+{
+    ui->openGLWidget->point_size = ui->vertex_size->value();
+    ui->openGLWidget->update();
+}
 
-// void MainWindow::on_screenshotButton_clicked()
-// {
-//     QPushButton *btn = (QPushButton *)sender();
-//     QString butVal = btn->text();
-//     QString filename;
-
-//     if (QString::compare(butVal, "bmp", Qt::CaseInsensitive) == 0) {
-//         filename = QFileDialog::getSaveFileName(this, tr("Save File"), pathProject, tr("BMP files (*.bmp)"));
-//     } else if (QString::compare(butVal, "jpeg", Qt::CaseInsensitive) == 0) {
-//         filename = QFileDialog::getSaveFileName(this, tr("Save File"), pathProject, tr("JPEG files (*.jpeg)"));
-//     }
-
-//     QImage screenshot = ui->openGLWidget->grabFramebuffer();
-//     screenshot.save(filename, nullptr, 80);
-
-// }
-
-// void MainWindow::on_gifButton_clicked()
-// {
-//   QString filename = QFileDialog::getSaveFileName(this, tr("Save File"), pathProject, tr("(*.gif)"));
-
-//   if (!filename.isEmpty()) {
-
-//     QGifImage gif(ui->openGLWidget->grab().size());
-//     gif.setDefaultDelay(100);
-
-//     for (int i = 0; i < 50; i++) {
-
-//       ui->Scale->setValue(50+i);
-//       changeScale();
-
-//       ui->RotateX->setValue(i);
-//       changeRotateX();
-
-//       QImage screenshot = ui->openGLWidget->grabFramebuffer();
-//       gif.addFrame(screenshot);
-//     }
-
-//     gif.save(filename);
-//   }
-
-// }
