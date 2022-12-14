@@ -22,7 +22,7 @@ int parse_file(ObjData_t* data, char* obj_file_name) {
     error = get_data_numbers(fp, data);    /*  Подсчет размеров массивов координат и индексов вершин */ 
     error = allocate_memory(data);         /*  Выделение память под массивы */
     error = get_data_arrays(fp, data);     /*  Заполнение массивов */
-    center_model(data);
+    center_model(data, 0.8);
     fclose(fp);
     return error;
 }
@@ -197,7 +197,7 @@ void print_vertex_array(ObjData_t* data) {
     }
     printf("\n");
     for (int i = 0; i < data->index_array_counter; i++) {
-            printf("%d ", data->index_array[i]);
+            // printf("%d ", data->index_array[i]);
     }
     printf("\n счетчик в конце равен: %d \n", data->index_array_counter);
 }
@@ -207,101 +207,69 @@ void print_vertex_array(ObjData_t* data) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-void center_model(ObjData_t *data) {
-    // if (find_max_coord(data)) {
-    //     divide_all_coords(data, );
-    // }
-
-
-    // /*
-    // 1. поделить все координаты на максимальную
-    //     1. пройтись по массиву и найти максимальную
-    //     2. пройтись и поделить все значения на нее    
-    // */
-
-    // for (int i = 0; i < data->vertex_array.coords_number; i++) {
-    //     data->vertex_array.coords_array[i] = data->vertex_array.coords_array[i] / max_coord;
-    // }
-
-
+void center_model(ObjData_t *data, double value) {
     
-    /* 
-    2. Поставить модельку в центр
-    */
+    move_model_to_center(data);
 
-    double max_x = data->vertex_array.coords_array[0];
-    double min_x = data->vertex_array.coords_array[0];
+    double scale_value = resize_model_on_screen(data, value);
 
-    double max_y = data->vertex_array.coords_array[1];
-    double min_y = data->vertex_array.coords_array[1];
+    matrix_t coords;
+    s21_create_matrix(data->vertex_array.coords_number / 3, 3, &coords);
 
-    double max_z = data->vertex_array.coords_array[2];
-    double min_z = data->vertex_array.coords_array[2];
+    conv_to_matr(data, &coords);
 
-    int i = 0;
+    model_scale(&coords, scale_value);
 
-    while (i < data->vertex_array.coords_number) {
+    conv_from_matr(data, &coords);
 
-        if (data->vertex_array.coords_array[i] > max_x) {
-            max_x = data->vertex_array.coords_array[i];
-        }
-
-        if (data->vertex_array.coords_array[i] < min_x) {
-            min_x = data->vertex_array.coords_array[i];
-        }
-        i++;
-
-        if (data->vertex_array.coords_array[i] > max_y) {
-            max_y = data->vertex_array.coords_array[i];
-        }
-        if (data->vertex_array.coords_array[i] < min_y) {
-            min_y = data->vertex_array.coords_array[i];
-        }
-        i++;
+    s21_remove_matrix(&coords);
+  
+}
 
 
-        if (data->vertex_array.coords_array[i] > max_z) {
-            max_z = data->vertex_array.coords_array[i];
-        }
-        if (data->vertex_array.coords_array[i] < min_z) {
-            min_z = data->vertex_array.coords_array[i];
-        }
-        i++;
-        
+double resize_model_on_screen(ObjData_t* data, double value) {
+    /* 1. Подогнать размер под экран */
 
-    }
+    double max_x = find_max_coord(data, 0); // x
+    double max_y = find_max_coord(data, 1); // y
+    double max_z = find_max_coord(data, 2); // z
 
-    // printf("max x = %lf min x = %lf max y = %lf min y = %lf max z = %lf min z = %lf\n", max_x, min_x, max_y, min_y, max_z, min_z);
+    double min_x = find_min_coord(data, 0); // x
+    double min_y = find_min_coord(data, 1); // y
+    double min_z = find_min_coord(data, 2); // z
+
+
+    double diff_x = max_x - min_x;
+    double diff_y = max_y - min_y;
+    double diff_z = max_z - min_z;
+
+    double diff_max    = maximum_difference(diff_x, diff_y, diff_z);
+    double scale_value = (value - (value * (-1))) / diff_max;
+
+    return scale_value;
+}
+
+double maximum_difference(double diff_x, double diff_y, double diff_z) {
+    double max;
+    if (diff_x > diff_y) max = diff_x;
+    else max = diff_y;
+    if (diff_z > max) max = diff_z;
+    return max;
+}
+
+
+void move_model_to_center(ObjData_t *data) {
+    /* 2. Поставить модельку в центр */
+
+    double max_x = find_max_coord(data, 0); // x
+    double max_y = find_max_coord(data, 1); // y
+    double max_z = find_max_coord(data, 2); // z
+
+    double min_x = find_min_coord(data, 0); // x
+    double min_y = find_min_coord(data, 1); // y
+    double min_z = find_min_coord(data, 2); // z
+
+    printf("max x = %lf min x = %lf max y = %lf min y = %lf max z = %lf min z = %lf\n", max_x, min_x, max_y, min_y, max_z, min_z);
 
     double diff_x = (min_x + (max_x - min_x) / 2);
     double diff_y = (min_y + (max_y - min_y) / 2);
@@ -318,32 +286,107 @@ void center_model(ObjData_t *data) {
         data->vertex_array.coords_array[j] -= diff_z;
         j++;
     }
+
 }
 
-int find_max_coord(ObjData_t *data) {
-    int max_coord = data->vertex_array.coords_array[0];
-    for (int i = 0; i < data->vertex_array.coords_number; i++) {
+
+double find_max_coord(ObjData_t *data, int axis) {
+    
+    double max_coord     = data->vertex_array.coords_array[axis];
+    int    coord_counter = axis;
+
+    while (coord_counter < data->vertex_array.coords_number) {
+
         // printf("найдена координата больше 1 %d\n", more_than_one);
         // printf("максимальная координата: %d\n", max_coord);
-        if (data->vertex_array.coords_array[i] > max_coord) {
-            max_coord = data->vertex_array.coords_array[i];
+
+        if (data->vertex_array.coords_array[coord_counter] > max_coord) {
+            max_coord = data->vertex_array.coords_array[coord_counter];
         }
+
+        coord_counter += 3;
     }
 
-    // printf("max_coord: %d", max_coord);
     return max_coord;
 }
 
+double find_min_coord(ObjData_t *data, int axis) {
+    
+    double min_coord     = data->vertex_array.coords_array[axis];
+    int    coord_counter = axis;
 
-int check_coords_more_one(ObjData_t *data) {
-    int check_if_coords_have_more_one = 0;
-    for (int i = 0; i < data->vertex_array.coords_number; i++) {
-        if (data->vertex_array.coords_array[i] > 1.0) {
-            check_if_coords_have_more_one = 1;
+    while (coord_counter < data->vertex_array.coords_number) {
+
+        // printf("найдена координата больше 1 %d\n", more_than_one);
+        // printf("максимальная координата: %d\n", max_coord);
+
+        if (data->vertex_array.coords_array[coord_counter] < min_coord) {
+            min_coord = data->vertex_array.coords_array[coord_counter];
         }
+
+        coord_counter += 3;
     }
-    return check_if_coords_have_more_one;
-} 
+
+    return min_coord;
+}
+
+    // printf("max_coord: %d", max_coord);
+
+
+    // double max_x = data->vertex_array.coords_array[0];
+    // double min_x = data->vertex_array.coords_array[0];
+
+    // double max_y = data->vertex_array.coords_array[1];
+    // double min_y = data->vertex_array.coords_array[1];
+
+    // double max_z = data->vertex_array.coords_array[2];
+    // double min_z = data->vertex_array.coords_array[2];
+
+    // int i = 0;
+
+    // while (i < data->vertex_array.coords_number) {
+
+    //     if (data->vertex_array.coords_array[i] > max_x) {
+    //         max_x = data->vertex_array.coords_array[i];
+    //     }
+
+    //     if (data->vertex_array.coords_array[i] < min_x) {
+    //         min_x = data->vertex_array.coords_array[i];
+    //     }
+    //     i++;
+
+    //     if (data->vertex_array.coords_array[i] > max_y) {
+    //         max_y = data->vertex_array.coords_array[i];
+    //     }
+    //     if (data->vertex_array.coords_array[i] < min_y) {
+    //         min_y = data->vertex_array.coords_array[i];
+    //     }
+    //     i++;
+
+    //     if (data->vertex_array.coords_array[i] > max_z) {
+    //         max_z = data->vertex_array.coords_array[i];
+    //     }
+    //     if (data->vertex_array.coords_array[i] < min_z) {
+    //         min_z = data->vertex_array.coords_array[i];
+    //     }
+    //     i++;
+        
+
+    // }
+
+
+
+
+
+// int check_coords_more_one(ObjData_t *data) {
+//     int check_if_coords_have_more_one = 0;
+//     for (int i = 0; i < data->vertex_array.coords_number; i++) {
+//         if (data->vertex_array.coords_array[i] > 1.0) {
+//             check_if_coords_have_more_one = 1;
+//         }
+//     }
+//     return check_if_coords_have_more_one;
+// } 
 
 
 int check_file_exist(char* filename) {

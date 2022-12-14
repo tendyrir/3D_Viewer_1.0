@@ -4,11 +4,11 @@ int main(void) {
   ObjData_t data = {0};
   // matrix_t crd;
 
-  char* obj_file_name = "../models/upto100/cube.obj";
+  // char* obj_file_name = "../models/upto100/cube.obj";
   // char* obj_file_name = "../models/upto1001/figure1.obj";
   // char*     obj_file_name = "models/icosahedron.obj";
   // char*     obj_file_name = "models/pyramid_2.obj";
-  // char*     obj_file_name = "models/gun.obj";
+  char*     obj_file_name = "../models/upto10000/gun.obj";
 
   if (check_file_exist(obj_file_name) == 1) {
     fprintf(stderr, "FILE ERROR\n");
