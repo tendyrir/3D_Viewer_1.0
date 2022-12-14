@@ -10,8 +10,14 @@ int main(void) {
 
   /* ОТКРЫТИЕ ФАЙЛА */
   srunner_add_suite(sr, suite_open_file());
-  srunner_add_suite(sr, suite_count_data());
+  // srunner_add_suite(sr, suite_count_data());
   
+
+
+
+
+
+
   // Должно быть обеспечено покрытие unit-тестами модулей, связанных с загрузкой моделей и аффинными преобразованиями
 
   // В один момент времени должна быть только одна модель на экране.

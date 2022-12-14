@@ -59,6 +59,9 @@ void s21_remove_matrix(matrix_t *A) {
   }
 }
 
+
+/* НЕРАБОЧИЕ АФИННЫЕ ПРЕОБРАЗОВАНИЯ */
+
 /* Матрицы поворота относительно осей x, y и z соответственно */
 
 int rotate_x(double alpha, matrix_t *result) {
@@ -203,6 +206,11 @@ void core_algorithm(matrix_t *crd_main, matrix_t *move, int type) {
   s21_remove_matrix(&athena);
 }
 
+
+
+
+/* РАБОЧИЕ АФИННЫЕ ПРЕОБРАЗОВАНИЯ */
+
 void conv_to_matr(ObjData_t *data,
                   matrix_t *crd_main) {  // перевод из массива в матрицу
 
@@ -211,13 +219,6 @@ void conv_to_matr(ObjData_t *data,
     if (i % 3 == 2) crd_main->matrix[i / 3][3] = 0.0;
   }
 }
-
-//void conv_from_matr_to_array_copy(ObjData_t* data, double *coords_array_copy, matrix_t *crd_main) {  // перевод из матрицы в массив
-//  for (int i = 0; i < data->vertex_array.coords_number; i++) {
-//    coords_array_copy[i] = crd_main->matrix[i / 3][i % 3];
-//  }
-//}
-
 
 void conv_from_matr(ObjData_t* data, matrix_t *crd_main) { // перевод из матрицы в массив
     for (int i = 0; i < data->vertex_array.coords_number; i++) {

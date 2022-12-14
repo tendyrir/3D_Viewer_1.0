@@ -4,48 +4,27 @@
 
 #include "./test.h"
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Тесты ошибки открытия файла
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  */
+#define CORRECT_PATH 0
+#define INVALID_PATH 1
 
-START_TEST(test_open_valid_cube) {
-  char *obj_path = "models/icosahedron.obj";
-  ObjData_t data = {0};
+START_TEST(test_correct_path) {
+  char *filename = "./models/upto100/cube.obj";
+  ck_assert_int_eq(run_test(filename), CORRECT_PATH);
+} END_TEST
 
-  parse_file(&data, obj_path);
-
-  free(data.vertex_array.coords_array);
-  free(data.index_array);
-
-}
-
-START_TEST(test_2) {
-  char *obj_path = "models/icosahedron.obj";
-  ObjData_t data = {0};
-
-  parse_file(&data, obj_path);
-  
-  free(data.vertex_array.coords_array);
-  free(data.index_array);
-
-}
-
-
+START_TEST(test_invalid_path) {
+  char *filename = "aboba abobovna";
+  ck_assert_int_eq(run_test(filename), INVALID_PATH);
+} END_TEST
 
 Suite *suite_open_file(void) {
-
   Suite *s;
   TCase *tc_core;
-
-  s = suite_create("parse_file");
+  s = suite_create("file_path_check");
   tc_core = tcase_create("Core");
-
-  tcase_add_test(tc_core, test_open_valid_cube);
-  tcase_add_test(tc_core, test_2);
-
-
+  tcase_add_test(tc_core, test_correct_path);
+  tcase_add_test(tc_core, test_invalid_path);
   suite_add_tcase(s, tc_core);
-
   return s;
 }
 

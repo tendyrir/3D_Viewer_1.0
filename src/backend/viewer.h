@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <unistd.h>
 
 #define OK 0
 #define ERR_1 1
@@ -29,21 +30,19 @@ typedef struct matrix_t {
   int rows;
 } matrix_t;
 
-int  parse_file(ObjData_t* data, char* obj_file_name);
+int   run_test(char* filename);
+int   check_file_exist(char* filename);
+int   parse_file(ObjData_t* data, char* obj_file_name);
 
 int   get_data_numbers(FILE* fp, ObjData_t* data);
 int   get_data_arrays(FILE* fp, ObjData_t* data);
 
 int   allocate_memory(ObjData_t* data);
-int   allocate_memory_for_vertex_array(ObjData_t* data);
-int   allocate_memory_for_index_array(ObjData_t* data);
 
-int   current_line_indices_counter(char* line);
 char* copy_current_line(char* line);
 int   write_vertex_array_in_data(char* line, int i, ObjData_t* data);
 int   write_index_array_in_data(char* line, char* line_copy, ObjData_t* data);
 int   count_cur_line(char* line);
-int   write_f_line(ObjData_t* data, char* token_ptr, int current_line_index_counter_1, int value);
 int   write_value(ObjData_t* data, int value);
 
 void  print_vertex_array(ObjData_t* data);
@@ -59,28 +58,21 @@ void  crd_ret(matrix_t *crd_main, matrix_t *crd, int row);
 void  crd_metamorph(matrix_t *crd_main, matrix_t *athena);
 void  core_algorithm(matrix_t *crd_main, matrix_t *move, int type);
 
-void conv_to_matr(ObjData_t* data, matrix_t *crd_main);
-void conv_from_matr(ObjData_t* data, matrix_t *crd_main);
-//void conv_from_matr_to_array_copy(ObjData_t* a, double *coords_array_copy,
-//                    matrix_t *crd_main);
+void  conv_to_matr(ObjData_t* data, matrix_t *crd_main);
+void  conv_from_matr(ObjData_t* data, matrix_t *crd_main);
 
 int   s21_create_matrix(int rows, int columns, matrix_t *result);
 int   s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
 void  s21_remove_matrix(matrix_t *A);
 
-void center_model(ObjData_t *data);
-int check_coords_more_one(ObjData_t *data);
-int find_max_coord(ObjData_t *data);
-
-void  copy_matrix(matrix_t* src, matrix_t* dest);
+void  center_model(ObjData_t *data);
+int   check_coords_more_one(ObjData_t *data);
+int   find_max_coord(ObjData_t *data);
 
 // Additional
 void model_scale(matrix_t*  vertexes, double scale);
 void model_rotate(matrix_t *vertexes, char coord, double angle);
 void model_move(matrix_t *vertexes, char coord, double value);
 
-//int possibility_mult(matrix_t *A, matrix_t *B);
-//void mat_multiplicate(matrix_t *A, matrix_t *B, matrix_t *result);
-//int matrix_checker(matrix_t *A);
 
 #endif  // VIEWER_H

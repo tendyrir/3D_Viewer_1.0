@@ -18,6 +18,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS OpenGLWidgets)
 set(PROJECT_SOURCES
     main.cpp
     mainwindow.cpp
+    picture.cpp
     opengl.cpp
 
     mainwindow.h
