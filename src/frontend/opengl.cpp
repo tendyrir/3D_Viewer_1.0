@@ -23,16 +23,29 @@ void openGL::paintGL() {
 void openGL::draw(double* vertices, int* indices) {
   /*the vertex; array is enabled for writing and used during rendering when
    * glDrawArrays, or glDrawElements is called*/
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glEnable(mods_point[0]);
-    glPointSize(point_size);
-    glColor3f(color_vertex->red()/255.f, color_vertex->green()/255.f, color_vertex->blue()/255.f);
-    glDisable(mods_point[0]);
-    glLineWidth(line_size);
-    glColor3f(color_edge->red()/255.f, color_edge->green()/255.f, color_edge->blue()/255.f);
+
+
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // cleaner
+
+
+  glColor3f(color_vertex->red()/255.f, color_vertex->green()/255.f, color_vertex->blue()/255.f);
+  glPointSize(point_size);
+
+
+
   glEnableClientState(GL_VERTEX_ARRAY);
+
   glVertexPointer(3, GL_DOUBLE, 0, vertices);
-  glDrawElements(GL_LINES, this->data_obj_openGL->index_array_size, GL_UNSIGNED_INT, indices);
+
+    glEnable(GL_POINT_SMOOTH);
+        glDrawArrays(GL_POINTS, 0, this->data_obj_openGL->vertex_array.coords_number / 3);
+    glDisable(GL_POINT_SMOOTH);
+
+  glColor3f(color_edge->red()/255.f, color_edge->green()/255.f, color_edge->blue()/255.f);
+  glLineWidth(line_size);
+
+        glDrawElements(GL_LINES, this->data_obj_openGL->index_array_size, GL_UNSIGNED_INT, indices);
+
   glDisableClientState(GL_VERTEX_ARRAY);
 }
 

@@ -61,6 +61,7 @@ MainWindow::MainWindow(QWidget *parent)
   connect(ui->button_gif, SIGNAL(clicked()), this, SLOT(on_gifButton_clicked()));
 
   connect(ui->edge_size, SIGNAL(valueChanged(int)), this, SLOT(edge_size_valueChanged()));
+  connect(ui->vertex_size, SIGNAL(valueChanged(int)), this, SLOT(vertex_size_valueChanged()));
 
   //  connect(ui->color_edges,SIGNAL(clicked()),this,SLOT(setColorEdges()));
   //  connect(ui->color_verticies,SIGNAL(clicked()),this,SLOT(setColorVerticies()));
