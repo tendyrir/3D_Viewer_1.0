@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>2120</width>
-    <height>1269</height>
+    <width>1440</width>
+    <height>1255</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -25,7 +25,7 @@
      <rect>
       <x>310</x>
       <y>100</y>
-      <width>1791</width>
+      <width>1100</width>
       <height>1101</height>
      </rect>
     </property>
@@ -41,7 +41,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>2101</width>
+      <width>1421</width>
       <height>1201</height>
      </rect>
     </property>
@@ -53,7 +53,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>2099</width>
+       <width>1419</width>
        <height>1199</height>
       </rect>
      </property>
@@ -993,7 +993,7 @@ border-radius: 4px;
       <property name="title">
        <string>Verticies</string>
       </property>
-      <widget class="QRadioButton" name="radioButton_5">
+      <widget class="QRadioButton" name="vertex_circle">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -1009,7 +1009,7 @@ border-radius: 4px;
         <string>Circle</string>
        </property>
       </widget>
-      <widget class="QRadioButton" name="radioButton_6">
+      <widget class="QRadioButton" name="vertex_square">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -1147,7 +1147,7 @@ border-radius: 4px;
         <string>Color</string>
        </property>
       </widget>
-      <widget class="QRadioButton" name="radioButton_7">
+      <widget class="QRadioButton" name="vertex_disable">
        <property name="geometry">
         <rect>
          <x>100</x>
@@ -1161,6 +1161,9 @@ border-radius: 4px;
        </property>
        <property name="text">
         <string>Disable</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
        </property>
       </widget>
      </widget>
@@ -1179,7 +1182,7 @@ border-radius: 4px;
       <property name="title">
        <string>Edges</string>
       </property>
-      <widget class="QRadioButton" name="radioButton_3">
+      <widget class="QRadioButton" name="edge_solid">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -1194,8 +1197,11 @@ border-radius: 4px;
        <property name="text">
         <string>Solid</string>
        </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
       </widget>
-      <widget class="QRadioButton" name="radioButton_4">
+      <widget class="QRadioButton" name="edge_dashed">
        <property name="geometry">
         <rect>
          <x>180</x>
@@ -1358,11 +1364,17 @@ border-radius: 4px;
          <height>20</height>
         </rect>
        </property>
+       <property name="tabletTracking">
+        <bool>false</bool>
+       </property>
        <property name="styleSheet">
         <string notr="true">font: 16pt &quot;.AppleSystemUIFont&quot;;</string>
        </property>
        <property name="text">
         <string>Central</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
        </property>
       </widget>
       <widget class="QRadioButton" name="radioButton_2">
@@ -1379,6 +1391,12 @@ border-radius: 4px;
        </property>
        <property name="text">
         <string>Parallel</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoRepeat">
+        <bool>false</bool>
        </property>
       </widget>
       <widget class="QPushButton" name="color_background">
@@ -1533,23 +1551,17 @@ border-radius: 4px;
    <zorder>scrollArea</zorder>
    <zorder>openGLWidget</zorder>
   </widget>
+  <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>2120</width>
+     <width>1440</width>
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuSuchka">
-    <property name="title">
-     <string>Suchka</string>
-    </property>
-   </widget>
-   <addaction name="menuSuchka"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <customwidgets>
   <customwidget>

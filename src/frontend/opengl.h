@@ -15,6 +15,8 @@ class openGL : public QOpenGLWidget, protected QOpenGLFunctions {
 public:
     openGL(QWidget *parent = nullptr);
     void getModelData(ObjData_t* model);
+    void drawEdges(int* indices);
+    void drawVerticies(double* vertices);
     matrix_t data_matrix;
     matrix_t move_matrix;
     ObjData_t* data_obj_openGL = NULL;
@@ -23,14 +25,16 @@ public:
     QColor *color_vertex = new QColor(0, 0, 255, 255);
     int line_size;
     int point_size;
-    GLenum mods_point[2] = {GL_POINTS, GL_POINT_SMOOTH};
+    bool central_perspective = false;
+    int edge_mood = 0; // 0 - solid, 1 - dashed
+    int vertex_mood = 0; // 0 - disable, 1 - circle, 2 - square
 
 protected:
     void initializeGL() override;
     void resizeGL(int w, int h) override;
     void paintGL() override;
     void mousePressEvent(QMouseEvent *mo) override;
-    void mouseMoveEvent(QMouseEvent*) override;
+    void mouseMoveEvent(QMouseEvent *mo) override;
 
 private:
     float xRot, zRot, yRot;

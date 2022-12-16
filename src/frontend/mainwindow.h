@@ -40,6 +40,7 @@ public:
     QColor *edges_color = new QColor(0, 0, 0, 255);
     QColor *back_color = new QColor(214, 214, 214, 255);
     QColor *vertex_color = new QColor(0, 0, 255, 255);
+    int vertex_mood = 0;
 
 private slots:
     void on_gifButton_clicked();
@@ -55,10 +56,17 @@ private slots:
 
     void on_color_edges_clicked();
     void on_color_verticies_clicked();
+    void on_color_background_clicked();
     void edge_size_valueChanged();
     void vertex_size_valueChanged();
 
-    void on_color_background_clicked();
+    void on_radioButton_toggled(bool checked);
+    void on_edge_dashed_toggled(bool checked);
+    void on_vertex_circle_toggled(bool checked);
+    void on_vertex_square_toggled(bool checked);
+
+    void on_vertex_disable_toggled(bool checked);
+    void check_frame_vertex();
 
 private:
     void init ();

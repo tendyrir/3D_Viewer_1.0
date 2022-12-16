@@ -62,9 +62,6 @@ MainWindow::MainWindow(QWidget *parent)
 
   connect(ui->edge_size, SIGNAL(valueChanged(int)), this, SLOT(edge_size_valueChanged()));
   connect(ui->vertex_size, SIGNAL(valueChanged(int)), this, SLOT(vertex_size_valueChanged()));
-
-  //  connect(ui->color_edges,SIGNAL(clicked()),this,SLOT(setColorEdges()));
-  //  connect(ui->color_verticies,SIGNAL(clicked()),this,SLOT(setColorVerticies()));
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -209,6 +206,15 @@ void MainWindow::changeMoveZ() {
   }
 }
 
+void MainWindow::on_color_background_clicked() {
+    QColor color = QColorDialog::getColor();
+    if (color.isValid()) {
+      *back_color = color;
+      ui->openGLWidget->color_back = back_color;
+      ui->openGLWidget->update();
+    }
+}
+
 void MainWindow::on_color_edges_clicked() {
   QColor color = QColorDialog::getColor();
   if (color.isValid()) {
@@ -227,26 +233,62 @@ void MainWindow::on_color_verticies_clicked() {
   }
 }
 
-void MainWindow::edge_size_valueChanged()
-{
+void MainWindow::edge_size_valueChanged() {
     ui->openGLWidget->line_size = ui->edge_size->value();
     ui->openGLWidget->update();
 }
 
-void MainWindow::vertex_size_valueChanged()
-{
+void MainWindow::vertex_size_valueChanged() {
     ui->openGLWidget->point_size = ui->vertex_size->value();
     ui->openGLWidget->update();
 }
 
-
-void MainWindow::on_color_background_clicked()
-{
-    QColor color = QColorDialog::getColor();
-    if (color.isValid()) {
-      *back_color = color;
-      ui->openGLWidget->color_back = back_color;
-      ui->openGLWidget->update();
+void MainWindow::on_radioButton_toggled(bool checked) {
+    if (checked) {
+        ui->openGLWidget->central_perspective = true;
+    } else {
+        ui->openGLWidget->central_perspective = false;
     }
+    ui->openGLWidget->update();
 }
 
+void MainWindow::on_edge_dashed_toggled(bool checked) {
+    if (checked) {
+        ui->openGLWidget->edge_mood = 1; // dashed
+    } else {
+        ui->openGLWidget->edge_mood = 0; // solid
+    }
+    ui->openGLWidget->update();
+}
+
+void MainWindow::on_vertex_circle_toggled(bool checked) {
+    if (checked) {
+        vertex_mood = 1; // circle
+    }
+    check_frame_vertex();
+}
+
+void MainWindow::on_vertex_square_toggled(bool checked) {
+    if (checked) {
+        vertex_mood = 2; // square
+    }
+    check_frame_vertex();
+}
+
+void MainWindow::on_vertex_disable_toggled(bool checked) {
+    if (checked) {
+        vertex_mood = 0; // disable
+    }
+    check_frame_vertex();
+}
+
+void MainWindow::check_frame_vertex() {
+    if (vertex_mood == 0) {
+        ui->openGLWidget->vertex_mood = 0;
+    } else if (vertex_mood == 1) {
+        ui->openGLWidget->vertex_mood = 1;
+    } else {
+        ui->openGLWidget->vertex_mood = 2;
+    }
+    ui->openGLWidget->update();
+}
