@@ -58,6 +58,8 @@ private slots:
     void edge_size_valueChanged();
     void vertex_size_valueChanged();
 
+    void on_color_background_clicked();
+
 private:
     void init ();
     Ui::MainWindow *ui;

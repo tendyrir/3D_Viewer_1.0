@@ -13,6 +13,8 @@ void openGL::resizeGL(int width, int height) {
 }
 
 void openGL::paintGL() {
+    glClearColor(color_back->red()/255.f, color_back->green()/255.f, color_back->blue()/255.f, 1);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
    if (data_obj_openGL != NULL) {
        double* vertices = this->data_obj_openGL->vertex_array.coords_array;
        int*    indices  = this->data_obj_openGL->index_array;
@@ -21,17 +23,8 @@ void openGL::paintGL() {
 }
 
 void openGL::draw(double* vertices, int* indices) {
-  /*the vertex; array is enabled for writing and used during rendering when
-   * glDrawArrays, or glDrawElements is called*/
-
-
-  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // cleaner
-
-
   glColor3f(color_vertex->red()/255.f, color_vertex->green()/255.f, color_vertex->blue()/255.f);
   glPointSize(point_size);
-
-
 
   glEnableClientState(GL_VERTEX_ARRAY);
 

@@ -239,3 +239,14 @@ void MainWindow::vertex_size_valueChanged()
     ui->openGLWidget->update();
 }
 
+
+void MainWindow::on_color_background_clicked()
+{
+    QColor color = QColorDialog::getColor();
+    if (color.isValid()) {
+      *back_color = color;
+      ui->openGLWidget->color_back = back_color;
+      ui->openGLWidget->update();
+    }
+}
+

@@ -1381,7 +1381,7 @@ border-radius: 4px;
         <string>Parallel</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_7">
+      <widget class="QPushButton" name="color_background">
        <property name="geometry">
         <rect>
          <x>10</x>
