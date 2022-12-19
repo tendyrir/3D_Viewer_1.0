@@ -5,45 +5,93 @@
 
 /** tendyrir screenshot hard coding skills **/
 
-void MainWindow::on_screenshotButton_clicked()
-{
+void MainWindow::on_screenshotButton_clicked() {
     QPushButton *btn = (QPushButton *)sender();
     QString butVal = btn->text();
     QString filename;
 
     if (QString::compare(butVal, "bmp", Qt::CaseInsensitive) == 0) {
-        filename = QFileDialog::getSaveFileName(this, tr("Save File"), pathProject, tr("BMP files (*.bmp)"));
+        filename = QFileDialog::getSaveFileName(this, tr("Save screenshot bmp"), pathProject, tr("BMP files (*.bmp)"));
     } else if (QString::compare(butVal, "jpeg", Qt::CaseInsensitive) == 0) {
-        filename = QFileDialog::getSaveFileName(this, tr("Save File"), pathProject, tr("JPEG files (*.jpeg)"));
+        filename = QFileDialog::getSaveFileName(this, tr("Save screenshot jpeg"), pathProject, tr("JPEG files (*.jpeg)"));
     }
 
     QImage screenshot = ui->openGLWidget->grabFramebuffer();
     screenshot.save(filename, nullptr, 80);
-
 }
 
-void MainWindow::on_gifButton_clicked()
-{
-  QString filename = QFileDialog::getSaveFileName(this, tr("Save File"), pathProject, tr("(*.gif)"));
 
-  if (!filename.isEmpty()) {
 
-    QGifImage gif(ui->openGLWidget->grab().size());
-    gif.setDefaultDelay(100);
 
-    for (int i = 0; i < 50; i++) {
+void MainWindow::gif_button_clicked() {
 
-      ui->Scale->setValue(50+i);
-      changeScale();
+/* таймер равен 100 милисекундам, что равно 1/10 секунды
+ * нужно для 10-ти кадров в секунду
+*/
+    timer->start(100);
+    add_frame_to_gif_on_timeout();
+    frames_count = 0;
+}
 
-      ui->RotateX->setValue(i);
-      changeRotateX();
+void MainWindow::add_frame_to_gif_on_timeout() {
+    if (frames_count <= 50) {
+        gif.push_back(ui->openGLWidget->grab().toImage()); // push_back() - вставка в конец вектора
+        frames_count++;
+    } else {
+        save_gif_file();
+        timer->stop();
+    }
+}
 
-      QImage screenshot = ui->openGLWidget->grabFramebuffer();
-      gif.addFrame(screenshot);
+void MainWindow::save_gif_file() {
+    QString filename = QFileDialog::getSaveFileName(this, tr("Save gif"), pathProject, tr("GIF files (*.gif)"));
+    if (!filename.isNull()) {
+    QGifImage gif_file(QSize(1100, 1100));
+        gif_file.setDefaultDelay(100);
+        for (QVector<QImage>::Iterator frames = gif.begin(); frames != gif.end(); frames++) {
+            gif_file.addFrame(*frames);
+        }
+        gif_file.save(filename);
     }
 
-    gif.save(filename);
-  }
-
+    gif.clear();
+    frames_count = 0;
 }
+
+
+
+
+
+
+
+
+
+//void MainWindow::start_timer() {
+//    timer = new QTimer(this);
+//    connect(timer, SIGNAL(timeout()), this, SLOT(change_time()));
+//    timer->start(1000);
+//}
+
+//void MainWindow::change_time(QGifImage gif) {
+//    add_frame_signal_count++;
+//    QTime time = QTime::currentTime();
+//    std::string count = std::to_string(add_frame_signal_count);
+//    QString time_text = time_text.fromStdString(count);
+//    ui->time_label->setText(time_text);
+//     QString filename = QFileDialog::getSaveFileName(this, tr("Save File"), pathProject, tr("(*.gif)"));
+//    if(add_frame_signal_count <= 50){
+//        timer->start();
+//        QImage screenshot = ui->openGLWidget->grabFramebuffer();
+//        gif.addFrame(screenshot);
+//    }else{
+//        timer->stop();
+//    }
+//    gif.save(filename);
+//}
+
+//void MainWindow::start_timer() {
+//}
+
+
+
+

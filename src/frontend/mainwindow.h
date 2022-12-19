@@ -13,6 +13,9 @@
 #include <math.h>
 #include <QSettings>
 
+#include <QTimer>
+#include "../gifimage/qgifimage.h"
+
 extern "C" {
 #include "../backend/viewer.h"
 }
@@ -41,9 +44,16 @@ public:
     QColor *back_color = new QColor(214, 214, 214, 255);
     QColor *vertex_color = new QColor(0, 0, 255, 255);
 
+    QTimer *timer;
+    int frames_count;
+
 private slots:
-    void on_gifButton_clicked();
+    void gif_button_clicked();
+    void add_frame_to_gif_on_timeout();
+    void save_gif_file();
+
     void on_screenshotButton_clicked();
+
     void on_choose_OBJFile_clicked();
     void changeScale();
     void changeRotateX();
@@ -61,5 +71,8 @@ private slots:
 private:
     void init ();
     Ui::MainWindow *ui;
+    QVector<QImage> gif;
+
+
 };
 #endif // MAINWINDOW_H

@@ -25,6 +25,8 @@ void openGL::draw(double* vertices, int* indices) {
    * glDrawArrays, or glDrawElements is called*/
   glEnableClientState(GL_VERTEX_ARRAY);
   glVertexPointer(3, GL_DOUBLE, 0, vertices);
+
+
   glDrawElements(GL_LINES, this->data_obj_openGL->index_array_size, GL_UNSIGNED_INT, indices);
   glDisableClientState(GL_VERTEX_ARRAY);
 }
