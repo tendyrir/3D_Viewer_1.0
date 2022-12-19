@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
   ui->setupUi(this);
   this->setWindowTitle("3D Viewer");
-
+  settings = new QSettings("Setting", "3DViewer", this);
   QLabel *labelMoveX = ui->lineMoveX;
   QLabel *labelMoveY = ui->lineMoveY;
   QLabel *labelMoveZ = ui->lineMoveZ;
@@ -64,7 +64,10 @@ MainWindow::MainWindow(QWidget *parent)
   connect(ui->vertex_size, SIGNAL(valueChanged(int)), this, SLOT(vertex_size_valueChanged()));
 }
 
-MainWindow::~MainWindow() { delete ui; }
+MainWindow::~MainWindow() {
+    save_settings();
+    delete ui;
+}
 
 void MainWindow::on_choose_OBJFile_clicked() {
   QString file = QFileDialog::getOpenFileName(this, "Choose File", "../../../../../src/models");
@@ -91,7 +94,7 @@ void MainWindow::init() {
   ui->MoveX->setValue(0);
   ui->MoveY->setValue(0);
   ui->MoveZ->setValue(0);
-  ui->openGLWidget->line_size = 1;
+  ui->edge_size->setValue(1);
 }
 
 void MainWindow::changeScale() {
@@ -263,32 +266,95 @@ void MainWindow::on_edge_dashed_toggled(bool checked) {
 
 void MainWindow::on_vertex_circle_toggled(bool checked) {
     if (checked) {
-        vertex_mood = 1; // circle
+        vertex_circle = true; // circle
+        vertex_disable = false;
+        vertex_square = false;
+    } else {
+        vertex_circle = false;
     }
     check_frame_vertex();
 }
 
 void MainWindow::on_vertex_square_toggled(bool checked) {
     if (checked) {
-        vertex_mood = 2; // square
+        vertex_square = true; // square
+        vertex_disable = false;
+        vertex_circle = false;
+    } else {
+        vertex_square = false;
     }
     check_frame_vertex();
 }
 
 void MainWindow::on_vertex_disable_toggled(bool checked) {
     if (checked) {
-        vertex_mood = 0; // disable
+        vertex_disable = true; // disable
+        vertex_square = false;
+        vertex_circle = false;
+    } else {
+        vertex_disable = false;
     }
     check_frame_vertex();
 }
 
 void MainWindow::check_frame_vertex() {
-    if (vertex_mood == 0) {
-        ui->openGLWidget->vertex_mood = 0;
-    } else if (vertex_mood == 1) {
-        ui->openGLWidget->vertex_mood = 1;
-    } else {
-        ui->openGLWidget->vertex_mood = 2;
+    if (vertex_circle) {
+        ui->openGLWidget->vertex_circle = true;
+    } else if (vertex_square){
+        ui->openGLWidget->vertex_square = true;
+    } else if (vertex_disable) {
+         ui->openGLWidget->vertex_disable = true;
     }
     ui->openGLWidget->update();
+}
+
+void MainWindow::save_settings() {
+    settings->setValue("color_background", *ui->openGLWidget->color_back);
+    settings->setValue("color_edges", *ui->openGLWidget->color_edge);
+    settings->setValue("color_vertex", *ui->openGLWidget->color_vertex);
+
+    settings->setValue("vertex_circle", ui->openGLWidget->vertex_circle);
+    settings->setValue("vertex_square", ui->openGLWidget->vertex_square);
+    settings->setValue("vertex_size", ui->openGLWidget->point_size);
+
+    settings->setValue("edge_size", ui->openGLWidget->line_size);
+    settings->setValue("edge_dashed", ui->openGLWidget->edge_mood);
+
+    settings->setValue("radioButton", ui->openGLWidget->central_perspective);
+}
+
+void MainWindow::on_load_settings_clicked() {
+//    ui->openGLWidget->central_perspective = settings->value("radioButton").toBool();
+//    if(ui->openGLWidget->central_perspective) ui->radioButton->setChecked(1);
+//    else ui->radioButton_2->setChecked(1);
+
+//    *back_color = settings->value("color_background").toByteArray().constData();
+//    ui->openGLWidget->color_back = back_color;
+//    *edges_color = settings->value("color_edges").toByteArray().constData();
+//    ui->openGLWidget->color_edge = edges_color;
+//    *vertex_color = settings->value("color_vertex").toByteArray().constData();
+//    ui->openGLWidget->color_vertex = vertex_color;
+
+//    if(settings->value("vertex_circle").toBool()) {
+//        ui->openGLWidget->vertex_circle = true;
+//        ui->vertex_circle->setChecked(1);
+//    } else if (settings->value("vertex_square").toBool()) {
+//        ui->openGLWidget->vertex_square = true;
+//        ui->vertex_square->setChecked(1);
+//    } else if (settings->value("vertex_disable").toBool()) {
+//        ui->openGLWidget->vertex_disable = true;
+//        ui->vertex_disable->setChecked(1);
+//    }
+
+//    ui->openGLWidget->point_size = settings->value("vertex_size").toDouble();
+//    ui->vertex_size->setValue(ui->openGLWidget->point_size);
+
+//    ui->openGLWidget->line_size = settings->value("edge_size").toDouble();
+//    ui->edge_size->setValue(ui->openGLWidget->line_size);
+
+//    ui->openGLWidget->edge_mood = settings->value("edge_dashed").toBool();
+//    if(ui->openGLWidget->edge_mood) ui->edge_dashed->setChecked(1);
+//    else ui->edge_solid->setChecked(1);
+
+//     ui->openGLWidget->update();
 }

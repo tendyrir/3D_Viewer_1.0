@@ -55,10 +55,10 @@ void openGL::drawVerticies(double* vertices) {
     glColor3f(color_vertex->red()/255.f, color_vertex->green()/255.f, color_vertex->blue()/255.f);
     glPointSize(point_size);
     glVertexPointer(3, GL_DOUBLE, 0, vertices);
-    if(vertex_mood) {
-        if(vertex_mood == 1) {
+    if (!vertex_disable) {
+        if(vertex_circle) {
             glEnable(GL_POINT_SMOOTH);
-        } else if (vertex_mood == 2) {
+        } else if (vertex_square) {
             glDisable(GL_POINT_SMOOTH);
         }
         glDrawArrays(GL_POINTS, 0, this->data_obj_openGL->vertex_array.coords_number / 3);

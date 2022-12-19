@@ -27,7 +27,9 @@ public:
     int point_size;
     bool central_perspective = false;
     int edge_mood = 0; // 0 - solid, 1 - dashed
-    int vertex_mood = 0; // 0 - disable, 1 - circle, 2 - square
+    bool vertex_square = false;
+    bool vertex_circle = false;
+    bool vertex_disable = false;
 
 protected:
     void initializeGL() override;

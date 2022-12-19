@@ -631,6 +631,9 @@ border-radius: 4px;
        <property name="maximum">
         <number>180</number>
        </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
        <property name="pageStep">
         <number>1</number>
        </property>
@@ -1544,6 +1547,58 @@ border-radius: 4px;
       </property>
       <property name="text">
        <string>OBJ File</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="load_settings">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>990</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton {
+     font: 700 13pt &quot;Arial&quot;;
+	color: white;
+	background-color:rgb(127, 187, 255);
+	border: 1px solid rgb(191, 210, 255);
+	border-radius: 5px;
+ }
+
+ QPushButton:hover {
+     background-color: blue;
+ }</string>
+      </property>
+      <property name="text">
+       <string>Load Settings</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="reset_settings">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>990</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton {
+     font: 700 13pt &quot;Arial&quot;;
+	color: white;
+	background-color:rgb(127, 187, 255);
+	border: 1px solid rgb(191, 210, 255);
+	border-radius: 5px;
+ }
+
+ QPushButton:hover {
+     background-color: blue;
+ }</string>
+      </property>
+      <property name="text">
+       <string>Reset Settings</string>
       </property>
      </widget>
     </widget>
