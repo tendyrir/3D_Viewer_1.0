@@ -82,25 +82,47 @@ void MainWindow::on_choose_OBJFile_clicked() {
     ui->verticies->setText(
         QString::number(data_obj->vertex_array.coords_number / 3));
     ui->openGLWidget->getModelData(data_obj);
+    init();
     ui->openGLWidget->update();
   }
 }
 
 void MainWindow::init() {
   ui->Scale->setValue(50);
+  changeScale();
   ui->RotateX->setValue(0);
+  changeRotateX();
   ui->RotateY->setValue(0);
+  changeRotateY();
   ui->RotateZ->setValue(0);
+  changeRotateZ();
   ui->MoveX->setValue(0);
+  changeMoveX();
   ui->MoveY->setValue(0);
+  changeMoveY();
   ui->MoveZ->setValue(0);
+  changeMoveZ();
   ui->edge_size->setValue(1);
+  ui->vertex_size->setValue(1);
+  ui->edge_solid->setChecked(1);
+  ui->edge_dashed->setChecked(0);
+  ui->radioButton_2->setChecked(1);
+  ui->radioButton->setChecked(0);
+  ui->vertex_circle->setChecked(0);
+  ui->vertex_square->setChecked(0);
+  ui->vertex_disable->setChecked(0);
+  *back_color = QColor(0, 0, 0, 255);
+  ui->openGLWidget->color_back = back_color;
+  *edges_color = QColor(214, 214, 214, 255);
+  ui->openGLWidget->color_edge = edges_color;
+  *vertex_color = QColor(0, 0, 255, 255);
+  ui->openGLWidget->color_vertex = vertex_color;
 }
 
 void MainWindow::changeScale() {
   if (data_obj) {
     double newSliderValue = (double)ui->Scale->value();
-    if (newSliderValue != 50) {
+//    if (newSliderValue != 50) {
       s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4,
                         &ui->openGLWidget->data_matrix);
       conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
@@ -108,7 +130,7 @@ void MainWindow::changeScale() {
                   newSliderValue / currentSliderValueScale);
       conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
       currentSliderValueScale = newSliderValue;
-    }
+//    }
     ui->openGLWidget->update();
   }
 }
@@ -116,7 +138,7 @@ void MainWindow::changeScale() {
 void MainWindow::changeRotateX() {
   if (data_obj) {
     double newSliderValue = (double)ui->RotateX->value() / 100;
-    if (newSliderValue != 0) {
+//    if (newSliderValue != 0) {
       s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4,
                         &ui->openGLWidget->data_matrix);
       conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
@@ -124,7 +146,7 @@ void MainWindow::changeRotateX() {
                    newSliderValue - currentSliderValueRotateX);
       conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
       currentSliderValueRotateX = newSliderValue;
-    }
+//    }
     ui->openGLWidget->update();
   }
 }
@@ -132,7 +154,7 @@ void MainWindow::changeRotateX() {
 void MainWindow::changeRotateY() {
   if (data_obj) {
     double newSliderValue = (double)ui->RotateY->value() / 100;
-    if (newSliderValue != 0) {
+//    if (newSliderValue != 0) {
       s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4,
                         &ui->openGLWidget->data_matrix);
       conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
@@ -140,7 +162,7 @@ void MainWindow::changeRotateY() {
                    newSliderValue - currentSliderValueRotateY);
       conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
       currentSliderValueRotateY = newSliderValue;
-    }
+//    }
     ui->openGLWidget->update();
   }
 }
@@ -148,7 +170,7 @@ void MainWindow::changeRotateY() {
 void MainWindow::changeRotateZ() {
   if (data_obj) {
     double newSliderValue = (double)ui->RotateZ->value() / 100;
-    if (newSliderValue != 0) {
+//    if (newSliderValue != 0) {
       s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4,
                         &ui->openGLWidget->data_matrix);
       conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
@@ -156,7 +178,7 @@ void MainWindow::changeRotateZ() {
                    newSliderValue - currentSliderValueRotateZ);
       conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
       currentSliderValueRotateZ = newSliderValue;
-    }
+//    }
     ui->openGLWidget->update();
   }
 }
@@ -164,7 +186,7 @@ void MainWindow::changeRotateZ() {
 void MainWindow::changeMoveX() {
   if (data_obj) {
     double newSliderValue = (double)ui->MoveX->value() / 100;
-    if (newSliderValue != 0) {
+//    if (newSliderValue != 0) {
       s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4,
                         &ui->openGLWidget->data_matrix);
       conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
@@ -172,7 +194,7 @@ void MainWindow::changeMoveX() {
                  newSliderValue - currentSliderValueMoveX);
       conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
       currentSliderValueMoveX = newSliderValue;
-    }
+//    }
     ui->openGLWidget->update();
   }
 }
@@ -180,7 +202,7 @@ void MainWindow::changeMoveX() {
 void MainWindow::changeMoveY() {
   if (data_obj) {
     double newSliderValue = (double)ui->MoveY->value() / 100;
-    if (newSliderValue != 0) {
+//    if (newSliderValue != 0) {
       s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4,
                         &ui->openGLWidget->data_matrix);
       conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
@@ -188,7 +210,7 @@ void MainWindow::changeMoveY() {
                  newSliderValue - currentSliderValueMoveY);
       conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
       currentSliderValueMoveY = newSliderValue;
-    }
+//    }
     ui->openGLWidget->update();
   }
 }
@@ -196,7 +218,7 @@ void MainWindow::changeMoveY() {
 void MainWindow::changeMoveZ() {
   if (data_obj) {
     double newSliderValue = (double)ui->MoveZ->value() / 100;
-    if (newSliderValue != 0) {
+//    if (newSliderValue != 0) {
       s21_create_matrix(data_obj->vertex_array.coords_number / 3, 4,
                         &ui->openGLWidget->data_matrix);
       conv_to_matr(data_obj, &ui->openGLWidget->data_matrix);
@@ -204,7 +226,7 @@ void MainWindow::changeMoveZ() {
                  newSliderValue - currentSliderValueMoveZ);
       conv_from_matr(data_obj, &ui->openGLWidget->data_matrix);
       currentSliderValueMoveZ = newSliderValue;
-    }
+//    }
     ui->openGLWidget->update();
   }
 }
@@ -266,44 +288,27 @@ void MainWindow::on_edge_dashed_toggled(bool checked) {
 
 void MainWindow::on_vertex_circle_toggled(bool checked) {
     if (checked) {
-        vertex_circle = true; // circle
-        vertex_disable = false;
-        vertex_square = false;
-    } else {
-        vertex_circle = false;
+        ui->openGLWidget->vertex_circle = 1;
+        ui->openGLWidget->vertex_square = 0;
+        ui->openGLWidget->vertex_disable = 0;
     }
-    check_frame_vertex();
+    ui->openGLWidget->update();
 }
 
 void MainWindow::on_vertex_square_toggled(bool checked) {
     if (checked) {
-        vertex_square = true; // square
-        vertex_disable = false;
-        vertex_circle = false;
-    } else {
-        vertex_square = false;
+        ui->openGLWidget->vertex_square = 1;
+        ui->openGLWidget->vertex_circle = 0;
+        ui->openGLWidget->vertex_disable = 0;
     }
-    check_frame_vertex();
+    ui->openGLWidget->update();
 }
 
 void MainWindow::on_vertex_disable_toggled(bool checked) {
     if (checked) {
-        vertex_disable = true; // disable
-        vertex_square = false;
-        vertex_circle = false;
-    } else {
-        vertex_disable = false;
-    }
-    check_frame_vertex();
-}
-
-void MainWindow::check_frame_vertex() {
-    if (vertex_circle) {
-        ui->openGLWidget->vertex_circle = true;
-    } else if (vertex_square){
-        ui->openGLWidget->vertex_square = true;
-    } else if (vertex_disable) {
-         ui->openGLWidget->vertex_disable = true;
+        ui->openGLWidget->vertex_disable = 1;
+        ui->openGLWidget->vertex_circle = 0;
+        ui->openGLWidget->vertex_square = 0;
     }
     ui->openGLWidget->update();
 }
@@ -324,37 +329,44 @@ void MainWindow::save_settings() {
 }
 
 void MainWindow::on_load_settings_clicked() {
-//    ui->openGLWidget->central_perspective = settings->value("radioButton").toBool();
-//    if(ui->openGLWidget->central_perspective) ui->radioButton->setChecked(1);
-//    else ui->radioButton_2->setChecked(1);
+    ui->openGLWidget->central_perspective = settings->value("radioButton").toBool();
+    if(ui->openGLWidget->central_perspective) ui->radioButton->setChecked(1);
+    else ui->radioButton_2->setChecked(1);
 
-//    *back_color = settings->value("color_background").toByteArray().constData();
-//    ui->openGLWidget->color_back = back_color;
-//    *edges_color = settings->value("color_edges").toByteArray().constData();
-//    ui->openGLWidget->color_edge = edges_color;
-//    *vertex_color = settings->value("color_vertex").toByteArray().constData();
-//    ui->openGLWidget->color_vertex = vertex_color;
+    *back_color = settings->value("color_background").toByteArray().constData();
+    ui->openGLWidget->color_back = back_color;
+    *edges_color = settings->value("color_edges").toByteArray().constData();
+    ui->openGLWidget->color_edge = edges_color;
+    *vertex_color = settings->value("color_vertex").toByteArray().constData();
+    ui->openGLWidget->color_vertex = vertex_color;
 
-//    if(settings->value("vertex_circle").toBool()) {
-//        ui->openGLWidget->vertex_circle = true;
-//        ui->vertex_circle->setChecked(1);
-//    } else if (settings->value("vertex_square").toBool()) {
-//        ui->openGLWidget->vertex_square = true;
-//        ui->vertex_square->setChecked(1);
-//    } else if (settings->value("vertex_disable").toBool()) {
-//        ui->openGLWidget->vertex_disable = true;
-//        ui->vertex_disable->setChecked(1);
-//    }
+    if(settings->value("vertex_circle").toBool()) {
+        ui->openGLWidget->vertex_circle = 1;
+        ui->vertex_circle->setChecked(1);
+    } else if (settings->value("vertex_square").toBool()) {
+        ui->openGLWidget->vertex_square = 1;
+        ui->vertex_square->setChecked(1);
+    } else if (settings->value("vertex_disable").toBool()) {
+        ui->openGLWidget->vertex_disable = 1;
+        ui->vertex_disable->setChecked(1);
+    }
 
-//    ui->openGLWidget->point_size = settings->value("vertex_size").toDouble();
-//    ui->vertex_size->setValue(ui->openGLWidget->point_size);
+    ui->openGLWidget->point_size = settings->value("vertex_size").toDouble();
+    ui->vertex_size->setValue(ui->openGLWidget->point_size);
 
-//    ui->openGLWidget->line_size = settings->value("edge_size").toDouble();
-//    ui->edge_size->setValue(ui->openGLWidget->line_size);
+    ui->openGLWidget->line_size = settings->value("edge_size").toDouble();
+    ui->edge_size->setValue(ui->openGLWidget->line_size);
 
-//    ui->openGLWidget->edge_mood = settings->value("edge_dashed").toBool();
-//    if(ui->openGLWidget->edge_mood) ui->edge_dashed->setChecked(1);
-//    else ui->edge_solid->setChecked(1);
+    ui->openGLWidget->edge_mood = settings->value("edge_dashed").toBool();
+    if(ui->openGLWidget->edge_mood) ui->edge_dashed->setChecked(1);
+    else ui->edge_solid->setChecked(1);
 
-//     ui->openGLWidget->update();
+    ui->openGLWidget->update();
 }
+
+void MainWindow::on_reset_settings_clicked()
+{
+    init();
+    ui->openGLWidget->update();
+}
+

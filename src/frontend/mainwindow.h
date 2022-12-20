@@ -40,9 +40,6 @@ public:
     QColor *edges_color = new QColor(0, 0, 0, 255);
     QColor *back_color = new QColor(214, 214, 214, 255);
     QColor *vertex_color = new QColor(0, 0, 255, 255);
-    bool vertex_square = false;
-    bool vertex_circle = false;
-    bool vertex_disable = false;
     QSettings *settings;
 
 private slots:
@@ -67,12 +64,12 @@ private slots:
     void on_edge_dashed_toggled(bool checked);
     void on_vertex_circle_toggled(bool checked);
     void on_vertex_square_toggled(bool checked);
-
     void on_vertex_disable_toggled(bool checked);
-    void check_frame_vertex();
 
     void save_settings();
     void on_load_settings_clicked();
+
+    void on_reset_settings_clicked();
 
 private:
     void init ();

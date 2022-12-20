@@ -23,13 +23,13 @@ public:
     QColor *color_edge = new QColor(214, 214, 214, 255);
     QColor *color_back = new QColor(0, 0, 0, 255);
     QColor *color_vertex = new QColor(0, 0, 255, 255);
-    int line_size;
-    int point_size;
+    int line_size = 1;
+    int point_size = 1;
     bool central_perspective = false;
     int edge_mood = 0; // 0 - solid, 1 - dashed
-    bool vertex_square = false;
-    bool vertex_circle = false;
-    bool vertex_disable = false;
+    int vertex_circle = 0;
+    int vertex_square = 0;
+    int vertex_disable = 1;
 
 protected:
     void initializeGL() override;
