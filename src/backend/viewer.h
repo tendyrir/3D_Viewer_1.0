@@ -47,22 +47,22 @@ int   write_value(ObjData_t* data, int value);
 
 void  print_vertex_array(ObjData_t* data);
 
-int   rotate_x(double alpha, matrix_t *result);
-int   rotate_y(double alpha, matrix_t *result);
-int   rotate_z(double alpha, matrix_t *result);
-int   rotation(matrix_t *move, matrix_t *result);
-int   move_matrix(matrix_t *move, matrix_t *result);
-int   scale_matrix(matrix_t *move, matrix_t *result);
-void  crd_stlr(matrix_t *crd_main, matrix_t *crd, int row);
-void  crd_ret(matrix_t *crd_main, matrix_t *crd, int row);
-void  crd_metamorph(matrix_t *crd_main, matrix_t *athena);
-void  core_algorithm(matrix_t *crd_main, matrix_t *move, int type);
+// int   rotate_x(double alpha, matrix_t *result);
+// int   rotate_y(double alpha, matrix_t *result);
+// int   rotate_z(double alpha, matrix_t *result);
+// int   rotation(matrix_t *move, matrix_t *result);
+// int   move_matrix(matrix_t *move, matrix_t *result);
+// int   scale_matrix(matrix_t *move, matrix_t *result);
+// void  crd_stlr(matrix_t *crd_main, matrix_t *crd, int row);
+// void  crd_ret(matrix_t *crd_main, matrix_t *crd, int row);
+// void  crd_metamorph(matrix_t *crd_main, matrix_t *athena);
+// void  core_algorithm(matrix_t *crd_main, matrix_t *move, int type);
 
 void  conv_to_matr(ObjData_t* data, matrix_t *crd_main);
 void  conv_from_matr(ObjData_t* data, matrix_t *crd_main);
 
 int   s21_create_matrix(int rows, int columns, matrix_t *result);
-int   s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
+// int   s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
 void  s21_remove_matrix(matrix_t *A);
 
 void   center_model(ObjData_t *data, double value);
@@ -72,9 +72,6 @@ double maximum_difference(double diff_x, double diff_y, double diff_z);
 
 double find_max_coord(ObjData_t *data, int axis);
 double find_min_coord(ObjData_t *data, int axis);
-
-// int   check_coords_more_one(ObjData_t *data);
-// int   find_max_coord(ObjData_t *data);
 
 // Additional
 void model_scale(matrix_t*  vertexes, double scale);

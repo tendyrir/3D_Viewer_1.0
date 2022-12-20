@@ -48,7 +48,7 @@ public:
     void setDefaultDelay(int internal);
     QColor defaultTransparentColor() const;
     void setDefaultTransparentColor(const QColor &color);
-
+§
     int loopCount() const;
     void setLoopCount(int loop);
 

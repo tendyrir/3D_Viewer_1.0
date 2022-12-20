@@ -269,7 +269,7 @@ void move_model_to_center(ObjData_t *data) {
     double min_y = find_min_coord(data, 1); // y
     double min_z = find_min_coord(data, 2); // z
 
-    printf("max x = %lf min x = %lf max y = %lf min y = %lf max z = %lf min z = %lf\n", max_x, min_x, max_y, min_y, max_z, min_z);
+    //printf("max x = %lf min x = %lf max y = %lf min y = %lf max z = %lf min z = %lf\n", max_x, min_x, max_y, min_y, max_z, min_z);
 
     double diff_x = (min_x + (max_x - min_x) / 2);
     double diff_y = (min_y + (max_y - min_y) / 2);
@@ -329,65 +329,6 @@ double find_min_coord(ObjData_t *data, int axis) {
 
     return min_coord;
 }
-
-    // printf("max_coord: %d", max_coord);
-
-
-    // double max_x = data->vertex_array.coords_array[0];
-    // double min_x = data->vertex_array.coords_array[0];
-
-    // double max_y = data->vertex_array.coords_array[1];
-    // double min_y = data->vertex_array.coords_array[1];
-
-    // double max_z = data->vertex_array.coords_array[2];
-    // double min_z = data->vertex_array.coords_array[2];
-
-    // int i = 0;
-
-    // while (i < data->vertex_array.coords_number) {
-
-    //     if (data->vertex_array.coords_array[i] > max_x) {
-    //         max_x = data->vertex_array.coords_array[i];
-    //     }
-
-    //     if (data->vertex_array.coords_array[i] < min_x) {
-    //         min_x = data->vertex_array.coords_array[i];
-    //     }
-    //     i++;
-
-    //     if (data->vertex_array.coords_array[i] > max_y) {
-    //         max_y = data->vertex_array.coords_array[i];
-    //     }
-    //     if (data->vertex_array.coords_array[i] < min_y) {
-    //         min_y = data->vertex_array.coords_array[i];
-    //     }
-    //     i++;
-
-    //     if (data->vertex_array.coords_array[i] > max_z) {
-    //         max_z = data->vertex_array.coords_array[i];
-    //     }
-    //     if (data->vertex_array.coords_array[i] < min_z) {
-    //         min_z = data->vertex_array.coords_array[i];
-    //     }
-    //     i++;
-        
-
-    // }
-
-
-
-
-
-// int check_coords_more_one(ObjData_t *data) {
-//     int check_if_coords_have_more_one = 0;
-//     for (int i = 0; i < data->vertex_array.coords_number; i++) {
-//         if (data->vertex_array.coords_array[i] > 1.0) {
-//             check_if_coords_have_more_one = 1;
-//         }
-//     }
-//     return check_if_coords_have_more_one;
-// } 
-
 
 int check_file_exist(char* filename) {
     if (access(filename, F_OK) != 0) {

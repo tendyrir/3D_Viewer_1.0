@@ -4,13 +4,8 @@
 
 #include "./test.h"
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Тесты на количество вершин и индексов
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  */
-
-
 START_TEST(test_count_icosahedron) {
-  char *obj_path = "models/icosahedron.obj";
+  char *obj_path = "./models/upto100/icosahedron.obj";
   ObjData_t data = {0};
 
   parse_file(&data, obj_path);

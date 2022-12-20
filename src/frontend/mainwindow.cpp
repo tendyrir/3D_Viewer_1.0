@@ -331,6 +331,18 @@ void MainWindow::on_color_verticies_clicked() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /** tendyrir screenshot hard coding skills **/
 
 void MainWindow::on_screenshotButton_clicked() {

@@ -10,7 +10,8 @@ int main(void) {
 
   /* ОТКРЫТИЕ ФАЙЛА */
   srunner_add_suite(sr, suite_open_file());
-  // srunner_add_suite(sr, suite_count_data());
+  srunner_add_suite(sr, suite_athena());
+  srunner_add_suite(sr, suite_count_data());
   
 
 

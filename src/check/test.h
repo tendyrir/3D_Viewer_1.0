@@ -9,6 +9,7 @@
 
 Suite* suite_open_file(void);
 Suite* suite_count_data(void);
+Suite* suite_athena(void);
 
 
 #endif  // SRC_CHECK_TEST_H_
