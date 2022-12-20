@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>2120</width>
-    <height>1269</height>
+    <width>1440</width>
+    <height>1255</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -25,7 +25,7 @@
      <rect>
       <x>310</x>
       <y>100</y>
-      <width>1791</width>
+      <width>1100</width>
       <height>1101</height>
      </rect>
     </property>
@@ -41,7 +41,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>2101</width>
+      <width>1421</width>
       <height>1201</height>
      </rect>
     </property>
@@ -53,7 +53,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>2099</width>
+       <width>1419</width>
        <height>1199</height>
       </rect>
      </property>
@@ -631,6 +631,9 @@ border-radius: 4px;
        <property name="maximum">
         <number>180</number>
        </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
        <property name="pageStep">
         <number>1</number>
        </property>
@@ -950,7 +953,7 @@ border-radius: 4px;
         <rect>
          <x>90</x>
          <y>0</y>
-         <width>61</width>
+         <width>181</width>
          <height>31</height>
         </rect>
        </property>
@@ -966,7 +969,7 @@ border-radius: 4px;
         <rect>
          <x>90</x>
          <y>30</y>
-         <width>61</width>
+         <width>181</width>
          <height>31</height>
         </rect>
        </property>
@@ -993,7 +996,7 @@ border-radius: 4px;
       <property name="title">
        <string>Verticies</string>
       </property>
-      <widget class="QRadioButton" name="radioButton_5">
+      <widget class="QRadioButton" name="vertex_circle">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -1009,7 +1012,7 @@ border-radius: 4px;
         <string>Circle</string>
        </property>
       </widget>
-      <widget class="QRadioButton" name="radioButton_6">
+      <widget class="QRadioButton" name="vertex_square">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -1025,7 +1028,7 @@ border-radius: 4px;
         <string>Square</string>
        </property>
       </widget>
-      <widget class="QSlider" name="Scale_3">
+      <widget class="QSlider" name="vertex_size">
        <property name="geometry">
         <rect>
          <x>60</x>
@@ -1093,10 +1096,13 @@ border-radius: 4px;
         <number>1</number>
        </property>
        <property name="maximum">
-        <number>300</number>
+        <number>50</number>
+       </property>
+       <property name="pageStep">
+        <number>1</number>
        </property>
        <property name="value">
-        <number>30</number>
+        <number>1</number>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -1144,7 +1150,7 @@ border-radius: 4px;
         <string>Color</string>
        </property>
       </widget>
-      <widget class="QRadioButton" name="radioButton_7">
+      <widget class="QRadioButton" name="vertex_disable">
        <property name="geometry">
         <rect>
          <x>100</x>
@@ -1158,6 +1164,9 @@ border-radius: 4px;
        </property>
        <property name="text">
         <string>Disable</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
        </property>
       </widget>
      </widget>
@@ -1176,7 +1185,7 @@ border-radius: 4px;
       <property name="title">
        <string>Edges</string>
       </property>
-      <widget class="QRadioButton" name="radioButton_3">
+      <widget class="QRadioButton" name="edge_solid">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -1191,8 +1200,11 @@ border-radius: 4px;
        <property name="text">
         <string>Solid</string>
        </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
       </widget>
-      <widget class="QRadioButton" name="radioButton_4">
+      <widget class="QRadioButton" name="edge_dashed">
        <property name="geometry">
         <rect>
          <x>180</x>
@@ -1208,7 +1220,7 @@ border-radius: 4px;
         <string>Dashed</string>
        </property>
       </widget>
-      <widget class="QSlider" name="Scale_2">
+      <widget class="QSlider" name="edge_size">
        <property name="geometry">
         <rect>
          <x>60</x>
@@ -1276,10 +1288,13 @@ border-radius: 4px;
         <number>1</number>
        </property>
        <property name="maximum">
-        <number>300</number>
+        <number>50</number>
+       </property>
+       <property name="pageStep">
+        <number>1</number>
        </property>
        <property name="value">
-        <number>30</number>
+        <number>1</number>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -1352,11 +1367,17 @@ border-radius: 4px;
          <height>20</height>
         </rect>
        </property>
+       <property name="tabletTracking">
+        <bool>false</bool>
+       </property>
        <property name="styleSheet">
         <string notr="true">font: 16pt &quot;.AppleSystemUIFont&quot;;</string>
        </property>
        <property name="text">
         <string>Central</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
        </property>
       </widget>
       <widget class="QRadioButton" name="radioButton_2">
@@ -1374,8 +1395,14 @@ border-radius: 4px;
        <property name="text">
         <string>Parallel</string>
        </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoRepeat">
+        <bool>false</bool>
+       </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_7">
+      <widget class="QPushButton" name="color_background">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -1522,28 +1549,74 @@ border-radius: 4px;
        <string>OBJ File</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="load_settings">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>990</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton {
+     font: 700 13pt &quot;Arial&quot;;
+	color: white;
+	background-color:rgb(127, 187, 255);
+	border: 1px solid rgb(191, 210, 255);
+	border-radius: 5px;
+ }
+
+ QPushButton:hover {
+     background-color: blue;
+ }</string>
+      </property>
+      <property name="text">
+       <string>Load Settings</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="reset_settings">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>990</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton {
+     font: 700 13pt &quot;Arial&quot;;
+	color: white;
+	background-color:rgb(127, 187, 255);
+	border: 1px solid rgb(191, 210, 255);
+	border-radius: 5px;
+ }
+
+ QPushButton:hover {
+     background-color: blue;
+ }</string>
+      </property>
+      <property name="text">
+       <string>Reset Settings</string>
+      </property>
+     </widget>
     </widget>
    </widget>
    <zorder>scrollArea</zorder>
    <zorder>openGLWidget</zorder>
   </widget>
+  <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>2120</width>
-     <height>24</height>
+     <width>1440</width>
+     <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuSuchka">
-    <property name="title">
-     <string>Suchka</string>
-    </property>
-   </widget>
-   <addaction name="menuSuchka"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <customwidgets>
   <customwidget>
